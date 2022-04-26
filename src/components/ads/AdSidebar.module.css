@@ -2,6 +2,6 @@
     width: 100%;
     hight: 100%;
     position: relative;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
 }

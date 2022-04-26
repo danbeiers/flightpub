@@ -26,22 +26,20 @@ function FlightPubHomePage() {
     const context = useContext(FlightPubContext);
 
     function clearForm() {
-        document.getElementById('searchForm').reset();
         context.setSearched(false);
     }
 
     if (!context.searched) {
         return (
             <section>
-                <h1>Flight Search</h1>
+                <h2>Flight Search</h2>
                 <FlightSearch/>
             </section>
         );
     } else {
         return (
-            <section>
-                <h1>Flight Search</h1>
-                <FlightSearch />
+            <div>
+
                 <div>
                     <h2>Search Results</h2>
 
@@ -49,7 +47,7 @@ function FlightPubHomePage() {
                     <button onClick={clearForm}>Clear</button>
                 </div>
 
-            </section>
+            </div>
         );
     }
 }
