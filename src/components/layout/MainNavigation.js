@@ -1,8 +1,20 @@
 import { Link } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
+import {useContext} from "react";
+import FlightPubContext from "../../store/FlightPubContext";
 
 function MainNavigation() {
+    const  context = useContext(FlightPubContext);
+    let content;
+    function logout() {
+        context.setAuthenticated(false);
+    }
+    if(context.authenticated){
+        content = <Link to='/' onClick='logout'>Logout</Link>;
+    }else{
+        content = <Link to='/login'>Login</Link>;
+    }
 
     return (
         <header className={classes.header}>
@@ -19,7 +31,7 @@ function MainNavigation() {
                         <Link to='/map'>Map</Link>
                     </li>
                     <li>
-                        <Link to='/login'>Login</Link>
+                        {content}
                     </li>
                     <li>
                         <Link to='/register'>Register</Link>
