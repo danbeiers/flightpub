@@ -24,6 +24,9 @@
 
 .header li {
     margin-left: 3rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #25d0c2;
 }
 
 .header a {

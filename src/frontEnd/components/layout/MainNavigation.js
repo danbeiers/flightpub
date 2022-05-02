@@ -1,19 +1,25 @@
-import { Link } from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
 import {useContext} from "react";
 import FlightPubContext from "../../store/FlightPubContext";
+import {useNavigate} from "react-router";
 
 function MainNavigation() {
     const  context = useContext(FlightPubContext);
-    let content;
-    function logout() {
+    let loginContent;
+
+    function Logout() {
+        let navigate = useNavigate();
         context.setAuthenticated(false);
+        navigate('/');
+
     }
+
     if(context.authenticated){
-        content = <Link to='/' onClick='logout'>Logout</Link>;
+        loginContent = <Link to='/' onClick={Logout}>Logout</Link>;
     }else{
-        content = <Link to='/login'>Login</Link>;
+        loginContent = <Link to='/login'>Login</Link>;
     }
 
     return (
@@ -21,6 +27,9 @@ function MainNavigation() {
             <div className={classes.logo}>FlightPub</div>
             <nav>
                 <ul>
+                    <li>
+                        Welcome {context.authenticated ? context.user: "Guest" }!
+                    </li>
                     <li>
                         <Link to='/'>Home</Link>
                     </li>
@@ -31,7 +40,7 @@ function MainNavigation() {
                         <Link to='/map'>Map</Link>
                     </li>
                     <li>
-                        {content}
+                        {loginContent}
                     </li>
                     <li>
                         <Link to='/register'>Register</Link>

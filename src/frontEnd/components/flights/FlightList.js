@@ -15,6 +15,7 @@ function FlightList(props) {
                     <th></th>
                     <th></th>
                 </tr>
+                <tbody>
                     {props.flights.map((flight) => (
                         <FlightItem
                             key={flight.flightId}
@@ -24,7 +25,9 @@ function FlightList(props) {
                             arrivalTime={flight.arrivalTime}
                             destination={flight.destination}
                         />
+
                     ))}
+                </tbody>
             </table>
         </Card>
 
