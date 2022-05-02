@@ -1,15 +1,15 @@
 import { Routes, Route  } from 'react-router-dom';
 
-import FlightPubHome from './pages/FlightPubHome';
-import MapPage from './pages/Map';
-import BookingsPage from './pages/Bookings';
-import Layout from './components/layout/Layout';
-import FlightPubContext from './store/FlightPubContext';
+import FlightPubHome from './frontEnd/pages/FlightPubHome';
+import MapPage from './frontEnd/pages/Map';
+import BookingsPage from './frontEnd/pages/Bookings';
+import Layout from './frontEnd/components/layout/Layout';
+import FlightPubContext from './frontEnd/store/FlightPubContext';
 
 import {useState} from "react";
-import LoginPage from "./pages/Login";
-import RegisterPage from "./pages/Register";
-import AccountPage from "./pages/Account";
+import LoginPage from "./frontEnd/pages/Login";
+import RegisterPage from "./frontEnd/pages/Register";
+import AccountPage from "./frontEnd/pages/Account";
 
 function App() {
     const [authenticated, setAuthenticated] = useState (false);
