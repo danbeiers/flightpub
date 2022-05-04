@@ -14,11 +14,12 @@ import AccountPage from "./frontEnd/pages/Account";
 function App() {
     const [authenticated, setAuthenticated] = useState (false);
     const [searched, setSearched] = useState (false);
+    const [user,setUser] = useState(null);
     return (
-        <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched }}>
+        <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched,user, setUser }}>
         <Layout>
             <Routes>
-                <Route path='/' element={<FlightPubHome />}></Route>
+                <Route path='/' element={<FlightPubHome />} />
                 <Route path='/bookings' element={<BookingsPage />} />
                 <Route path='/map' element={<MapPage />} />
                 <Route path='/login' element = {<LoginPage />} />
