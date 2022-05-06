@@ -1,6 +1,9 @@
 import {useContext, useRef} from 'react';
 import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import List from "../list/List";
 import DatePicker from "react-datepicker";
+
 
 import Card from '../ui/Card';
 import classes from './FlightSearch.module.css';
@@ -8,6 +11,17 @@ import "react-datepicker/dist/react-datepicker.css";
 import FlightPubContext from "../../store/FlightPubContext";
 
 function FlightSearch() {
+
+    //var and method for searchbox in form
+    //used to search list of destinations from user input
+    const [searchInputQuery, setSearchInputQuery] = useState("");
+    let searchInputHandler = (e) =>
+    {
+        //manipulate string into required format and set into searchInputText
+        var query = e.target.value.toLowerCase();
+        setSearchInputQuery(query);
+    }
+
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const context = useContext(FlightPubContext);
@@ -50,8 +64,13 @@ function FlightSearch() {
             <form id='searchForm' className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.control}>
                     <label htmlFor='departureLocation'>Departure Location</label>
-                    <input type='text' id='departureLocation' ref={departureLocationInputRef} />
+                    <TextField id='departureLocation'
+                               variant="outlined"
+                               fullWidth
+                               onChange={searchInputHandler}
+                               label={"Departure Location"}/>
                 </div>
+                <List input={searchInputQuery}/>
                 <div className={classes.control}>
                     <label htmlFor='departureDate'>Departure Date</label>
                     <DatePicker

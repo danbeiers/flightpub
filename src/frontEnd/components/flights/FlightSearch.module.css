@@ -43,3 +43,16 @@
     background-color: #a50e48;
     border-color: #a50e48;
 }
+
+ul li {
+    font-size: 20px;
+}
+
+#list {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
