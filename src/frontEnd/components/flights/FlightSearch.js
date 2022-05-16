@@ -56,17 +56,17 @@ function FlightSearch() {
         return;
     }
 
-    const [flexiArrival, setFlexiArrival] = useState(false);
+    const [flexiReturn, setFlexiReturn] = useState(false);
 
-    let toggleFlexiArrival = () =>
+    let toggleFlexiReturn = () =>
     {
-        if(flexiArrival)
+        if(flexiReturn)
         {
-            setFlexiArrival(false);
+            setFlexiReturn(false);
             return;
         }
 
-        setFlexiArrival(true);
+        setFlexiReturn(true);
         return;
     }
 
@@ -75,6 +75,9 @@ function FlightSearch() {
     const [soonestEndDate, setSoonestEndDate] = useState(new Date());
     const [latestEndDate, setLatestEndDate] = useState(new Date());
     const context = useContext(FlightPubContext);
+
+    const [depLocation, setDepLocation] = useState("");
+    const [arrLocation, setArrLocation] = useState("");
 
     const departureLocationInputRef = useRef();
     const destinationLocationInputRef = useRef();
@@ -86,16 +89,16 @@ function FlightSearch() {
     function submitHandler(event) {
         event.preventDefault();
 
-        const enteredDepartureLocation = departureLocationInputRef.current.value;
+        const enteredDepartureLocation = depLocation;
         const enteredSoonestDepartureDate = soonestStartDate;
         const enteredLatestDepartureDate = latestStartDate;
         const enteredSoonestReturnDate = soonestEndDate;
         const enteredLatestReturnDate = latestEndDate;
-        const enteredDestinationLocation = destinationLocationInputRef.current.value;
+        const enteredDestinationLocation = arrLocation;
         const enteredNumberOfPassenger = numberOfPassengerInputRef.current.value;
-        const enteredOneWayTrip = oneWayTripInputRef.current.value;
-        const enteredFlexibleReturn = flexibleReturnInputRef.current.value;
-        const enteredFlexibleDeparture = flexibleDepartureInputRef.current.value;
+        const enteredOneWayTrip = oneWay;
+        const enteredFlexibleReturn = flexiReturn;
+        const enteredFlexibleDeparture = flexiDeparture;
 
         const flightSearchData = {
             departureLocation: enteredDepartureLocation,
@@ -207,6 +210,7 @@ function FlightSearch() {
                     <Autocomplete id="departureLocation"
                                   freeSolo={true}
                                   options= {getSearchResults()}
+                                  onChange={(event, value) => setDepLocation(value)}
                                   renderInput={(params) =>
                                       <TextField {...params}
                                                  variant="outlined"
@@ -221,6 +225,7 @@ function FlightSearch() {
                     <Autocomplete id="destinationLocation"
                                   freeSolo={true}
                                   options= {getSearchResults()}
+                                  onChange={(event, value) => setArrLocation(value)}
                                   renderInput={(params) =>
                                       <TextField {...params}
                                                  variant="outlined"
@@ -230,7 +235,7 @@ function FlightSearch() {
                     />
                 </div>
 
-                <Return target={oneWay} flexi={flexiArrival}/>
+                <Return target={oneWay} flexi={flexiReturn}/>
 
                 <div className={classes.control}>
                     <label htmlFor='numberOfPassenger'>Number Of Passengers</label>
@@ -244,7 +249,7 @@ function FlightSearch() {
                     <input type='checkbox' id='flexibleDeparture' onClick={toggleFlexiDeparture} ref={flexibleDepartureInputRef} />
 
                     <label htmlFor='flexibleReturn'>Flexible Return</label>
-                    <input type='checkbox' id='flexibleReturn' onClick={toggleFlexiArrival} ref={flexibleReturnInputRef} />
+                    <input type='checkbox' id='flexibleReturn' onClick={toggleFlexiReturn} ref={flexibleReturnInputRef} />
                 </div>
                 <div className={classes.actions}>
                     <button>Search</button>
