@@ -1,4 +1,5 @@
 import {useContext} from 'react';
+import {useState} from "react";
 
 import FlightList from '../components/flights/FlightList';
 import FlightSearch from "../components/flights/FlightSearch";
@@ -21,9 +22,24 @@ const DUMMY_DATA = [
     },
 ];
 
+const flightSearchData = {
+    departureLocation: "Sydney",
+    soonestDepartureDate: new Date(),
+    latestDepartureDate: new Date(),
+    soonestReturnDate: new Date(),
+    latestReturnDate: new Date(),
+    destinationLocation: "Brisbane",
+    numOfPass: 2,
+    oneWayTrip: false,
+    flexibleDeparture: false,
+    flexibleReturn: false,
+};
+
 function FlightPubHomePage() {
 
     const context = useContext(FlightPubContext);
+
+    const [query, setQuery] = useState({});
 
     function clearForm() {
         context.setSearched(false);
@@ -33,17 +49,18 @@ function FlightPubHomePage() {
         return (
             <section>
                 <h2>Flight Search</h2>
-                <FlightSearch/>
+                <FlightSearch
+                    exportQuery={query => setQuery(query)}/>
             </section>
         );
     } else {
+
         return (
             <div>
-
                 <div>
                     <h2>Search Results</h2>
 
-                    <FlightList flights={DUMMY_DATA}/>
+                    <FlightList flights={DUMMY_DATA} searchQuery={query}/>
                     <button onClick={clearForm}>Clear</button>
                 </div>
 

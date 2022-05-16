@@ -12,7 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import FlightPubContext from "../../store/FlightPubContext";
 import {Autocomplete} from "@mui/material";
 
-function FlightSearch() {
+function FlightSearch(props) {
 
     //var and method for searchbox in form
     //used to search list of destinations from user input
@@ -114,6 +114,8 @@ function FlightSearch() {
         };
         context.setSearched(true);
         console.log(flightSearchData);
+
+        props.exportQuery(flightSearchData);
     }
 
     function Return(e) {

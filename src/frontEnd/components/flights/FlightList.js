@@ -3,8 +3,11 @@ import classes from './FlightList.module.css';
 import Card from "../ui/Card";
 
 function FlightList(props) {
+
+
     return (
         <Card>
+            <p>{props.searchQuery.departureLocation}</p>
             <table className={classes.tableList}>
                 <tr>
                     <th>Flight</th>
