@@ -3,6 +3,11 @@ import { ListData } from "./ListData.js"
 
 function List(query) {
 
+    if(!query.display)
+    {
+        return null;
+    }
+
     const processedQuery = ListData.filter((el) =>
     {
         //return el;

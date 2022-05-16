@@ -3,27 +3,77 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import List from "../list/List";
 import DatePicker from "react-datepicker";
+import { ListData } from "../list/ListData.js"
 
 
 import Card from '../ui/Card';
 import classes from './FlightSearch.module.css';
 import "react-datepicker/dist/react-datepicker.css";
 import FlightPubContext from "../../store/FlightPubContext";
+import {Autocomplete} from "@mui/material";
 
 function FlightSearch() {
 
     //var and method for searchbox in form
     //used to search list of destinations from user input
-    const [searchInputQuery, setSearchInputQuery] = useState("");
-    let searchInputHandler = (e) =>
+    let getSearchResults = () =>
     {
-        //manipulate string into required format and set into searchInputText
-        var query = e.target.value.toLowerCase();
-        setSearchInputQuery(query);
+        var arr = [];
+
+        ListData.map((el) =>
+        {
+            arr.push(el.text);
+        })
+
+        return arr;
     }
 
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [oneWay, setOneWay] = useState(false);
+
+    let toggleOneWay = () =>
+    {
+        if(oneWay)
+        {
+            setOneWay(false);
+            return;
+        }
+
+        setOneWay(true);
+        return;
+    }
+
+    const [flexiDeparture, setFlexiDeparture] = useState(false);
+
+    let toggleFlexiDeparture = () =>
+    {
+        if(flexiDeparture)
+        {
+            setFlexiDeparture(false);
+            return;
+        }
+
+        setFlexiDeparture(true);
+        return;
+    }
+
+    const [flexiArrival, setFlexiArrival] = useState(false);
+
+    let toggleFlexiArrival = () =>
+    {
+        if(flexiArrival)
+        {
+            setFlexiArrival(false);
+            return;
+        }
+
+        setFlexiArrival(true);
+        return;
+    }
+
+    const [soonestStartDate, setSoonestStartDate] = useState(new Date());
+    const [latestStartDate, setLatestStartDate] = useState(new Date());
+    const [soonestEndDate, setSoonestEndDate] = useState(new Date());
+    const [latestEndDate, setLatestEndDate] = useState(new Date());
     const context = useContext(FlightPubContext);
 
     const departureLocationInputRef = useRef();
@@ -37,8 +87,10 @@ function FlightSearch() {
         event.preventDefault();
 
         const enteredDepartureLocation = departureLocationInputRef.current.value;
-        const enteredDepartureDate = startDate;
-        const enteredReturnDate = endDate;
+        const enteredSoonestDepartureDate = soonestStartDate;
+        const enteredLatestDepartureDate = latestStartDate;
+        const enteredSoonestReturnDate = soonestEndDate;
+        const enteredLatestReturnDate = latestEndDate;
         const enteredDestinationLocation = destinationLocationInputRef.current.value;
         const enteredNumberOfPassenger = numberOfPassengerInputRef.current.value;
         const enteredOneWayTrip = oneWayTripInputRef.current.value;
@@ -47,8 +99,10 @@ function FlightSearch() {
 
         const flightSearchData = {
             departureLocation: enteredDepartureLocation,
-            departureDate: enteredDepartureDate,
-            returnDate: enteredReturnDate,
+            soonestDepartureDate: enteredSoonestDepartureDate,
+            latestDepartureDate: enteredLatestDepartureDate,
+            soonestReturnDate: enteredSoonestReturnDate,
+            latestReturnDate: enteredLatestReturnDate,
             destinationLocation: enteredDestinationLocation,
             numOfPass: enteredNumberOfPassenger,
             oneWayTrip: enteredOneWayTrip,
@@ -59,50 +113,138 @@ function FlightSearch() {
         console.log(flightSearchData);
     }
 
+    function Return(e) {
+
+        if(e.target)
+        {
+            return null;
+        }
+
+        return (
+            <Arrival  target={e.flexi}/>
+        );
+
+    }
+
+    function Departure(e) {
+        if (e.target) {
+            return (
+                <div className={classes.control}>
+                    <label htmlFor='soonestDeparture'>Soonest Departure</label>
+                    <DatePicker
+                        id='soonestDeparture'
+                        dateFormat="dd/MM/yyyy"
+                        selected={soonestStartDate}
+                        onChange={(date) => setSoonestStartDate(date)}
+                    />
+
+                    <label htmlFor='latestDeparture'>Latest Departure</label>
+                    <DatePicker
+                        id='latestDeparture'
+                        dateFormat="dd/MM/yyyy"
+                        selected={latestStartDate}
+                        onChange={(date) => setLatestStartDate(date)}
+                    />
+                </div>
+            );
+        }
+
+        return (
+            <div className={classes.control}>
+                <label htmlFor='departureDate'>Departure Date</label>
+                <DatePicker
+                    id = 'departureDate'
+                    dateFormat="dd/MM/yyyy"
+                    selected={soonestStartDate}
+                    onChange={(date) => setSoonestStartDate(date)}
+                />
+            </div>
+        );
+    }
+
+    function Arrival(e) {
+        if(e.target)
+        {
+            return (
+                <div className={classes.control}>
+                    <label htmlFor='soonestArrival'>Soonest Return</label>
+                    <DatePicker
+                        id = 'soonestArrival'
+                        dateFormat="dd/MM/yyyy"
+                        selected={soonestEndDate}
+                        onChange={(date) => setSoonestEndDate(date)}
+                    />
+
+                    <label htmlFor='latestArrival'>Latest Return</label>
+                    <DatePicker
+                        id = 'latestArrival'
+                        dateFormat="dd/MM/yyyy"
+                        selected={latestEndDate}
+                        onChange={(date) => setLatestEndDate(date)}
+                    />
+                </div>
+            );
+        }
+
+        return (
+            <div className={classes.control}>
+                <label htmlFor='arrivalDate'>Return Date</label>
+                <DatePicker
+                    id = 'arrivalDate'
+                    dateFormat="dd/MM/yyyy"
+                    selected={soonestEndDate}
+                    onChange={(date) => setSoonestEndDate(date)}
+                />
+            </div>
+            );
+        }
+
     return (
         <Card>
             <form id='searchForm' className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.control}>
                     <label htmlFor='departureLocation'>Departure Location</label>
-                    <TextField id='departureLocation'
-                               variant="outlined"
-                               fullWidth
-                               onChange={searchInputHandler}
-                               label={"Departure Location"}/>
-                </div>
-                <List input={searchInputQuery}/>
-                <div className={classes.control}>
-                    <label htmlFor='departureDate'>Departure Date</label>
-                    <DatePicker
-                        id = 'departureDate'
-                        dateFormat="dd/MM/yyyy"
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                    /><label htmlFor='returnDate'>Return Date</label>
-                    <DatePicker
-                        id = 'returnDate'
-                        dateFormat="dd/MM/yyyy"
-                        selected={endDate}
-                        onChange={(date) => setEndDate(date)}
+                    <Autocomplete id="departureLocation"
+                                  freeSolo={true}
+                                  options= {getSearchResults()}
+                                  renderInput={(params) =>
+                                      <TextField {...params}
+                                                 variant="outlined"
+                                                 fullWidth
+                                                 ref={departureLocationInputRef}
+                                                 label="Departure"/>}
+                    />
+
+                    <Departure target={flexiDeparture}/>
+
+                    <label htmlFor='destinationLocation'>Destination Location</label>
+                    <Autocomplete id="destinationLocation"
+                                  freeSolo={true}
+                                  options= {getSearchResults()}
+                                  renderInput={(params) =>
+                                      <TextField {...params}
+                                                 variant="outlined"
+                                                 fullWidth
+                                                 ref={destinationLocationInputRef}
+                                                 label="Destination"/>}
                     />
                 </div>
-                <div className={classes.control}>
-                    <label htmlFor='destinationLocation'>Destination Location</label>
-                    <input type='text' id='destinationLocation' ref={destinationLocationInputRef} />
-                </div>
+
+                <Return target={oneWay} flexi={flexiArrival}/>
+
                 <div className={classes.control}>
                     <label htmlFor='numberOfPassenger'>Number Of Passengers</label>
                     <input type='number' id='numberOfPassenger' ref={numberOfPassengerInputRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='oneWayTrip'>One Way</label>
-                    <input type='checkbox' id='oneWayTrip' ref={oneWayTripInputRef} />
+                    <input type='checkbox' id='oneWayTrip' onClick={toggleOneWay} ref={oneWayTripInputRef} />
 
                     <label htmlFor='flexibleDeparture'>Flexible Departure</label>
-                    <input type='checkbox' id='flexibleDeparture' ref={flexibleDepartureInputRef} />
+                    <input type='checkbox' id='flexibleDeparture' onClick={toggleFlexiDeparture} ref={flexibleDepartureInputRef} />
 
                     <label htmlFor='flexibleReturn'>Flexible Return</label>
-                    <input type='checkbox' id='flexibleReturn' ref={flexibleReturnInputRef} />
+                    <input type='checkbox' id='flexibleReturn' onClick={toggleFlexiArrival} ref={flexibleReturnInputRef} />
                 </div>
                 <div className={classes.actions}>
                     <button>Search</button>
