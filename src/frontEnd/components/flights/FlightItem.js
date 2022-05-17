@@ -12,6 +12,7 @@ function FlightItem(props) {
     return (
             <tr className={classes.row}>
                 <td> {props.flightId}</td>
+                <td> {props.departure}</td>
                 <td> {props.destination}</td>
                 <td> {props.departureDate}</td>
                 <td> {props.departureTime}</td>
