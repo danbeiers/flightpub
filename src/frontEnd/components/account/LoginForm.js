@@ -31,18 +31,18 @@ function LoginForm() {
 
     return (
         <div className={classes.main}>
-            <h1>Please Log In</h1>
+            <h1>Log In</h1>
             <form onSubmit={submitHandler} className={classes.form}>
-                <label>
-                    <p>Username</p>
-                    <input type="text" ref={userNameRef}/>
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" ref={passWordRef}/>
-                </label>
                 <div>
-                    <button>Submit</button>
+                    <label>
+                        <p>Username</p>
+                        <input type="text" ref={userNameRef} placeholder="Username"/>
+                    </label>
+                    <label>
+                        <p>Password</p>
+                        <input type="password" ref={passWordRef} placeholder="Password"/>
+                    </label>
+                        <input target="submit" type="submit" value="Submit"/>
                 </div>
             </form>
         </div>

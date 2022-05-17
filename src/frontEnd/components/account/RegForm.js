@@ -9,6 +9,8 @@ function RegForm() {
     const userNameRef = useRef();
     const firstNameRef = useRef();
     const lastNameRef = useRef();
+    const dateOfBirthRef = useRef();
+    const emailRef = useRef();
     const passWordRef = useRef();
 
     function submitHandler(event) {
@@ -16,6 +18,8 @@ function RegForm() {
         const userName = userNameRef.current.value;
         const firstName = firstNameRef.current.value;
         const lastName = lastNameRef.current.value;
+        const dateOfBirth = dateOfBirthRef.current.value;
+        const email = emailRef.current.value;
         const passWord = passWordRef.current.value;
 
         context.setUser(userName);
@@ -37,23 +41,33 @@ function RegForm() {
         <div className={classes.main}>
             <h1>User Registration</h1>
                 <form onSubmit={submitHandler} className={classes.form}>
-                    <label>
-                        <p>Username</p>
-                        <input type="text" ref={userNameRef}/>
-                    </label>
-                    <label>
-                        <p>First Name</p>
-                        <input type="text" ref={firstNameRef}/>
-                    </label>
-                    <label>
-                        <p>Last Name</p>
-                        <input type="text" ref={lastNameRef}/>
-                    </label>
-                    <label>
-                        <p>Password</p>
-                        <input type="text" ref={passWordRef}/>
-                    </label>
-                    <input type="submit" value="Submit" />
+                    <div>
+                        <label>
+                            <p>Username</p>
+                            <input type="text" ref={userNameRef} placeholder="Username"/>
+                        </label>
+                        <label>
+                            <p>First Name</p>
+                            <input type="text" ref={firstNameRef} placeholder="First name"/>
+                        </label>
+                        <label>
+                            <p>Last Name</p>
+                            <input type="text" ref={lastNameRef} placeholder="Last name"/>
+                        </label>
+                        <label>
+                            <p>Date of Birth</p>
+                            <input type="Date" ref={dateOfBirthRef}/>
+                        </label>
+                        <label>
+                            <p>Email Address</p>
+                            <input type="text" ref={emailRef} placeholder="Email"/>
+                        </label>
+                        <label>
+                            <p>Password</p>
+                            <input type="text" ref={passWordRef} placeholder="Password"/>
+                        </label>
+                        <input target="submit" type="submit" value="Submit"/>
+                    </div>
                 </form>
         </div>
     )

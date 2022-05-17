@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #0925a9;
+    background-color: #0961a9;
     padding: 0 10%;
 }
 
@@ -23,26 +23,31 @@
 }
 
 .header li {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     margin-left: 3rem;
     text-decoration: none;
-    font-size: 1.5rem;
-    color: #25d0c2;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #ffffff;
 }
 
 .header a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     text-decoration: none;
-    font-size: 1.5rem;
-    color: #25d0c2;
+    font-size: 0.8rem;
+    color: #ffffff;
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .badge {
-    background-color: #cc2062;
+    background-color: #0961a9;
     color: white;
     border-radius: 12px;
     padding: 0 1rem;

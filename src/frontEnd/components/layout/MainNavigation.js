@@ -4,6 +4,7 @@ import classes from './MainNavigation.module.css';
 import {useContext} from "react";
 import FlightPubContext from "../../store/FlightPubContext";
 import {useNavigate} from "react-router";
+import { GiCommercialAirplane } from "react-icons/gi";
 
 function MainNavigation() {
     const  context = useContext(FlightPubContext);
@@ -24,7 +25,7 @@ function MainNavigation() {
 
     return (
         <header className={classes.header}>
-            <div className={classes.logo}>FlightPub</div>
+            <div className={classes.logo}><GiCommercialAirplane/> FlightPub</div>
             <nav>
                 <ul>
                     <li>

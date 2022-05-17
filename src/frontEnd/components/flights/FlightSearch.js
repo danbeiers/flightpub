@@ -11,6 +11,9 @@ import classes from './FlightSearch.module.css';
 import "react-datepicker/dist/react-datepicker.css";
 import FlightPubContext from "../../store/FlightPubContext";
 import {Autocomplete} from "@mui/material";
+import {IoMdCalendar} from "react-icons/io";
+import {MdOutlineAirlineSeatReclineExtra} from "react-icons/md";
+import {GiAirplaneArrival, GiAirplaneDeparture} from "react-icons/gi";
 
 function FlightSearch(props) {
 
@@ -156,7 +159,7 @@ function FlightSearch(props) {
 
         return (
             <div className={classes.control}>
-                <label htmlFor='departureDate'>Departure Date</label>
+                <label htmlFor='departureDate'>Departure Date <IoMdCalendar/></label>
                 <DatePicker
                     id = 'departureDate'
                     dateFormat="dd/MM/yyyy"
@@ -193,7 +196,7 @@ function FlightSearch(props) {
 
         return (
             <div className={classes.control}>
-                <label htmlFor='arrivalDate'>Return Date</label>
+                <label htmlFor='arrivalDate'>Return Date <IoMdCalendar/></label>
                 <DatePicker
                     id = 'arrivalDate'
                     dateFormat="dd/MM/yyyy"
@@ -208,7 +211,8 @@ function FlightSearch(props) {
         <Card>
             <form id='searchForm' className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.control}>
-                    <label htmlFor='departureLocation'>Departure Location</label>
+
+                    <label htmlFor='departureLocation'>Departure Location <GiAirplaneDeparture /></label>
                     <Autocomplete id="departureLocation"
                                   freeSolo={true}
                                   options= {getSearchResults()}
@@ -223,7 +227,7 @@ function FlightSearch(props) {
 
                     <Departure target={flexiDeparture}/>
 
-                    <label htmlFor='destinationLocation'>Destination Location</label>
+                    <label htmlFor='destinationLocation'>Destination Location <GiAirplaneArrival /> </label>
                     <Autocomplete id="destinationLocation"
                                   freeSolo={true}
                                   options= {getSearchResults()}
@@ -240,7 +244,7 @@ function FlightSearch(props) {
                 <Return target={oneWay} flexi={flexiReturn}/>
 
                 <div className={classes.control}>
-                    <label htmlFor='numberOfPassenger'>Number Of Passengers</label>
+                    <label htmlFor='numberOfPassenger'>Number Of Passengers <MdOutlineAirlineSeatReclineExtra/></label>
                     <input type='number' id='numberOfPassenger' ref={numberOfPassengerInputRef} />
                 </div>
                 <div className={classes.control}>
