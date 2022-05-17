@@ -3,7 +3,7 @@ import { createContext } from 'react';
 const FlightPubContext = createContext({
     authenticated:false,
     searched:false,
-    user: null,
+    user: '',
     setAuthenticated: (auth) => {},
     setSearched: (search) => {},
     setUser: (user) => {},
