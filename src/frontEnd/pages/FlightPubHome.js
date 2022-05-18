@@ -8,19 +8,30 @@ import FlightPubContext from "../store/FlightPubContext";
 const DUMMY_DATA = [
     {
         flightId: 'AA2431',
-        departureDate: new Date('May 18, 2022'),
+        departureDate: new Date('May 18, 2022 09:30:00'),
         departureTime: '9:30AM',
         arrivalTime: '10:45PM',
         destination: 'SYDNEY',
         departure: 'NEWCASTLE',
+        price: 500,
     },
     {
         flightId: 'CC7296',
-        departureDate: new Date('May 20, 2022'),
+        departureDate: new Date('May 20, 2022 21:00:00'),
         departureTime: '9:00PM',
         arrivalTime: '03:45AM',
         destination: 'NEWCASTLE',
         departure: 'SYDNEY',
+        price: 450,
+    },
+    {
+        flightId: 'CC7296',
+        departureDate: new Date('May 20, 2022 22:00:00'),
+        departureTime: '10:00PM',
+        arrivalTime: '03:45AM',
+        destination: 'NEWCASTLE',
+        departure: 'SYDNEY',
+        price: 550,
     },
 ];
 
@@ -60,6 +71,7 @@ function FlightPubHomePage() {
         return (
             <div>
                 <div>
+
                     <h2>Search Results</h2>
 
                     <FlightList flights={DUMMY_DATA} searchQuery={query}/>

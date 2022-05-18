@@ -209,6 +209,8 @@ function FlightSearch(props) {
 
     return (
         <Card>
+
+
             <form id='searchForm' className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.control}>
 
