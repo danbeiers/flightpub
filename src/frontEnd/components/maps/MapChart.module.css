@@ -1,3 +1,5 @@
 .map {
-    margin-top: 15vh;
+    font-family: sans-serif;
+    text-align: center;
 }
+/* .leaflet-popup-content { width:500px; } */
