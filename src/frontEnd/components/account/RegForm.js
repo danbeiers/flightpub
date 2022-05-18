@@ -21,8 +21,14 @@ function RegForm() {
         const dateOfBirth = dateOfBirthRef.current.value;
         const email = emailRef.current.value;
         const passWord = passWordRef.current.value;
-
+        let details = {fName: firstName,
+                       lName: lastName,
+                        dob: dateOfBirth,
+                        emailAdd: email,
+                        pword: passWord,
+                    }
         context.setUser(userName);
+        context.setUserDetails(details);
         context.setAuthenticated(true);
         navigate('/');
         /*
