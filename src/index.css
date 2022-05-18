@@ -19,3 +19,14 @@ h2 {
     font-size: 1.5rem;
     color: #2c292b;
 }
+
+.marker-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.marker-btn img{
+    width: 20px;
+    height: 20px;
+}
