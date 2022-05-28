@@ -3,6 +3,7 @@ import {useState} from "react";
 
 import FlightList from '../components/flights/FlightList';
 import FlightSearch from "../components/flights/FlightSearch";
+import ConfirmBooking from "../components/flights/ConfirmBooking"
 import FlightPubContext from "../store/FlightPubContext";
 
 const DUMMY_DATA = [
@@ -25,7 +26,7 @@ const DUMMY_DATA = [
         price: 450,
     },
     {
-        flightId: 'CC7296',
+        flightId: 'CC7298',
         departureDate: new Date('May 20, 2022 22:00:00'),
         departureTime: '10:00PM',
         arrivalTime: '03:45AM',
@@ -53,9 +54,11 @@ function FlightPubHomePage() {
     const context = useContext(FlightPubContext);
 
     const [query, setQuery] = useState({});
+    const [selectedFlights, setSelectedFlights] = useState([{}]);
 
     function clearForm() {
         context.setSearched(false);
+        context.setBookingsSelected(false);
     }
 
     if (!context.searched) {
@@ -66,7 +69,7 @@ function FlightPubHomePage() {
                     exportQuery={query => setQuery(query)}/>
             </section>
         );
-    } else {
+    } else if(!context.bookingsSelected){
 
         return (
             <div>
@@ -74,10 +77,20 @@ function FlightPubHomePage() {
 
                     <h2>Search Results</h2>
 
-                    <FlightList flights={DUMMY_DATA} searchQuery={query}/>
+                    <FlightList flights={DUMMY_DATA} searchQuery={query}
+                        exportFlights={flights => setSelectedFlights(flights)}/>
                     <button onClick={clearForm}>Clear</button>
                 </div>
 
+            </div>
+        );
+    }
+    else
+    {
+        return (
+            <div>
+                <ConfirmBooking flights={selectedFlights} oneWay={query.oneWayTrip}/>
+                <button onClick={clearForm}>Clear</button>
             </div>
         );
     }

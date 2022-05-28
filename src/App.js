@@ -16,6 +16,7 @@ import ProfilePage from "./frontEnd/pages/Profile";
 function App() {
     const [authenticated, setAuthenticated] = useState (false);
     const [searched, setSearched] = useState (false);
+    const [bookingsSelected, setBookingsSelected] = useState(false);
     const [user,setUser] = useState(null);
     const [userDetails,setUserDetails] = useState(null);
     const [lat, setLat] = useState(0);
@@ -42,7 +43,7 @@ function App() {
     }, [lat,long,setWeatherData])
 
     return (
-        <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched,user, setUser,userDetails,setUserDetails,lat,setLat,long,setLong,weatherData,setWeatherData }}>
+        <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched,bookingsSelected,setBookingsSelected,setUser,userDetails,setUserDetails,lat,setLat,long,setLong,weatherData,setWeatherData }}>
         <Layout>
             <Routes>
                 <Route path='/' element={<FlightPubHome />} />

@@ -5,6 +5,14 @@
     width: available;
 }
 
+.selectedFlight {
+    background: aquamarine;
+    border-width: 1px;
+    border-color: #2c292b;
+    border-style: solid;
+    width: available;
+}
+
 .btnCell {
     width: 100px;
     text-align: right;

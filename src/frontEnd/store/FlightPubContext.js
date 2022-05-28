@@ -3,6 +3,7 @@ import { createContext } from 'react';
 const FlightPubContext = createContext({
     authenticated:false,
     searched:false,
+    bookingsSelected:false,
     user: '',
     userDetails: {
         fName:'',
@@ -18,6 +19,7 @@ const FlightPubContext = createContext({
 
     setAuthenticated: (auth) => {},
     setSearched: (search) => {},
+    setBookingsSelected: (selected) => {},
     setUser: (user) => {},
     setUserDetails: (details) => {},
     setIP: (_ip) => {},
