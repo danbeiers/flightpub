@@ -19,16 +19,30 @@ function FlightSearch(props) {
 
     //var and method for searchbox in form
     //used to search list of destinations from user input
+
+    const [locationList, setLocationList] = useState([]);
+
+
     let getSearchResults = () =>
     {
-        var arr = [];
+        locationList.length = 0;
 
         ListData.map((el) =>
         {
-            arr.push(el.text);
+            locationList.push(el);
         })
 
-        return arr;
+        //sorts list so that items with a higher priority are
+        //suggested first in the suggestion comboboxes
+        locationList.sort((a, b) => a.priority <= b.priority ? 1 : -1);
+
+        var loc = [];
+
+        locationList.map((el) => {
+            loc.push(el.text);
+        })
+
+        return loc;
     }
 
     const [oneWay, setOneWay] = useState(false);
