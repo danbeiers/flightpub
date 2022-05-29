@@ -34,6 +34,25 @@ const DUMMY_DATA = [
         departure: 'SYDNEY',
         price: 550,
     },
+    {
+        flightId: 'CC7209',
+        departureDate: new Date('June 4, 2022 08:00:00'),
+        departureTime: '08:00AM',
+        arrivalTime: '9:45AM',
+        destination: 'BRISBANE',
+        departure: 'SYDNEY',
+        price: 725,
+    },
+    {
+        flightId: 'CC7234',
+        departureDate: new Date('May 31, 2022 12:00:00'),
+        departureTime: '12:00PM',
+        arrivalTime: '01:45PM',
+        destination: 'SYDNEY',
+        departure: 'BRISBANE',
+        price: 725,
+    },
+
 ];
 
 const flightSearchData = {

@@ -48,7 +48,7 @@ function ConfirmBooking(props) {
                                 <td> {flight.departureDate}</td>
                                 <td> {flight.departureTime}</td>
                                 <td> {flight.arrivalTime}</td>
-                                <td> ${flight.price}</td>
+                                <td> ${flight.price} AUD</td>
 
                             </tr>
                         ))}
@@ -102,7 +102,7 @@ function ConfirmBooking(props) {
                                     <td> {flight.departureDate}</td>
                                     <td> {flight.departureTime}</td>
                                     <td> {flight.arrivalTime}</td>
-                                    <td> {flight.price}</td>
+                                    <td> ${flight.price} AUD</td>
                                 </tr>
                             ))}
 
@@ -115,6 +115,8 @@ function ConfirmBooking(props) {
 
     return (
         <Card>
+            <h1>Booking Preview</h1>
+
             <h2>Flight to Destination</h2>
             <Departure/>
 
