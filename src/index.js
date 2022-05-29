@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 // import {lightTheme, darkTheme} from './frontEnd/components/DarkMode/style';
 import App from "./App";
-// import AppDarkMode from "./frontEnd/pages/AppDarkMode";
-
+// import DarkModeIcon from "./frontEnd/pages/DarkModeIcon";
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 

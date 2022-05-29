@@ -1,17 +1,20 @@
 import React from 'react';
 
 
-import {Toggle} from "../components/DarkMode/Toggle";
-import {useDarkMode} from '../components/DarkMode/useDarkMode';
-import {lightTheme, darkTheme} from '../components/DarkMode/style';
+import {ToggleButton} from "../components/DarkMode/ToggleButton";
+import {useDarkMode} from '../components/DarkMode/DarkMode';
+import {lightTheme, darkTheme} from '../components/DarkMode/darkmodestyle';
 import styled, { ThemeProvider } from 'styled-components';
 
 const Container = styled.div`
   max-width: 50%;
+  width: 100%;
+  height: 500px;
   margin: 8rem auto 0;
+  background: black !important;
 `;
 
-function AppDarkMode(){
+function DarkModeIcon(){
         const [ theme, toggleTheme ] = useDarkMode();
         const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
@@ -19,12 +22,12 @@ function AppDarkMode(){
             <ThemeProvider theme={themeMode}>
                 <Container>
                     <style />
-                    <Toggle theme={theme} toggleTheme={toggleTheme} />
+                    <ToggleButton theme={theme} toggleTheme={toggleTheme} />
 
                 </Container>
             </ThemeProvider>
         );
     }
 
-    export default AppDarkMode;
+    export default DarkModeIcon;
 

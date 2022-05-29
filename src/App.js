@@ -5,18 +5,20 @@ import MapPage from './frontEnd/pages/Map';
 import BookingsPage from './frontEnd/pages/Bookings';
 import Layout from './frontEnd/components/layout/Layout';
 import FlightPubContext from './frontEnd/store/FlightPubContext';
-import {useDarkMode} from "./frontEnd/components/DarkMode/useDarkMode";
+
+import {useDarkMode} from "./frontEnd/components/DarkMode/DarkMode";
 import {useState} from "react";
 import LoginPage from "./frontEnd/pages/Login";
 import RegisterPage from "./frontEnd/pages/Register";
 import AccountPage from "./frontEnd/pages/Account";
+
 import {
     GlobalStyles,
     darkTheme,
     lightTheme,
-} from "./frontEnd/components/DarkMode/style";
+} from "./frontEnd/components/DarkMode/darkmodestyle";
 import styled, {ThemeProvider} from "styled-components";
-import {Toggle} from "./frontEnd/components/DarkMode/Toggle";
+import {ToggleButton} from "./frontEnd/components/DarkMode/ToggleButton";
 //import React from "@types/react";
 
 
@@ -31,7 +33,7 @@ function App() {
         <ThemeProvider theme={themeMode}>
         <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched }}>
             <GlobalStyles />
-            <Toggle theme={theme} toggleTheme={toggleTheme} />
+            <ToggleButton theme={theme} toggleTheme={toggleTheme} />
         <Layout>
             <Routes>
 

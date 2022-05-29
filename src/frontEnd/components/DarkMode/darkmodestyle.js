@@ -18,3 +18,11 @@ export const darkTheme = {
     //text: '#fff',
 };
 
+export const Mybackground = {
+    background: '#000',
+    display:'flex',
+    flex: 1,
+    height: '500px',
+    width: '100%',
+}
+

@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 let Sun, Moon;
-
+//positioning of the toggle icon
 Sun = Moon = styled.svg`
   position: absolute;
   top: 2rem;
   right: 4rem;
   transition: all .5s linear;
 `;
-
-export const Toggle = ({ theme, toggleTheme }) => {
+//svg icon for the toggle button thingy
+export const ToggleButton = ({ theme, toggleTheme }) => {
     console.log(theme);
     return (
         <div onClick={toggleTheme}>
@@ -20,3 +20,4 @@ export const Toggle = ({ theme, toggleTheme }) => {
         </div>
     )
 }
+

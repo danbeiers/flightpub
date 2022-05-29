@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+// this js file is used to determine what the current background of the user is and change it
 export const useDarkMode = () => {
     const [theme, setTheme] = useState('dark');
 
