@@ -1,0 +1,37 @@
+label{
+    padding-left: 20px;
+}
+
+tr {
+    width: 100%;
+}
+
+td {
+   padding-left: 1rem;
+   padding-top: 5px;
+   display: inline-block;
+}
+.Selected {
+    background-color: #3590db;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Booking {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.rebook {
+    font: inherit;
+    cursor: pointer;
+    background-color: #0961a9;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #034072;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-right: 1rem;
+    float: right;
+}
