@@ -1,10 +1,14 @@
+import Card from "../components/ui/Card";
+import RegForm from "../components/account/RegForm";
+
 function RegisterPage() {
 
     return (
-        <section>
-            <h1>Register</h1>
-
-        </section>
+        <div>
+            <Card>
+                <RegForm/>
+            </Card>
+        </div>
     );
 }
 
