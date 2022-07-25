@@ -1,0 +1,24 @@
+{
+  "name": "flightpub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danbeiers/flightpub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danbeiers/flightpub/issues"
+  },
+  "homepage": "https://github.com/danbeiers/flightpub#readme",
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
