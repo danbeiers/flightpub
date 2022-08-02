@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo} from "react";
 // import ReactDOM from "react-dom";
 import CustomMarker from "./CustomMarker";
 import {
@@ -170,14 +170,10 @@ const markers = [
         visit: "Shinjuku Gyoen National Garden",
         happening:"Katsushika Iris Festival 2022",
     },
-
-
-
 ];
 
-
 const geoUrl =
-    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/v2/topojson-maps/world-110m.json";
 // const leafURL = "https://api.mapbox.com/styles/v1/nicknyr/cje7mtk2y6gf92snsydobiahf/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlja255ciIsImEiOiJjajduNGptZWQxZml2MndvNjk4eGtwbDRkIn0.L0aWwfHlFJVGa-WOj7EHaA";
 //setting the hovering stuff
 const MapChart = ({ setTooltipContent }) => {
