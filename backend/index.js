@@ -5,6 +5,7 @@ import req from "express/lib/request.js";
 import res from "express/lib/response.js";
 import session from "express-session";
 import { default as connectMongoDBSession} from 'connect-mongodb-session';
+import cors from "cors"
 
 //import authRoute from "./routes/auth.js";
 //import usersRoute from "./routes/users.js";
@@ -23,6 +24,10 @@ var mongoStore = new MongoDBStore({
     uri: process.env.MONGO,
     collection: 'Sessions',
 })
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200,
+}
 
 //FPUB-13 Adding login functionality
 
@@ -60,6 +65,7 @@ mongoose.connection.on("connected", ()=>{
 
 //middlewares
 //middleware for insomnia/postman
+app.use(cors(corsOptions))
 app.use(express.json());
 //Session creation stuff
 app.use(

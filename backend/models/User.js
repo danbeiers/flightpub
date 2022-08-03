@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 // const {Schema} =mongoose;
 
 const UserSchema = new mongoose.Schema({
-    username:{
+    userName:{
         type: String,
         //required: true,
     },
@@ -15,7 +15,19 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    residency:{
+    firstName:{
+        type: String,
+        //required: true,
+    },
+    lastName:{
+        type: String,
+        //required: true,
+    },
+    dob:{
+        type: Date,
+        //required: true,
+    },
+    /*residency:{
         type: String,
     },
     age:{
@@ -28,7 +40,7 @@ const UserSchema = new mongoose.Schema({
     },
     favCity:{
         type: String
-    },
+    },*/
     isAdmin:{
         type: Boolean,
         default: false

@@ -6,11 +6,13 @@ import express from "express";
 const router = express.Router()
 
 export const registerUser = async (req, res)=>{
-    const {email, password} = req.body
+    const {email, password, repeatPassword, userName, firstName, lastName, dob} = req.body
     console.log(req.body);
     //console.log(password);
     if (!email || !password)
-        return res.status(400).json({ msg: 'Password and email are required' })
+        return res
+            .status(400)
+            .json({ msg: 'Password and email are required' })
 
     if (password.length < 8) {
         return res
@@ -21,8 +23,8 @@ export const registerUser = async (req, res)=>{
     const user = await UserSchema.findOne({ email }) // finding user in db
     if (user) return res.status(400).json({ msg: 'User already exists' })
 
-    const newUser = new UserSchema({ email, password })
-    // hasing the password
+    const newUser = new UserSchema({ email, password, userName, firstName, lastName, dob })
+    // hashing the password
     bcrypt.hash(password, 7, async (err, hash) => {
         if (err)
             return res.status(400).json({ msg: 'error while saving the password' })
@@ -40,12 +42,16 @@ export const loginUser =  async (req, res) => {
         const { email, password } = req.body
 
         if (!email || !password) {
-            res.status(400).json({ msg: 'Something missing' })
+            return res
+                .status(400)
+                .json({ msg: 'Something missing' })
         }
 
         const user = await UserSchema.findOne({ email: email }) // finding user in db
         if (!user) {
-            return res.status(400).json({ msg: 'User not found' })
+            return res
+                .status(400)
+                .json({ msg: 'User not found' })
         }
 
         // comparing the password with the saved hash-password
@@ -57,7 +63,9 @@ export const loginUser =  async (req, res) => {
                 .status(200)
                 .json({ msg: 'You have logged in successfully',userSession })
         } else {
-            return res.status(400).json({ msg: 'Invalid credential' })
+            return res
+                .status(400)
+                .json({ msg: 'Invalid credential' })
         }
     }
 
