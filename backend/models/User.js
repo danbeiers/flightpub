@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema({
     username:{
         type: String,
-        required: true,
+        //required: true,
     },
     email:{
         type: String,
@@ -20,11 +20,11 @@ const UserSchema = new mongoose.Schema({
     },
     age:{
         type: Number,
-        required: true
+        //required: true
     },
     gender:{
         type: String,
-        required: true
+        //required: true
     },
     favCity:{
         type: String
@@ -35,4 +35,4 @@ const UserSchema = new mongoose.Schema({
     },
 });
 
-export default mongoose.model("User", UserSchema)
+export default mongoose.model('RegisteredUser', UserSchema,'RegisteredUsers')

@@ -30,6 +30,21 @@ function RegForm() {
         context.setUser(userName);
         context.setUserDetails(details);
         context.setAuthenticated(true);
+        try {
+            const res = await fetch('/user/registerUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: details.emailAdd,
+                    password: details.pword,
+                }),
+            })
+            if(!res.ok) {
+                return console.log("fetch error")
+            }
+        }
         navigate('/');
         /*
         return fetch('http://localhost:8080/registration', {

@@ -1,18 +1,31 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import req from "express/lib/request.js";
+import res from "express/lib/response.js";
+import session from "express-session";
+import { default as connectMongoDBSession} from 'connect-mongodb-session';
+
 //import authRoute from "./routes/auth.js";
 //import usersRoute from "./routes/users.js";
 import airlinesRoute from "./routes/airline.js";
 import flightRoute from "./routes/flight.js";
+import loginRoute from "./routes/login.js"
 import seat from "./routes/seat.js";
-import req from "express/lib/request.js";
-import res from "express/lib/response.js";
 import flight from "./routes/flight.js";
-
 
 const app = express()
 dotenv.config()
+
+const MAX_AGE = 1000 * 60 * 60 * 3 //Session cookie timeout
+const MongoDBStore = connectMongoDBSession(session);
+var mongoStore = new MongoDBStore({
+    uri: process.env.MONGO,
+    collection: 'Sessions',
+})
+
+//FPUB-13 Adding login functionality
+
 const connect = async () => {
 try{
     await mongoose.connect(process.env.MONGO);
@@ -48,12 +61,28 @@ mongoose.connection.on("connected", ()=>{
 //middlewares
 //middleware for insomnia/postman
 app.use(express.json());
+//Session creation stuff
+app.use(
+    session({
+        secret: 'randomkey1',
+        name: 'session-id',
+        store: mongoStore,
+        cookie: {
+            maxAge: MAX_AGE,
+            sameSite: false,
+            secure:false, //turn 'true' in deployment
+        },
+        resave: true,
+        saveUninitialized: true
+
+}))
 
 //app.use("/auth", authRoute);
 //app.use("/users", usersRoute);
 app.use("/airline", airlinesRoute);
 app.use("/flight", flightRoute);
 app.use("/seat", seat);
+app.use("/user", loginRoute);
 
 //middleware for error handling
 app.use((err,req,res, next)=>{
