@@ -1,8 +1,5 @@
-import React, {useContext, useRef, useState} from "react";
-import FlightPubContext from "../../store/FlightPubContext";
-import {useNavigate} from "react-router";
+import React, {useState} from "react";
 import classes from "./RegForm.module.css";
-import validator from "validator"
 import passwordRegexp from "password-regexp"
 import isEmail from "validator/es/lib/isEmail";
 
@@ -15,20 +12,18 @@ function RegForm() {
         lastName:'',
         userName: '',
         dob:'',
-        showPassword: false,
-        showRepeatPassword: false,
     })
     const [errors, setErrors] = useState({
         email: false,
         password: false,
         repeatPassword: false,
         fetchError: false,
-        fetchErrorMsg: ''
+        fetchErrorMsg: '',
     })
 
-
     const handleChange = (fieldName) => (event) => {
-        const currValue = event.target.value()
+        const currValue = event.target.value;
+
         switch(fieldName) {
             case 'email':
                 isEmail(currValue)
@@ -36,7 +31,7 @@ function RegForm() {
                     : setErrors({...errors,email:true})
                 break;
             case 'password':
-                passwordRegexp().test(currValue)
+                passwordRegexp(currValue)
                     ? setErrors({...errors, password:false})
                     : setErrors({...errors,password:true})
                 break;
@@ -45,14 +40,16 @@ function RegForm() {
                     ? setErrors({...errors, repeatPassword:false})
                     : setErrors({...errors, repeatPassword:true})
                 break;
+            default:
+                break;
         }
         setValues({ ...values, [fieldName]: event.target.value })
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-
         try {
+
             const res = await fetch('/user/registerUser', {
                 method: 'POST',
                 headers: {
@@ -95,12 +92,10 @@ function RegForm() {
                 firstName: '',
                 lastName:'',
                 userName: '',
-                dob:'',
-                showPassword: false,
-                showRepeatPassword: false,
+                dob:''
             })
-            alert(data.msg)
         } catch (error) {
+            console.log("catch statement")
             setErrors({
                 ...errors,
                 fetchError: true,
@@ -122,6 +117,7 @@ function RegForm() {
                                 value={values.userName}
                                 placeholder="Username"
                                 onChange={handleChange('userName')}
+                                required={true}
                             />
                         </label>
                         <label>
@@ -131,6 +127,7 @@ function RegForm() {
                                 value={values.firstName}
                                 placeholder="First name"
                                 onChange={handleChange('firstName')}
+                                required={true}
                             />
                         </label>
                         <label>
@@ -140,6 +137,7 @@ function RegForm() {
                                 value={values.lastName}
                                 placeholder="Last name"
                                 onChange={handleChange('lastName')}
+                                required={true}
                             />
                         </label>
                         <label>
@@ -147,6 +145,8 @@ function RegForm() {
                             <input
                                 type="Date"
                                 value={values.dob}
+                                min = "1900-01-01"
+                                max = "2022-01-01"
                                 onChange={handleChange('dob')}
                             />
                         </label>
@@ -154,9 +154,10 @@ function RegForm() {
                             <p>Email Address</p>
                             <input
                                 type='email'
-                                placeholder="Email"
                                 value={values.email}
+                                placeholder='Email'
                                 onChange={handleChange('email')}
+                                required={true}
                             />
                         </label>
                         <label>
@@ -164,22 +165,25 @@ function RegForm() {
                             <input
                                 type='password'
                                 id='password-field'
-                                placeholder="Password"
+                                placeholder='Password'
                                 value={values.password}
                                 onChange={handleChange('password')}
+                                required={true}
                             />
                         </label>
                         <label>
                             <p>Repeat Password</p>
                             <input
                                 type='password'
-                                id='password-field'
-                                placeholder="Password"
+                                id='repeat-password-field'
+                                placeholder='Re-Type Password'
                                 value={values.repeatPassword}
                                 onChange={handleChange('repeatPassword')}
+                                required={true}
                             />
                         </label>
-                        <input target = 'submit' type="submit" value="Submit"/>
+                        <input className={classes.button} type="submit" value="Submit"/>
+                        <input className={classes.button} type="reset" value="Reset" />
                     </div>
                 </form>
         </div>

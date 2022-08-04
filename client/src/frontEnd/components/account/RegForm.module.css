@@ -9,8 +9,12 @@
     text-align: left;
     margin-left: 1rem;
 }
-.h1 {
+h1 {
     text-align: center;
+}
+h2 {
+    text-align: center;
+    color: red;
 }
 .labels > * {
     display: flex;
@@ -24,7 +28,7 @@
     margin: 10px 0;
 }
 
-.input[target="submit"] {
+.button{
     font: inherit;
     cursor: pointer;
     background-color: #0961a9;

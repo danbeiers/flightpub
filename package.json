@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd backend && npm start\" \"cd client && npm start\""
+    "start": "concurrently \"cd backend && npm start\" \"cd client && npm start\"",
+    "install": "concurrently \"cd backend && npm install\" \"cd client && npm install\""
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,6 @@
   "homepage": "https://github.com/danbeiers/flightpub#readme",
   "dependencies": {
     "concurrently": "^7.3.0",
-    "react-scripts": "^5.0.1",
-    "svgo": "^2.8.0"
+    "react-scripts": "^5.0.1"
   }
 }
