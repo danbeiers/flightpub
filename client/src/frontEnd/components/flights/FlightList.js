@@ -78,6 +78,16 @@ function FlightList(props) {
         console.log("wow way back selected");
     }
 
+    function multiSearch()
+    {
+        flightList.length = 0;
+        returnFlightList.length = 0;
+
+        props.flights.map((el) => {
+            
+        })
+    }
+
     function searchFlightList()
     {
 
