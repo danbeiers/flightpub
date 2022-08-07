@@ -78,14 +78,93 @@ function FlightList(props) {
         console.log("wow way back selected");
     }
 
+    //struct to store flights in a reverse linkedList
+    //pattern for the multi-search algorithm
+    function makeFlightStruct(e)
+    {
+        var flightRefs = e.split(' ');
+
+
+        function constructor()
+        {
+            this[flightRefs[0]] = arguments[0];
+            this[flightRefs[1]] = arguments[1];
+        }
+        return constructor;
+    }
+
     function multiSearch()
     {
+        //todo
+        //create struct where each el has a ref to it's prev flightPoint except for the start of each search which uses null
+        //replace iterating through map to find matches with, iterating through returned database results
+        //
+        //flightList.length = 0;
+        //returnFlightList.length = 0;
+
+        var FlightPoint = makeFlightStruct("prev curr");
+        var flightPoints = [];
+
         flightList.length = 0;
         returnFlightList.length = 0;
 
+        var startIndex = 0;
+
         props.flights.map((el) => {
-            
+
+            flightPoints.length = 0;
+            //find next start point
+            if(el.departure.toLowerCase() == props.searchQuery.departureLocation.toLowerCase())
+            {
+                if(el.destination.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase())
+                {
+                    //add to flight list
+                    flightList.push([el])
+                    //don't include other results as they are meaningless and create a loop
+                }
+                else
+                {
+                    flightPoints.push(new FlightPoint(null, el));
+
+
+
+                    //search for flights from this node
+                    props.flights.map((el2) => {
+                        if(el2.departure.toLowerCase() == flightPoints[startIndex].curr.destination.toLowerCase())
+                        {
+                            if(el2.destination.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase())
+                            {
+                                flightList.push([el, el2])
+                                //add to search results
+                                //don't search further due to loop
+                            }
+                            else
+                            {
+                                flightPoints.push(new FlightPoint(flightPoints[startIndex], el2));
+                            }
+                        }
+                    })
+
+                    startIndex++;
+                    var endIndex = flightPoints.length;
+                    for(var i = startIndex; i < endIndex; i++)
+                    {
+                        props.flights.map((el2) => {
+                            if(el2.departure.toLowerCase() == flightPoints[i].curr.destination.toLowerCase() &&
+                                el2.destination.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase())
+                            {
+                                //add flight to list
+                                flightList.push([el, flightPoints[i].curr, el2]);
+                                flightPoints.push(new FlightPoint(flightPoints[i], el2));
+                            }
+                        })
+                    }
+                }
+        }
+
+
         })
+
     }
 
     function searchFlightList()
@@ -341,6 +420,8 @@ function FlightList(props) {
         }
     }
 
+
+
     function Return()
     {
         if(props.searchQuery.oneWayTrip)
@@ -364,22 +445,23 @@ function FlightList(props) {
                       <th></th>
                   </tr>
                   <tbody>
-                  {returnFlightList.map((flight) => (
-                      <FlightItem
-                          key={flight.flightId}
-                          flightId={flight.flightId}
-                          departureDate={flight.departureDate.getDate() + "/" + (flight.departureDate.getMonth() + 1)+ "/" + flight.departureDate.getFullYear()}
-                          departureTime={flight.departureTime}
-                          arrivalTime={flight.arrivalTime}
-                          destination={flight.destination}
-                          departure={flight.departure}
-                          price={flight.price}
-                          return={true}
-                          selectedId={selectedReturnFlight.length > 0 ? selectedReturnFlight[0].flightId : ""}
-                          selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
-                          selFlight={res => setSelectedReturnFlight(res)}
-                      />
-
+                  {flightList.map((flightPackage) => (
+                      flightPackage.map((flight) => (
+                          <FlightItem
+                              key={flight.flightId}
+                              flightId={flight.flightId}
+                              departureDate={flight.departureDate.getDate() + "/" + (flight.departureDate.getMonth() + 1)+ "/" + flight.departureDate.getFullYear()}
+                              departureTime={flight.departureTime}
+                              arrivalTime={flight.arrivalTime}
+                              destination={flight.destination}
+                              departure={flight.departure}
+                              price={flight.price}
+                              return={true}
+                              selectedId={selectedReturnFlight.length > 0 ? selectedReturnFlight[0].flightId : ""}
+                              selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
+                              selFlight={res => setSelectedReturnFlight(res)}
+                          />
+                      ))
                   ))}
                   </tbody>
               </table>
@@ -434,7 +516,8 @@ function FlightList(props) {
         return;
     }
 
-    searchFlightList();
+    multiSearch();
+    //searchFlightList();
     sort("latest");
 
     //what do need
@@ -474,22 +557,23 @@ function FlightList(props) {
                     <th></th>
                 </tr>
                 <tbody>
-                    {flightList.map((flight) => (
-                        <FlightItem
-                            key={flight.flightId}
-                            flightId={flight.flightId}
-                            departureDate={flight.departureDate.getDate() + "/" + (flight.departureDate.getMonth() + 1)+ "/" + flight.departureDate.getFullYear()}
-                            departureTime={flight.departureTime}
-                            arrivalTime={flight.arrivalTime}
-                            destination={flight.destination}
-                            departure={flight.departure}
-                            price={flight.price}
-                            selectedId={selectedFlight.length > 0 ? selectedFlight[0].flightId : ""}
-                            return={false}
-                            selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
-                            selFlight={res => setSelectedFlight(res)}
-                        />
-
+                    {flightList.map((flightPackage) => (
+                        flightPackage.map((flight) => (
+                                <FlightItem
+                                    key={flight.flightId}
+                                    flightId={flight.flightId}
+                                    departureDate={flight.departureDate.getDate() + "/" + (flight.departureDate.getMonth() + 1)+ "/" + flight.departureDate.getFullYear()}
+                                    departureTime={flight.departureTime}
+                                    arrivalTime={flight.arrivalTime}
+                                    destination={flight.destination}
+                                    departure={flight.departure}
+                                    price={flight.price}
+                                    selectedId={selectedFlight.length > 0 ? selectedFlight[0].flightId : ""}
+                                    return={false}
+                                    selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
+                                    selFlight={res => setSelectedFlight(res)}
+                                />
+                        ))
                     ))}
                 </tbody>
             </table>
