@@ -1,35 +1,35 @@
 import mongoose from "mongoose";
 // const {Schema} =mongoose;
 
-const AirlineSchema = new mongoose.Schema({
-    AirlineCode:{
+const MapSchema = new mongoose.Schema({
+    DestinationCode:{
         type: String,
         required: true,
     },
-    AirlineName:{
+    City:{
+        type:String,
+        required: true,
+    },
+    Country:{
         type: String,
         required: true,
     },
-    CountryCode3:{
+    location:{
+        type: Object,
+        required: true,
+    },
+    visit:{
         type: String,
         required: true,
     },
-    /*flightId:{
+    happening:{
         type: String,
         required: true,
     },
-    departureCity:{
-        type: String,
-        required: true,
+    tag:{
+        type:String,
+        required: true
     },
-    arrivalCity:{
-        type: String,
-        required: true,
-    },
-    cheapestPrice:{
-        type: Number,
-        required:true,
-    },*/
 });
 
-export default mongoose.model("Airline", AirlineSchema, "Airlines")
+export default mongoose.model("Map", MapSchema, "Maps")

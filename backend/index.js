@@ -9,7 +9,8 @@ import seat from "./routes/seat.js";
 import req from "express/lib/request.js";
 import res from "express/lib/response.js";
 import flight from "./routes/flight.js";
-
+import mapRoute from "./routes/map.js";
+import map from "./routes/map.js";
 
 const app = express()
 dotenv.config()
@@ -23,9 +24,9 @@ try{
 
 //get request just to test the api
 //can be removed later on
-/*app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("MongoDb API")
-})*/
+})
 
 //technically this get request should allow the data stored in that specific table to be read
 /*app.get('/api/airline',(req,res)=>{
@@ -53,6 +54,7 @@ app.use(express.json());
 //app.use("/users", usersRoute);
 app.use("/airline", airlinesRoute);
 app.use("/flight", flightRoute);
+app.use("/map", mapRoute);
 app.use("/seat", seat);
 
 //middleware for error handling

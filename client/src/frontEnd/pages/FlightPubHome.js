@@ -6,6 +6,8 @@ import FlightSearch from "../components/flights/FlightSearch";
 import ConfirmBooking from "../components/flights/ConfirmBooking"
 import FlightPubContext from "../store/FlightPubContext";
 
+// import flightpubapi from "../../api/flightpubapi";
+
 const DUMMY_DATA = [
     {
         flightId: 'AA2431',
@@ -68,16 +70,19 @@ const flightSearchData = {
     flexibleReturn: false,
 };
 
-function FlightPubHomePage() {
+  function FlightPubHomePage() {
 
     const context = useContext(FlightPubContext);
 
     const [query, setQuery] = useState({});
     const [selectedFlights, setSelectedFlights] = useState([{}]);
 
-    function clearForm() {
+   // async
+        function clearForm() {
         context.setSearched(false);
         context.setBookingsSelected(false);
+        // const resp = await flightpubapi.getapi();
+        // console.log(resp);
     }
 
     if (!context.searched) {

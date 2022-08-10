@@ -49,4 +49,4 @@ const FlightSchema = new mongoose.Schema({
     },*/
 });
 
-export default mongoose.model("Flight", FlightSchema)
+export default mongoose.model("Flight", FlightSchema, "Flights")

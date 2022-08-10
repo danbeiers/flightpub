@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/danbeiers/flightpub#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
     "concurrently": "^7.3.0",
     "react-scripts": "^5.0.1",
     "svgo": "^2.8.0"
