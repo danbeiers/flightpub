@@ -8,7 +8,7 @@ import Layout from './frontEnd/components/layout/Layout';
 import FlightPubContext from './frontEnd/store/FlightPubContext';
 
 import {useDarkMode} from "./frontEnd/components/DarkMode/DarkMode";
-import {useState, useEffect} from "react";
+import {useState, useEffect, createContext} from "react";
 import LoginPage from "./frontEnd/pages/Login";
 import RegisterPage from "./frontEnd/pages/Register";
 import AccountPage from "./frontEnd/pages/Account";
@@ -23,9 +23,11 @@ import styled, {ThemeProvider} from "styled-components";
 import {ToggleButton} from "./frontEnd/components/DarkMode/ToggleButton";
 //import React from "@types/react";
 
-
+export const UserContext = createContext({});
 
 function App() {
+    const [loading,setLoading] = useState(true);
+    const [userSession,setUserSession] = useState(true);
     const [authenticated, setAuthenticated] = useState (false);
     const [searched, setSearched] = useState (false);
     const [bookingsSelected, setBookingsSelected] = useState(false);
@@ -48,17 +50,43 @@ function App() {
                 .then(res => res.json())
                 .then(result => {
                     setWeatherData(result)
-                    console.log(result);
+                    //console.log(result);
                 });
-            console.log(weatherData);
+            //console.log(weatherData);
         }
         fetchData();
 
     }, [lat,long,setWeatherData])
 
+    useEffect(() => {
+        const fetchUserAuth = async () => {
+            try {
+                setLoading(true);
+                const res = await fetch('/user/isAuth')
+                if(!res.ok) {
+                    console.log('auth not ok')
+                    setUserSession(false)
+                    return setLoading(false);
+                }
+                const data = await res.json();
+                setUserSession(data);
+                setLoading(false)
+                setUser(data.userName)
+                console.log(data.userName)
+            }catch (error){
+                setLoading(false)
+                console.log('There was an error authenticating user',error);
+                return
+            }
+        }
+        fetchUserAuth()
+    },[user])
+
     return (
+        <UserContext.Provider value={userSession}>
 
         <ThemeProvider theme={themeMode}>
+
         <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched,bookingsSelected,setBookingsSelected,setUser,userDetails,setUserDetails,lat,setLat,long,setLong,weatherData,setWeatherData }}>
         <GlobalStyles />
         <ToggleButton theme={theme} toggleTheme={toggleTheme} />
@@ -75,6 +103,7 @@ function App() {
         </Layout>
         </FlightPubContext.Provider>
         </ThemeProvider>
+        </UserContext.Provider>
     );
 }
 

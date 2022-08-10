@@ -1,9 +1,18 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
+import {useNavigate} from "react-router";
 import classes from "./LoginForm.module.css";
 import passwordRegexp from "password-regexp"
 import isEmail from "validator/es/lib/isEmail";
+import {UserContext} from '../../../App';
+import FlightPubContext from "../../store/FlightPubContext";
+
+
+
 
 function LoginForm() {
+    const otherContext = useContext(UserContext);
+    const context = useContext(FlightPubContext);
+    const navigate = useNavigate();
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -64,7 +73,10 @@ function LoginForm() {
                 email: '',
                 password: ''
             })
-            return
+            context.setUser(data.userSession.userName)
+            //console.log(data.userSession.userName)
+
+            navigate('/')
         }catch (error) {
             setErrors({
                 ...errors,
@@ -81,12 +93,13 @@ function LoginForm() {
             <form onSubmit={handleSubmit} className={classes.form}>
                 <div>
                     <label>
-                        <p>Username</p>
+                        <p>Email</p>
                         <input
                             type="text"
-                            value={values.userName}
-                            placeholder="Username"
-                            onChange={handleChange('userName')}
+                            value={values.email}
+                            placeholder="Email"
+                            aria-autocomplete="list"
+                            onChange={handleChange('email')}
                         />
                     </label>
                     <label>

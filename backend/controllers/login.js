@@ -18,7 +18,7 @@ export const registerUser = async (req, res)=>{
             .status(400)
             .json({ msg: 'Password should be at least 8 characters long' })
     }
-    if(passwordRegexp(password)){
+    if(!passwordRegexp(password)){
         return res
             .status(400)
             .json({ msg: 'Password needs atleast 1 Upper, 1 lower and 1 character ' })
@@ -48,34 +48,54 @@ export const registerUser = async (req, res)=>{
 
 export const loginUser =  async (req, res) => {
 
-        const { email, password } = req.body
+    const {email, password} = req.body
 
-        if (!email || !password) {
-            return res
-                .status(400)
-                .json({ msg: 'Something missing' })
-        }
-
-        const user = await UserSchema.findOne({ email: email }) // finding user in db
-        if (!user) {
-            return res
-                .status(400)
-                .json({ msg: 'User not found' })
-        }
-
-        // comparing the password with the saved hash-password
-        const matchPassword = await bcrypt.compare(password, user.password)
-        if (matchPassword) {
-            const userSession = {email: user.email} //Create user session
-            req.session.user = userSession
-            return res
-                .status(200)
-                .json({ msg: 'You have logged in successfully',userSession })
-        } else {
-            return res
-                .status(400)
-                .json({ msg: 'Invalid credential' })
-        }
+    if (!email || !password) {
+        return res
+            .status(400)
+            .json({msg: 'Something missing'})
     }
+
+    const user = await UserSchema.findOne({email: email}) // finding user in db
+    if (!user) {
+        return res
+            .status(400)
+            .json({msg: 'User not found'})
+    }
+
+    // comparing the password with the saved hash-password
+    const matchPassword = await bcrypt.compare(password, user.password)
+    if (matchPassword) {
+        const userSession = {email: user.email,userName:user.userName} //Create user session
+        req.session.user = userSession
+        return res
+            .status(200)
+            .json({msg: 'You have logged in successfully', userSession})
+    } else {
+        return res
+            .status(400)
+            .json({msg: 'Invalid credential'})
+    }
+}
+
+export const isAuthorised = async (req, res) => {
+    //console.log("User Authenticated:"+req.session.user)
+    if (req.session.user) {
+        //console.log("User Authenticated:"+req.session.user.userName)
+        return res.json(req.session.user)
+    } else {
+        return res.status(401).json('unauthorized')
+    }
+}
+export const logoutUser =  async (req, res) => {
+    console.log('in logout')
+    req.session.destroy((err) => {
+        //delete session data from store, using sessionID in cookie
+        if (err) throw err;
+        res.clearCookie("session-id"); // clears cookie containing expired sessionID
+        res.status(201).json("Logged out successfully");
+
+    });
+}
 
 // comparing the password with the saved hash-password

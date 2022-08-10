@@ -24,25 +24,25 @@ function RegForm() {
     const handleChange = (fieldName) => (event) => {
         const currValue = event.target.value;
 
-        switch(fieldName) {
-            case 'email':
-                isEmail(currValue)
-                    ? setErrors({...errors, email:false})
-                    : setErrors({...errors,email:true})
-                break;
-            case 'password':
-                passwordRegexp(currValue)
-                    ? setErrors({...errors, password:false})
-                    : setErrors({...errors,password:true})
-                break;
-            case 'repeatPassword':
-                currValue === values.password
-                    ? setErrors({...errors, repeatPassword:false})
-                    : setErrors({...errors, repeatPassword:true})
-                break;
-            default:
-                break;
-        }
+        // switch(fieldName) {
+        //     case 'email':
+        //         isEmail(currValue)
+        //             ? setErrors({...errors, email:false})
+        //             : setErrors({...errors,email:true})
+        //         break;
+        //     case 'password':
+        //         passwordRegexp(currValue)
+        //             ? setErrors({...errors, password:false})
+        //             : setErrors({...errors,password:true})
+        //         break;
+        //     case 'repeatPassword':
+        //         currValue === values.password
+        //             ? setErrors({...errors, repeatPassword:false})
+        //             : setErrors({...errors, repeatPassword:true})
+        //         break;
+        //     default:
+        //         break;
+        // }
         setValues({ ...values, [fieldName]: event.target.value })
     }
 
