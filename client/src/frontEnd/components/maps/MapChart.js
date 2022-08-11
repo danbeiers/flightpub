@@ -1,8 +1,6 @@
 import React, { memo, useRef, useState} from "react";
- import ReactDOM from "react-dom";
-// import DropdownList from "react-widgets/DropdownList";
-// import {Button} from "@mui/material";
-import Dropdown from "./Dropdown";
+import ReactDOM from "react-dom";
+
 import CustomMarker from "./CustomMarker";
 import {
     ZoomableGroup,
@@ -10,8 +8,6 @@ import {
     Geographies,
     Geography,
 } from "react-simple-maps";
-
-import useFetch from "../../../hooks/useFetch";
 
 const markers = [
 {
@@ -204,9 +200,7 @@ const MapChart = ({ setTooltipContent, data }) => {
 
    // const{data, loading, error} = useFetch("/map");
    // console.log(data);
-
     return (
-
         <>
             <ComposableMap data-tip="" projectionConfig={{scale: 200}}>
                 <ZoomableGroup>

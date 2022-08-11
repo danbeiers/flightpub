@@ -1,39 +1,27 @@
-import React, {useState} from "react";
-
-function Dropdown({title, items=[], multiselect =false}){
-    const [open, setOpen] = useState(false);
-    const [selection, setSelection]= useState([]);
-    const toggle =() => setOpen(!open);
-
-    function handleOnClick(item){}
-    return(
-        <div className="dd-wrapper">
-            <div tabIndex={0}
-                 className= "dd-header"
-                 role="button"
-                 onKeyPress={() => toggle(!open)}
-                 onClick={()=>
-                toggle(!open)}>
-                <div className="dd-header_title">
-                    <p className="dd-header_title--bold">{title}</p>
-                    </div>
-                <div className="dd-header_action">
-                    <p> {open ? 'Close':'Open '}</p>
-                </div>
+import { useState } from "react";
+function Dropdown({ selected, setSelected }) {
+    const [isActive, setIsActive] = useState(false);
+    const options = ["Summer", "Winter", "Music and Arts", "Sports"];
+    return (
+        <div className="dropdown">
+            <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
+                {selected}
+                <span className="fas fa-caret-down"></span>
             </div>
-            {open &&(
-                <ul className="dd-list">
-                    {items.map(item=>(
-                        <li className="dd-list-item" key={item.id}>
-                            <button type="button" onClick={()=> handleOnClick(item)}>
-                                <span>{item.value}</span>
-                                <span>     Selected</span>
-
-                            </button>
-
-                        </li>
+            {isActive && (
+                <div className="dropdown-content">
+                    {options.map((option) => (
+                        <div
+                            onClick={(e) => {
+                                setSelected(option);
+                                setIsActive(false);
+                            }}
+                            className="dropdown-item"
+                        >
+                            {option}
+                        </div>
                     ))}
-                </ul>
+                </div>
             )}
         </div>
     );

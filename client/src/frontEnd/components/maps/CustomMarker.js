@@ -14,8 +14,7 @@ const CustomMarker = ({ name, coordinates, markerOffset, visit, happening }) => 
             happening = {happening} //stores what is happening in the city and would be further expanded once we have backend
             onClick={() => {
                 setIsPopoverOpen(true);
-            }}
-        >
+            }}>
             <Popover
                 isOpen={isPopoverOpen}
                 onClickOutside={() => {

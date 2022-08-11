@@ -24,6 +24,7 @@
     "concurrently": "^7.3.0",
     "react-scripts": "^5.0.1",
     "react-simple-maps": "^3.0.0",
+    "react-tooltip": "^4.2.21",
     "svgo": "^2.8.0"
   }
 }

@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Axios done!!! Can see backend table data onto frontend!!! Yayyyy">
-      <change afterPath="$PROJECT_DIR$/backend/controllers/booking.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/Booking.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/booking.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/api/apiClient.js" afterDir="false" />
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Usefetch fetching map data and displaying on frontend!!!">
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/airline.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/airline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/flight.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/flight.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useFetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useFetch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -33,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -78,13 +69,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor"
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.editor.code.editing"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -135,7 +128,7 @@
       <workItem from="1659324294431" duration="2607000" />
       <workItem from="1659351923266" duration="615000" />
       <workItem from="1659606395731" duration="20607000" />
-      <workItem from="1659991536986" duration="38349000" />
+      <workItem from="1659991536986" duration="41425000" />
     </task>
     <task id="LOCAL-00001" summary="Added rudimentary interactive map that outputs country selection to console.">
       <created>1650975070620</created>
@@ -179,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660117609171</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Usefetch fetching map data and displaying on frontend!!!">
+      <created>1660249234868</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660249234868</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +240,8 @@
     <MESSAGE value="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**" />
     <MESSAGE value="Connected front end to back end.&#10;directory node_modules should be in project root.&#10;npm update (--legacy-peer-deps if needed) to update modules.&#10;npm start to start both back end and front end." />
     <MESSAGE value="Axios done!!! Can see backend table data onto frontend!!! Yayyyy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Axios done!!! Can see backend table data onto frontend!!! Yayyyy" />
+    <MESSAGE value="Usefetch fetching map data and displaying on frontend!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Usefetch fetching map data and displaying on frontend!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
