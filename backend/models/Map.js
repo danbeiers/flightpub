@@ -6,7 +6,7 @@ const MapSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    City:{
+    name:{
         type:String,
         required: true,
     },
@@ -17,6 +17,10 @@ const MapSchema = new mongoose.Schema({
     location:{
         type: Object,
         required: true,
+    },
+    markerOffset:{
+        type: Number,
+        required:true,
     },
     visit:{
         type: String,

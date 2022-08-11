@@ -55,10 +55,11 @@ export const getMap = async (req, res)=>{
 export const getallMap = async (req, res, next)=>{
     try{
 
-        // console.log(req);
         const maps = await Map.find();
         res.status(200).json(maps);
     }catch(err){
         next(err)
     }
 }
+
+// console.log("MEssage from get all maps", req);

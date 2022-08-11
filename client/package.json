@@ -62,5 +62,5 @@
   "devDependencies": {
     "react-tooltip": "^4.2.21"
   },
-  "proxy": "http://localhost:8800/"
+  "proxy": "http://localhost:8800/backend"
 }

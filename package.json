@@ -23,6 +23,7 @@
     "bootstrap": "^5.2.0",
     "concurrently": "^7.3.0",
     "react-scripts": "^5.0.1",
+    "react-simple-maps": "^3.0.0",
     "svgo": "^2.8.0"
   }
 }

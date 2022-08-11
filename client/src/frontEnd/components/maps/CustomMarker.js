@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Marker } from "react-simple-maps";
 import { Popover } from "react-tiny-popover";
+import useFetch from "../../../hooks/useFetch";
 
 const CustomMarker = ({ name, coordinates, markerOffset, visit, happening }) => {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);

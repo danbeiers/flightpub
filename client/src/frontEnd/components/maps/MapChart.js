@@ -1,5 +1,5 @@
-import React, { memo} from "react";
-// import ReactDOM from "react-dom";
+import React, { memo, useRef, useState} from "react";
+ import ReactDOM from "react-dom";
 // import DropdownList from "react-widgets/DropdownList";
 // import {Button} from "@mui/material";
 import Dropdown from "./Dropdown";
@@ -14,7 +14,6 @@ import {
 import useFetch from "../../../hooks/useFetch";
 
 const markers = [
-
 {
         markerOffset: -20,
         name: "Sao Paulo",
@@ -201,12 +200,13 @@ const geoUrl =
     "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/v2/topojson-maps/world-110m.json";
 // const leafURL = "https://api.mapbox.com/styles/v1/nicknyr/cje7mtk2y6gf92snsydobiahf/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlja255ciIsImEiOiJjajduNGptZWQxZml2MndvNjk4eGtwbDRkIn0.L0aWwfHlFJVGa-WOj7EHaA";
 //setting the hovering stuff
-const MapChart = ({ setTooltipContent }) => {
+const MapChart = ({ setTooltipContent, data }) => {
 
-    const{data, loading, error} = useFetch("http://localhost:8800/map/");
-    console.log(data);
+   // const{data, loading, error} = useFetch("/map");
+   // console.log(data);
 
     return (
+
         <>
             <ComposableMap data-tip="" projectionConfig={{scale: 200}}>
                 <ZoomableGroup>
@@ -246,14 +246,14 @@ const MapChart = ({ setTooltipContent }) => {
                             ))
                         }
                     </Geographies>
-
                     {
-                        markers.map(({name, coordinates, markerOffset, visit, happening}) => (
+                        //{loading? ("loading") : (
+                        data.map(({name, location, markerOffset, visit, happening}) => (
 
                             <CustomMarker
                                 key ={name}
                                 name ={name}
-                                coordinates={coordinates}
+                                coordinates={location.coordinates}
                                 markerOffset = {markerOffset}
                                 visit = {visit}
                                 happening = {happening}>

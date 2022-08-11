@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 import Dropdown from "../components/maps/Dropdown";
 import MapChart from "../components/maps/MapChart";
+import useFetch from "../../hooks/useFetch";
 import classes from "../components/maps/MapChart.module.css"
 
 const items =[
@@ -26,12 +27,16 @@ const items =[
 
 function MapPage() {
     const [content, setContent] = useState("");
+    const{data, loading, error} = useFetch("/map");
+     console.log(data);
     return (
         <div className={classes.map}>
             <h1 style={{ textAlign: 'center' }}>
                 Maps {' '}</h1>
             <Dropdown title ="Select Destination Category" items={items}/>
-            <MapChart setTooltipContent={setContent} />
+            <MapChart setTooltipContent={setContent}
+            data = {data}/>
+
             <ReactTooltip>{content}</ReactTooltip>
         </div>
 
@@ -39,3 +44,4 @@ function MapPage() {
 
 
 export default MapPage;
+
