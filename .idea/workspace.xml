@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Usefetch fetching map data and displaying on frontend!!!">
-      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Filter button working displaying dropdown of categories">
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +122,7 @@
       <workItem from="1659324294431" duration="2607000" />
       <workItem from="1659351923266" duration="615000" />
       <workItem from="1659606395731" duration="20607000" />
-      <workItem from="1659991536986" duration="41425000" />
+      <workItem from="1659991536986" duration="42222000" />
     </task>
     <task id="LOCAL-00001" summary="Added rudimentary interactive map that outputs country selection to console.">
       <created>1650975070620</created>
@@ -179,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660249234868</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Filter button working displaying dropdown of categories">
+      <created>1660252784733</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660252784733</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +242,8 @@
     <MESSAGE value="Connected front end to back end.&#10;directory node_modules should be in project root.&#10;npm update (--legacy-peer-deps if needed) to update modules.&#10;npm start to start both back end and front end." />
     <MESSAGE value="Axios done!!! Can see backend table data onto frontend!!! Yayyyy" />
     <MESSAGE value="Usefetch fetching map data and displaying on frontend!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Usefetch fetching map data and displaying on frontend!!!" />
+    <MESSAGE value="Filter button working displaying dropdown of categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filter button working displaying dropdown of categories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

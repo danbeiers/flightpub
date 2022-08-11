@@ -30,5 +30,4 @@ const CustomMarker = ({ name, coordinates, markerOffset, visit, happening }) => 
         </Marker>
     );
 };
-
 export default CustomMarker;
