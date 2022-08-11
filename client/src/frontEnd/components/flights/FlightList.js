@@ -152,15 +152,16 @@ function FlightList(props) {
                             {
                                 //check flight occurs after last flight
                                 validTime = false;
-                                var dayAfter = el.departureDate + 1;
+                                var dayAfter = new Date();
+                                dayAfter.setDate(el.departureDate.getDate() + 1);
 
                                 if(el.departureDate.getFullYear() == el2.departureDate.getFullYear()
                                     && el.departureDate.getMonth() == el2.departureDate.getMonth()
-                                    && el.departureDate.getDate() == el.departureDate.getDate()
+                                    && el.departureDate.getDate() == el2.departureDate.getDate()
                                     ||
                                     dayAfter.getFullYear() == el2.departureDate.getFullYear()
-                                    && dayAfter.departureDate.getMonth() == el2.departureDate.getMonth()
-                                    && dayAfter.departureDate.getDate() == el.departureDate.getDate())
+                                    && dayAfter.getMonth() == el2.departureDate.getMonth()
+                                    && dayAfter.getDate() == el2.departureDate.getDate())
                                 {
                                     validTime = true;
                                 }
@@ -192,15 +193,16 @@ function FlightList(props) {
                                 {
                                     //check if flight occurs after last flight
                                     validTime = false;
-                                    var dayAfter = flightPoints[i].curr.departureDate + 1;
+                                    var dayAfter = new Date();
+                                    dayAfter.setDate(flightPoints[i].curr.departureDate.getDate() + 1);
 
                                     if(flightPoints[i].curr.departureDate.getFullYear() == el2.departureDate.getFullYear()
                                         && flightPoints[i].curr.departureDate.getMonth() == el2.departureDate.getMonth()
-                                        && flightPoints[i].curr.departureDate.getDate() == el.departureDate.getDate()
+                                        && flightPoints[i].curr.departureDate.getDate() == el2.departureDate.getDate()
                                         ||
                                         dayAfter.getFullYear() == el2.departureDate.getFullYear()
-                                        && dayAfter.departureDate.getMonth() == el2.departureDate.getMonth()
-                                        && dayAfter.departureDate.getDate() == el.departureDate.getDate())
+                                        && dayAfter.getMonth() == el2.departureDate.getMonth()
+                                        && dayAfter.getDate() == el2.departureDate.getDate())
                                     {
                                         validTime = true;
                                     }

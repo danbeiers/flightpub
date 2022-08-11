@@ -36,7 +36,7 @@ const DUMMY_DATA = [
     },
     {
         flightId: 'CC7209',
-        departureDate: new Date('May 20, 2022 08:00:00'),
+        departureDate: new Date('May 19, 2022 08:00:00'),
         departureTime: '08:00AM',
         arrivalTime: '9:45AM',
         destination: 'BRISBANE',
