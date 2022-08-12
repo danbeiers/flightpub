@@ -1,6 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import cors from "cors"
 //import authRoute from "./routes/auth.js";
 //import usersRoute from "./routes/users.js";
 import airlinesRoute from "./routes/airline.js";
@@ -9,9 +10,15 @@ import seat from "./routes/seat.js";
 import req from "express/lib/request.js";
 import res from "express/lib/response.js";
 import flight from "./routes/flight.js";
+import mapRoute from "./routes/map.js";
+import map from "./routes/map.js";
+import bookingRoute from "./routes/booking.js";
+import booking from "./routes/booking.js";
+
 
 
 const app = express()
+app.use(cors({ credentials: true, origin: true }));
 dotenv.config()
 const connect = async () => {
 try{
@@ -23,9 +30,9 @@ try{
 
 //get request just to test the api
 //can be removed later on
-/*app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("MongoDb API")
-})*/
+})
 
 //technically this get request should allow the data stored in that specific table to be read
 /*app.get('/api/airline',(req,res)=>{
@@ -53,7 +60,9 @@ app.use(express.json());
 //app.use("/users", usersRoute);
 app.use("/airline", airlinesRoute);
 app.use("/flight", flightRoute);
+app.use("/map", mapRoute);
 app.use("/seat", seat);
+app.use("/booking", bookingRoute);
 
 //middleware for error handling
 app.use((err,req,res, next)=>{
