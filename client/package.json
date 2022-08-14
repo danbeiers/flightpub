@@ -1,5 +1,6 @@
 {
   "name": "flightpub",
+  "proxy": "http://localhost:8800/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -63,5 +64,6 @@
   },
   "devDependencies": {
     "react-tooltip": "^4.2.21"
-  }
+  },
+  "proxy": "http://localhost:8800/backend"
 }

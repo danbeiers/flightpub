@@ -4,7 +4,7 @@ import {createFlight, deleteFlight, getallFlight, getFlight, updateFlight} from 
 const router = express.Router();
 
 //All da CRUD commands for database
-//Download postman or insomnia whatever doesn't matter
+
 
 //Create
 router.post("/", createFlight);

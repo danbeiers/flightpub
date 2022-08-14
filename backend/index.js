@@ -13,9 +13,18 @@ import airlinesRoute from "./routes/airline.js";
 import flightRoute from "./routes/flight.js";
 import loginRoute from "./routes/login.js"
 import seat from "./routes/seat.js";
+import req from "express/lib/request.js";
+import res from "express/lib/response.js";
 import flight from "./routes/flight.js";
+import mapRoute from "./routes/map.js";
+import map from "./routes/map.js";
+import bookingRoute from "./routes/booking.js";
+import booking from "./routes/booking.js";
+
+
 
 const app = express()
+app.use(cors({ credentials: true, origin: true }));
 dotenv.config()
 
 const MAX_AGE = 1000 * 60 * 60 * 3 //Session cookie timeout
@@ -41,9 +50,9 @@ try{
 
 //get request just to test the api
 //can be removed later on
-/*app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("MongoDb API")
-})*/
+})
 
 //technically this get request should allow the data stored in that specific table to be read
 /*app.get('/api/airline',(req,res)=>{
@@ -87,8 +96,10 @@ app.use(
 //app.use("/users", usersRoute);
 app.use("/airline", airlinesRoute);
 app.use("/flight", flightRoute);
+app.use("/map", mapRoute);
 app.use("/seat", seat);
 app.use("/user", loginRoute);
+app.use("/booking", bookingRoute);
 
 //middleware for error handling
 app.use((err,req,res, next)=>{
