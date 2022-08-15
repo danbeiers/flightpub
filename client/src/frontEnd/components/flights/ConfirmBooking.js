@@ -1,4 +1,5 @@
 import {useContext} from 'react';
+import classes from './FlightItem.module.css';
 import {useState} from "react";
 import FlightPubContext from "../../store/FlightPubContext";
 
@@ -7,81 +8,46 @@ import Card from "../ui/Card";
 function ConfirmBooking(props) {
 
     const context = useContext(FlightPubContext);
+    const depFlights = [];
+    const retFlights = [];
 
     function bookingHandler(e)
     {
         return;
     }
 
-    function Departure(e)
+    function Flight(e)
     {
-        const depFlights = [];
+        console.log(e.e);
+        return(
+            <tr className = {classes.row}>
+                <td> {e.e.flightId}</td>
+                <td> {e.e.departure}</td>
+                <td> {e.e.destination}</td>
+                <td> {e.e.departureDate.getDate() + "/" + (e.e.departureDate.getMonth() + 1)+ "/" + e.e.departureDate.getFullYear()}</td>
+                <td> {e.e.departureTime}</td>
+                <td> {e.e.arrivalTime}</td>
+                <td> ${e.e.price} AUD</td>
 
-        props.flights.map((flight) =>
+            </tr>);
+    }
+
+    props.flights.map((flight) =>
         {
           if(!flight.isReturn)
           {
-              console.log(flight);
-              depFlights.push(flight);
-          }
-        })
+              depFlights.push(<Flight e={flight}/>)}
+          else
+          {
+              retFlights.push(<Flight e={flight}/>)
+          }})
 
-        return (
+    return (
+        <Card>
+            <h1>Booking Preview</h1>
+
+            <h2>Flight to Destination</h2>
             <div>
-
-                <table>
-                    <tr>
-                        <th>Flight</th>
-                        <th>Departure</th>
-                        <th>Destination</th>
-                        <th>Date</th>
-                        <th>Dep</th>
-                        <th>Arr</th>
-                        <th>Price</th>
-                    </tr>
-                    <tbody>
-                        {depFlights.map((flight) => (
-                            <tr>
-                                <td> {flight.flightId}</td>
-                                <td> {flight.departure}</td>
-                                <td> {flight.destination}</td>
-                                <td> {flight.departureDate}</td>
-                                <td> {flight.departureTime}</td>
-                                <td> {flight.arrivalTime}</td>
-                                <td> ${flight.price} AUD</td>
-
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        );
-    }
-
-    function Return(e)
-    {
-        if(props.oneWay)
-        {
-            return null;
-        }
-
-        var retFlights = [];
-
-        props.flights.map((flight) =>
-        {
-            if(flight.isReturn)
-            {
-                retFlights.push(flight);
-            }
-        })
-
-        return (
-            <div>
-
-                <h2>Return Flight</h2>
-
-                <div>
-
                     <table>
                         <tr>
                             <th>Flight</th>
@@ -94,33 +60,32 @@ function ConfirmBooking(props) {
                         </tr>
                         <tbody>
 
-                            {retFlights.map((flight) => (
-                                <tr>
-                                    <td> {flight.flightId}</td>
-                                    <td> {flight.departure}</td>
-                                    <td> {flight.destination}</td>
-                                    <td> {flight.departureDate}</td>
-                                    <td> {flight.departureTime}</td>
-                                    <td> {flight.arrivalTime}</td>
-                                    <td> ${flight.price} AUD</td>
-                                </tr>
-                            ))}
+                             {depFlights}
 
                         </tbody>
                     </table>
-                </div>
             </div>
-        );
-    }
 
-    return (
-        <Card>
-            <h1>Booking Preview</h1>
+            <h2>Return Flight</h2>
 
-            <h2>Flight to Destination</h2>
-            <Departure/>
+            <div>
 
-            <Return/>
+                <table>
+                    <tr>
+                        <th>Flight</th>
+                        <th>Departure</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Price</th>
+                    </tr>
+                    <tbody>
+                        {retFlights}
+                    </tbody>
+                </table>
+            </div>
+
             <button onClick={bookingHandler}>Proceed to payment</button>
         </Card>
     );

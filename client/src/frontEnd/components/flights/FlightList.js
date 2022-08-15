@@ -7,6 +7,7 @@ import FlightPubContext from "../../store/FlightPubContext";
 
 import DropdownList from "react-widgets/DropdownList";
 import {Button} from "@mui/material";
+import MultiFlightItem from "./MultiFlightItem";
 
 
 function FlightList(props) {
@@ -329,159 +330,6 @@ function FlightList(props) {
         }
     }
 
-    function searchFlightList()
-    {
-
-        flightList.length = 0;
-        returnFlightList.length = 0;
-
-        props.flights.map((el) =>
-        {
-
-            if(!props.searchQuery.flexibleDeparture)
-            {
-                if(el.destination.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase()
-                    && el.departure.toLowerCase() == props.searchQuery.departureLocation.toLowerCase()
-                    && el.departureDate.getFullYear() == props.searchQuery.soonestDepartureDate.getFullYear()
-                    && el.departureDate.getMonth() == props.searchQuery.soonestDepartureDate.getMonth()
-                    && el.departureDate.getDate() == props.searchQuery.soonestDepartureDate.getDate())
-                {
-                    if(!morningFilter && !afternoonFilter && !eveningFilter)
-                    {
-                        flightList.push(el);
-                    }
-
-                    if(morningFilter)
-                    {
-                        console.log("morning filter active");
-
-                        if(el.departureDate.getHours() >= 0 && el.departureDate.getHours() < 12)
-                        {
-                            flightList.push(el);
-                        }
-
-                    }
-                    if(afternoonFilter)
-                    {
-                        if(el.departureDate.getHours() >= 12  && el.departureDate.getHours() < 18)
-                        {
-                            flightList.push(el);
-                        }
-                    }
-                    if(eveningFilter)
-                    {
-                        if(el.departureDate.getHours() >= 18)
-                        {
-                            flightList.push(el);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if(el.destination.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase()
-                    && el.departure.toLowerCase() == props.searchQuery.departureLocation.toLowerCase()
-                    && el.departureDate.getFullYear() >= props.searchQuery.soonestDepartureDate.getFullYear()
-                    && el.departureDate.getFullYear() <= props.searchQuery.latestDepartureDate.getFullYear()
-                    && el.departureDate.getMonth() >= props.searchQuery.soonestDepartureDate.getMonth()
-                    && el.departureDate.getMonth() <= props.searchQuery.latestDepartureDate.getMonth()
-                    && el.departureDate.getDate() >= props.searchQuery.soonestDepartureDate.getDate()
-                    && el.departureDate.getDate() <= props.searchQuery.latestDepartureDate.getDate())
-                {
-
-                    if(!morningFilter && !afternoonFilter && !eveningFilter)
-                    {
-                        flightList.push(el);
-                    }
-
-                    if(morningFilter)
-                    {
-                        if(el.departureDate.getHours() >= 0 && el.departureDate.getHours() < 12)
-                        {
-                            flightList.push(el);
-                        }
-                    }
-                    if(afternoonFilter)
-                    {
-                        if(el.departureDate.getHours() >= 12  && el.departureDate.getHours() < 18)
-                        {
-                            flightList.push(el);
-                        }
-                    }
-                    if(eveningFilter)
-                    {
-                        if(el.departureDate.getHours() >= 18)
-                        {
-                            flightList.push(el);
-                        }
-                    }
-                }
-            }
-
-            if(!props.searchQuery.oneWayTrip) {
-                if (!props.searchQuery.flexibleReturn) {
-                    if (el.destination.toLowerCase() == props.searchQuery.departureLocation.toLowerCase()
-                        && el.departure.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase()
-                        && el.departureDate.getFullYear() == props.searchQuery.soonestReturnDate.getFullYear()
-                        && el.departureDate.getMonth() == props.searchQuery.soonestReturnDate.getMonth()
-                        && el.departureDate.getDate() == props.searchQuery.soonestReturnDate.getDate()) {
-                        if (!morningFilter && !afternoonFilter && !eveningFilter) {
-                            returnFlightList.push(el);
-                        }
-
-                        if (morningFilter) {
-                            if (el.departureDate.getHours() >= 0 && el.departureDate.getHours() < 12) {
-                                returnFlightList.push(el);
-                            }
-                        }
-                        if (afternoonFilter) {
-                            if (el.departureDate.getHours() >= 12 && el.departureDate.getHours() < 18) {
-                                returnFlightList.push(el);
-                            }
-                        }
-                        if (eveningFilter) {
-                            if (el.departureDate.getHours() >= 18) {
-                                returnFlightList.push(el);
-                            }
-                        }
-                    }
-                } else {
-                    if (el.destination.toLowerCase() == props.searchQuery.departureLocation.toLowerCase()
-                        && el.departure.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase()
-                        && el.departureDate.getFullYear() >= props.searchQuery.soonestReturnDate.getFullYear()
-                        && el.departureDate.getFullYear() <= props.searchQuery.latestReturnDate.getFullYear()
-                        && el.departureDate.getMonth() >= props.searchQuery.soonestReturnDate.getMonth()
-                        && el.departureDate.getMonth() <= props.searchQuery.latestReturnDate.getMonth()
-                        && el.departureDate.getDate() >= props.searchQuery.soonestReturnDate.getDate()
-                        && el.departureDate.getDate() <= props.searchQuery.latestReturnDate.getDate()) {
-
-                        if (!morningFilter && !afternoonFilter && !eveningFilter) {
-                            returnFlightList.push(el);
-                        }
-
-                        if (morningFilter) {
-                            if (el.departureDate.getHours() >= 0 && el.departureDate.getHours() < 12) {
-                                returnFlightList.push(el);
-                            }
-                        }
-                        if (afternoonFilter) {
-                            if (el.departureDate.getHours() >= 12 && el.departureDate.getHours() < 18) {
-                                returnFlightList.push(el);
-                            }
-                        }
-                        if (eveningFilter) {
-                            if (el.departureDate.getHours() >= 18) {
-                                returnFlightList.push(el);
-                            }
-                        }
-                    }
-                }
-            }
-        })
-
-
-    }
-
     function sort(e)
     {
         if(e == "soonest")
@@ -502,78 +350,6 @@ function FlightList(props) {
                 for(let j = 0; j < returnFlightList.length - i - 1; j++)
                 {
                     if(returnFlightList[j+1][0].departureDate < returnFlightList[j][0].departureDate)
-                    {
-                        [returnFlightList[j+1], returnFlightList[j]] = [returnFlightList[j], returnFlightList[j+1]];
-                    }
-                }
-            }
-        }
-        else if(e == "latest")
-        {
-            for(let i = 0; i < flightList.length; i++)
-            {
-                for(let j = 0; j < flightList.length - i - 1; j++)
-                {
-                    if(flightList[j+1][0].departureDate > flightList[j][0].departureDate)
-                    {
-                        [flightList[j+1], flightList[j]] = [flightList[j], flightList[j+1]];
-                    }
-                }
-            }
-
-            for(let i = 0; i < returnFlightList.length; i++)
-            {
-                for(let j = 0; j < returnFlightList.length - i - 1; j++)
-                {
-                    if(returnFlightList[j+1][0].departureDate > returnFlightList[j][0].departureDate)
-                    {
-                        [returnFlightList[j+1], returnFlightList[j]] = [returnFlightList[j], returnFlightList[j+1]];
-                    }
-                }
-            }
-        }
-        else if(e == "lowest price")
-        {
-            for(let i = 0; i < flightList.length; i++)
-            {
-                for(let j = 0; j < flightList.length - i - 1; j++)
-                {
-                    if(flightList[j+1].price < flightList[j].price)
-                    {
-                        [flightList[j+1], flightList[j]] = [flightList[j], flightList[j+1]];
-                    }
-                }
-            }
-
-            for(let i = 0; i < returnFlightList.length; i++)
-            {
-                for(let j = 0; j < returnFlightList.length - i - 1; j++)
-                {
-                    if(returnFlightList[j+1].price < returnFlightList[j].price)
-                    {
-                        [returnFlightList[j+1], returnFlightList[j]] = [returnFlightList[j], returnFlightList[j+1]];
-                    }
-                }
-            }
-        }
-        else if(e == "highest price")
-        {
-            for(let i = 0; i < flightList.length; i++)
-            {
-                for(let j = 0; j < flightList.length - i - 1; j++)
-                {
-                    if(flightList[j+1].price > flightList[j].price)
-                    {
-                        [flightList[j+1], flightList[j]] = [flightList[j], flightList[j+1]];
-                    }
-                }
-            }
-
-            for(let i = 0; i < returnFlightList.length; i++)
-            {
-                for(let j = 0; j < returnFlightList.length - i - 1; j++)
-                {
-                    if(returnFlightList[j+1].price > returnFlightList[j].price)
                     {
                         [returnFlightList[j+1], returnFlightList[j]] = [returnFlightList[j], returnFlightList[j+1]];
                     }
@@ -607,23 +383,14 @@ function FlightList(props) {
                       <th></th>
                   </tr>
                   <tbody>
-                  {returnFlightList.map((flightPackage) => (
-                      flightPackage.map((flight) => (
-                          <FlightItem
-                              key={flight.flightId}
-                              flightId={flight.flightId}
-                              departureDate={flight.departureDate.getDate() + "/" + (flight.departureDate.getMonth() + 1)+ "/" + flight.departureDate.getFullYear()}
-                              departureTime={flight.departureTime}
-                              arrivalTime={flight.arrivalTime}
-                              destination={flight.destination}
-                              departure={flight.departure}
-                              price={flight.price}
-                              return={true}
-                              selectedId={selectedReturnFlight.length > 0 ? selectedReturnFlight[0].flightId : ""}
-                              selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
-                              selFlight={res => setSelectedReturnFlight(res)}
-                          />
-                      ))
+                  {returnFlightList.map((flightDetails) => (
+                      <MultiFlightItem
+                          flightPackage={flightDetails}
+                          selectedFlights={selectedReturnFlight}
+                          return={true}
+                          selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
+                          selFlight={res => setSelectedReturnFlight(res)}
+                      />
                   ))}
                   </tbody>
               </table>
@@ -642,13 +409,13 @@ function FlightList(props) {
            {
                selectedFlight.map((flight) =>
                {
+                   //console.log(flight);
                    flightArr.push(flight);
                })
 
                //move onto next phase
-
                context.setBookingsSelected(true);
-               console.log(context.bookingsSelected);
+               //console.log(context.bookingsSelected);
                props.exportFlights(flightArr);
                return;
            }
@@ -667,7 +434,7 @@ function FlightList(props) {
                 })
 
                 context.setBookingsSelected(true);
-                console.log(context.bookingsSelected);
+                //console.log(context.bookingsSelected);
                 props.exportFlights(flightArr);
                 return;
             }
@@ -719,23 +486,14 @@ function FlightList(props) {
                     <th></th>
                 </tr>
                 <tbody>
-                    {flightList.map((flightPackage) => (
-                        flightPackage.map((flight) => (
-                                <FlightItem
-                                    key={flight.flightId}
-                                    flightId={flight.flightId}
-                                    departureDate={flight.departureDate.getDate() + "/" + (flight.departureDate.getMonth() + 1)+ "/" + flight.departureDate.getFullYear()}
-                                    departureTime={flight.departureTime}
-                                    arrivalTime={flight.arrivalTime}
-                                    destination={flight.destination}
-                                    departure={flight.departure}
-                                    price={flight.price}
-                                    selectedId={selectedFlight.length > 0 ? selectedFlight[0].flightId : ""}
-                                    return={false}
-                                    selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
-                                    selFlight={res => setSelectedFlight(res)}
-                                />
-                        ))
+                    {flightList.map((flightDetails) => (
+                        <MultiFlightItem
+                            flightPackage={flightDetails}
+                            selectedFlights={selectedFlight}
+                            return={false}
+                            selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
+                            selFlight={res => setSelectedFlight(res)}
+                        />
                     ))}
                 </tbody>
             </table>

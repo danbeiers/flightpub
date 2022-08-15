@@ -9,32 +9,9 @@ function FlightItem(props) {
 
     }
 
-    function selectFlight()
-    {
-        props.selectFlight(props.return);
-
-        const flightData = [];
-
-        flightData.push(
-            {
-                flightId: props.flightId,
-                departure: props.departure,
-                destination: props.destination,
-                departureDate: props.departureDate,
-                departureTime: props.departureTime,
-                arrivalTime: props.arrivalTime,
-                price: props.price,
-                isReturn: props.return,
-
-            }
-        );
-
-        props.selFlight(flightData);
-    }
-
     return (
 
-                <tr onClick={selectFlight}  className={props.selectedId == props.flightId ? classes.selectedFlight : classes.row}>
+                <tr className={props.selectedId == props.flightId ? classes.selectedFlight : classes.row}>
                     <td> {props.flightId}</td>
                     <td> {props.departure}</td>
                     <td> {props.destination}</td>

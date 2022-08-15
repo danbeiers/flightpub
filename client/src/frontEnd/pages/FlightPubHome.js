@@ -36,9 +36,9 @@ const DUMMY_DATA = [
     },
     {
         flightId: 'CC7209',
-        departureDate: new Date('May 19, 2022 08:00:00'),
-        departureTime: '08:00AM',
-        arrivalTime: '9:45AM',
+        departureDate: new Date('May 18, 2022 13:00:00'),
+        departureTime: '01:00PM',
+        arrivalTime: '3:35PM',
         destination: 'BRISBANE',
         departure: 'SYDNEY',
         price: 725,
