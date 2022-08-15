@@ -17,51 +17,10 @@ function FlightList(props) {
     const [flightList, setFlightList] = useState([]);
     const [returnFlightList, setReturnFlightList] = useState([]);
 
-    const [morningFilter, setMorningFilter] = useState(false);
-    const [afternoonFilter, setAfternoonFilter] = useState(false);
-    const [eveningFilter, setEveningFilter] = useState(false);
-
     const [flightSelected , setFlightSelected] = useState(false);
     const [selectedFlight, setSelectedFlight] = useState([]);
     const [returnFlightSelected, setReturnFlightSelected] = useState(false);
     const [selectedReturnFlight, setSelectedReturnFlight] = useState([]);
-
-    let toggleMorningFilter = () =>
-    {
-        if(morningFilter)
-        {
-            setMorningFilter(false);
-            return;
-        }
-
-        setMorningFilter(true);
-        return;
-
-    }
-
-    let toggleAfternoonFilter = () =>
-    {
-        if(afternoonFilter)
-        {
-            setAfternoonFilter(false);
-            return;
-        }
-
-        setAfternoonFilter(true);
-        return;
-    }
-
-    let toggleEveningFilter = () =>
-    {
-        if(eveningFilter)
-        {
-            setEveningFilter(false);
-            return;
-        }
-
-        setEveningFilter(true);
-        return;
-    }
 
     props.flights.map((el) =>
     {
@@ -446,33 +405,13 @@ function FlightList(props) {
     }
 
     multiSearch();
-    //searchFlightList();
     sort("latest");
-
-    //what do need
-    //filters
-    //sort by
-
-    //
 
 
     return (
 
         <Card>
             <h2>Trip to Destination</h2>
-
-
-            <div className={classes.list}>
-
-                <label htmlFor='morningDeparture'> Morning Departure </label>
-                <input type='checkbox' id='morningDeparture' onClick={toggleMorningFilter} />
-
-                <label htmlFor='afternoonDeparture'> Afternoon Departure </label>
-                <input type='checkbox' id='afternoonDeparture' onClick={toggleAfternoonFilter} />
-
-                <label htmlFor='eveningDeparture'> Evening Departure </label>
-                <input type='checkbox' id='eveningDeparture' onClick={toggleEveningFilter}/>
-            </div>
 
             <table className={classes.tableList}>
                 <tr>
