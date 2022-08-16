@@ -408,9 +408,63 @@ function FlightList(props) {
         return;
     }
 
+    function swap(arr, i ,j)
+    {
+        [arr[j], arr[i]] = [arr[i], arr[j]];
+    }
+
+    function partition(arr, lowBound, highBound)
+    {
+        var highCount = 0;
+
+
+        for(let h = 0; h < arr[highBound].length; h++)
+        {
+            if(arr[highBound][h].sponsored == true)
+            {
+                highCount += 1;
+            }
+        }
+
+        let piv = highCount;
+        let i = lowBound - 1;
+
+        for(let j = lowBound; j <= highBound - 1; j++)
+        {
+            var jCount = 0;
+
+            for(let h = 0; h < arr[j].length; h++)
+            {
+                if(arr[j][h].sponsored == true)
+                {
+                    jCount += 1;
+                }
+            }
+
+            if(jCount > piv)
+            {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, i  + 1, highBound);
+        return (i + 1);
+    }
+
+    function quickSort(arr, low, high)
+    {
+        if(low < high)
+        {
+            let partIndex = partition(arr, low, high);
+            quickSort(arr, low, partIndex - 1);
+            quickSort(arr, partIndex + 1, high);
+        }
+    }
+
     function sponsoredSort(arr)
     {
-        for(let i = 0; i < arr.length; i++)
+        quickSort(arr, 0, arr.length - 1);
+        /*for(let i = 0; i < arr.length; i++)
         {
             for(let j = 0; j < arr.length - i - 1; j++)
             {
@@ -439,7 +493,7 @@ function FlightList(props) {
                     [arr[j+1], arr[j]] = [arr[j], arr[j+1]];
                 }
             }
-        }
+        }*/
     }
 
     multiSearch();
