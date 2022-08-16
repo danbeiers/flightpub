@@ -29,6 +29,15 @@ const DUMMY_DATA = [
     },
     {
         flightId: 'CC7296',
+        departureDate: new Date('May 31, 2022 21:00:00'),
+        departureTime: '9:00PM',
+        arrivalTime: '03:45AM',
+        destination: 'NEWCASTLE',
+        departure: 'SYDNEY',
+        price: 450,
+    },
+    {
+        flightId: 'CC7296',
         departureDate: new Date('May 20, 2022 21:00:00'),
         departureTime: '9:00PM',
         arrivalTime: '03:45AM',
