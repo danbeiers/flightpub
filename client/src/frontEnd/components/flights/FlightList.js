@@ -102,9 +102,9 @@ function FlightList(props) {
                     }
                     else
                     {
-                        flightPoints.push(new FlightPoint(null, el));
+                        var tempP = new FlightPoint(null, el);
 
-
+                        flightPoints.push(tempP);
 
                         //search for flights from this node
                         props.flights.map((el2) => {
@@ -186,7 +186,7 @@ function FlightList(props) {
         })
 
         //return trip details
-        if(!props.searchQuery.oneWayTrip) {
+        /*if(!props.searchQuery.oneWayTrip) {
             startIndex = 0;
 
             props.flights.map((el) => {
@@ -287,6 +287,8 @@ function FlightList(props) {
 
             })
         }
+
+         */
     }
 
     function sort(e)
@@ -339,8 +341,9 @@ function FlightList(props) {
                       <th>Date</th>
                       <th>Dep</th>
                       <th>Arr</th>
-                      <th></th>
-                      <th></th>
+                      <th>Favorite</th>
+                      <th>Select</th>
+                      <th>Sponsored</th>
                   </tr>
                   <tbody>
                   {returnFlightList.map((flightDetails) => (
@@ -411,14 +414,15 @@ function FlightList(props) {
         {
             for(let j = 0; j < arr.length - i - 1; j++)
             {
-                var nextSponsored = false;
-                var thisSponsored = false;
+                var nextSponsoredCount = 0;
+                var thisSponsoredCount = 0;
+
+
                 for(let h = 0; h < arr[j + i].length; h++)
                 {
                     if(arr[j + 1][h].sponsored == true)
                     {
-                        nextSponsored = true;
-                        break;
+                        nextSponsoredCount += 1;
                     }
                 }
 
@@ -426,12 +430,11 @@ function FlightList(props) {
                 {
                     if(arr[j][h].sponsored == true)
                     {
-                        thisSponsored = true;
-                        break;
+                        thisSponsoredCount += 1;
                     }
                 }
 
-                if(nextSponsored == true &&  thisSponsored == false)
+                if(nextSponsoredCount > thisSponsoredCount)
                 {
                     [arr[j+1], arr[j]] = [arr[j], arr[j+1]];
                 }
@@ -459,8 +462,9 @@ function FlightList(props) {
                     <th>Date</th>
                     <th>Dep</th>
                     <th>Arr</th>
-                    <th></th>
-                    <th></th>
+                    <th>Favourite</th>
+                    <th>Select</th>
+                    <th>Sponsored</th>
                 </tr>
                 <tbody>
                     {flightList.map((flightDetails) => (

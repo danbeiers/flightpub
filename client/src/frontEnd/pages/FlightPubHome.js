@@ -18,14 +18,14 @@ const DUMMY_DATA = [
         sponsored: false,
     },
     {
-        flightId: 'AA2431',
+        flightId: 'AA2430',
         departureDate: new Date('May 20, 2022 09:30:00'),
         departureTime: '9:30AM',
         arrivalTime: '10:45PM',
         destination: 'SYDNEY',
         departure: 'NEWCASTLE',
         price: 500,
-        sponsored: false,
+        sponsored: true,
     },
     {
         flightId: 'CC7296',
@@ -37,7 +37,7 @@ const DUMMY_DATA = [
         price: 450,
     },
     {
-        flightId: 'CC7296',
+        flightId: 'CC7297',
         departureDate: new Date('May 20, 2022 21:00:00'),
         departureTime: '9:00PM',
         arrivalTime: '03:45AM',
@@ -67,7 +67,7 @@ const DUMMY_DATA = [
         sponsored: false,
     },
     {
-        flightId: 'CC7209',
+        flightId: 'CC7210',
         departureDate: new Date('May 20, 2022 10:00:00'),
         departureTime: '10:00AM',
         arrivalTime: '9:45AM',

@@ -1,12 +1,19 @@
 import classes from './FlightItem.module.css';
 function FlightItem(props) {
 
+    const sponsored = [];
+
     function toggleFavouriteStatusHandler() {
 
     }
 
     function bookFlightHandler() {
 
+    }
+
+    if(props.sponsored)
+    {
+        sponsored.push(<td>Sponsored</td>);
     }
 
     return (
@@ -28,6 +35,7 @@ function FlightItem(props) {
                             Select Flight
                         </button>
                     </td>
+                    {sponsored}
                 </tr>
     );
 }

@@ -42,6 +42,7 @@ function MultiFlightItem(props) {
             price={props.flightPackage[i].price}
             selectedId={props.selectedFlights.length > 0 ? props.selectedFlights[i].flightId : ""}
             return={props.return}
+            sponsored={props.flightPackage[i].sponsored}
             />);
     }
 
