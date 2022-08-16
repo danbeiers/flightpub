@@ -15,6 +15,17 @@ const DUMMY_DATA = [
         destination: 'SYDNEY',
         departure: 'NEWCASTLE',
         price: 500,
+        sponsored: false,
+    },
+    {
+        flightId: 'AA2431',
+        departureDate: new Date('May 20, 2022 09:30:00'),
+        departureTime: '9:30AM',
+        arrivalTime: '10:45PM',
+        destination: 'SYDNEY',
+        departure: 'NEWCASTLE',
+        price: 500,
+        sponsored: false,
     },
     {
         flightId: 'CC7296',
@@ -24,6 +35,7 @@ const DUMMY_DATA = [
         destination: 'NEWCASTLE',
         departure: 'SYDNEY',
         price: 450,
+        sponsored: false,
     },
     {
         flightId: 'CC7298',
@@ -33,15 +45,27 @@ const DUMMY_DATA = [
         destination: 'NEWCASTLE',
         departure: 'SYDNEY',
         price: 550,
+        sponsored: true,
     },
     {
         flightId: 'CC7209',
-        departureDate: new Date('May 19, 2022 08:00:00'),
+        departureDate: new Date('May 20, 2022 08:00:00'),
         departureTime: '08:00AM',
         arrivalTime: '9:45AM',
         destination: 'BRISBANE',
         departure: 'SYDNEY',
         price: 725,
+        sponsored: false,
+    },
+    {
+        flightId: 'CC7209',
+        departureDate: new Date('May 20, 2022 10:00:00'),
+        departureTime: '10:00AM',
+        arrivalTime: '9:45AM',
+        destination: 'BRISBANE',
+        departure: 'SYDNEY',
+        price: 725,
+        sponsored: true,
     },
     {
         flightId: 'CC7234',
@@ -51,6 +75,7 @@ const DUMMY_DATA = [
         destination: 'SYDNEY',
         departure: 'BRISBANE',
         price: 725,
+        sponsored: false,
     },
 
 ];

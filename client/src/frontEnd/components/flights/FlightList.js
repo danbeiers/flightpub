@@ -484,6 +484,7 @@ function FlightList(props) {
 
     function sort(e)
     {
+        console.log(e);
         if(e == "soonest")
         {
             for(let i = 0; i < flightList.length; i++)
@@ -678,9 +679,45 @@ function FlightList(props) {
         return;
     }
 
+    function sponsoredSort(arr)
+    {
+        for(let i = 0; i < arr.length; i++)
+        {
+            for(let j = 0; j < arr.length - i - 1; j++)
+            {
+                var nextSponsored = false;
+                var thisSponsored = false;
+                for(let h = 0; h < arr[j + i].length; h++)
+                {
+                    if(arr[j + 1][h].sponsored == true)
+                    {
+                        nextSponsored = true;
+                        break;
+                    }
+                }
+
+                for(let h = 0; h < arr[j].length; h++)
+                {
+                    if(arr[j][h].sponsored == true)
+                    {
+                        thisSponsored = true;
+                        break;
+                    }
+                }
+
+                if(nextSponsored == true &&  thisSponsored == false)
+                {
+                    [arr[j+1], arr[j]] = [arr[j], arr[j+1]];
+                }
+            }
+        }
+    }
+
     multiSearch();
     //searchFlightList();
-    sort("latest");
+    //sort("latest");
+    sponsoredSort(flightList);
+    sponsoredSort(returnFlightList);
 
     //what do need
     //filters
