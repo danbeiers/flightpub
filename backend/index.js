@@ -1,11 +1,15 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import session from "express-session";
+import { default as connectMongoDBSession} from 'connect-mongodb-session';
 import cors from "cors"
+
 //import authRoute from "./routes/auth.js";
 //import usersRoute from "./routes/users.js";
 import airlinesRoute from "./routes/airline.js";
 import flightRoute from "./routes/flight.js";
+import loginRoute from "./routes/login.js"
 import seat from "./routes/seat.js";
 import req from "express/lib/request.js";
 import res from "express/lib/response.js";
@@ -18,8 +22,23 @@ import booking from "./routes/booking.js";
 
 
 const app = express()
-app.use(cors({ credentials: true, origin: true }));
+//const cors = require('cors');
+//app.use(cors({ credentials: true, origin: true }));
 dotenv.config()
+
+const MAX_AGE = 1000 * 60 * 60 * 3 //Session cookie timeout
+const MongoDBStore = connectMongoDBSession(session);
+var mongoStore = new MongoDBStore({
+    uri: process.env.MONGO,
+    collection: 'Sessions',
+})
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200,
+}
+
+//FPUB-13 Adding login functionality
+
 const connect = async () => {
 try{
     await mongoose.connect(process.env.MONGO);
@@ -54,7 +73,24 @@ mongoose.connection.on("connected", ()=>{
 
 //middlewares
 //middleware for insomnia/postman
+//app.use(cors)
+app.use(cors(corsOptions))
 app.use(express.json());
+//Session creation stuff
+app.use(
+    session({
+        secret: 'randomkey1',
+        name: 'session-id',
+        store: mongoStore,
+        cookie: {
+            maxAge: MAX_AGE,
+            sameSite: false,
+            secure:false, //turn 'true' in deployment
+        },
+        resave: true,
+        saveUninitialized: true
+
+}))
 
 //app.use("/auth", authRoute);
 //app.use("/users", usersRoute);
@@ -62,6 +98,7 @@ app.use("/airline", airlinesRoute);
 app.use("/flight", flightRoute);
 app.use("/map", mapRoute);
 app.use("/seat", seat);
+app.use("/user", loginRoute);
 app.use("/booking", bookingRoute);
 
 //middleware for error handling
