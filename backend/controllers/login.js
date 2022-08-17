@@ -66,8 +66,9 @@ export const loginUser =  async (req, res) => {
     // comparing the password with the saved hash-password
     const matchPassword = await bcrypt.compare(password, user.password)
     if (matchPassword) {
-        const userSession = {email: user.email,userName:user.userName} //Create user session
-        req.session.user = userSession
+        const userSession = user
+        //const userSession = {email: user.email,userName:user.userName} //Create user session
+        req.session.user = {email: user.email, userName: user.userName}
         return res
             .status(200)
             .json({msg: 'You have logged in successfully', userSession})

@@ -27,6 +27,9 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         //required: true,
     },
+    bookedFlights:{
+        type: JSON,
+    },
     /*residency:{
         type: String,
     },

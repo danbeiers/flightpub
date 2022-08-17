@@ -21,11 +21,13 @@ import {
 } from "./frontEnd/components/DarkMode/darkmodestyle";
 import styled, {ThemeProvider} from "styled-components";
 import {ToggleButton} from "./frontEnd/components/DarkMode/ToggleButton";
+import useFetch from "./hooks/useFetch";
 //import React from "@types/react";
 
 export const UserContext = createContext({});
 
 function App() {
+    const [flights,setFlights] = useState([])
     const [loading,setLoading] = useState(true);
     const [userSession,setUserSession] = useState(true);
     const [authenticated, setAuthenticated] = useState (false);
@@ -38,6 +40,7 @@ function App() {
     const [weatherData,setWeatherData] = useState([]);
     const [theme, toggleTheme] = useDarkMode();
     const themeMode = theme === "light" ? lightTheme : darkTheme;
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,7 +65,7 @@ function App() {
         const fetchUserAuth = async () => {
             try {
                 setLoading(true);
-                const res = await fetch('/user/isAuth')
+                const res = await fetch ('/user/isAuth', { mode: 'cors' })
                 if(!res.ok) {
                     console.log('auth not ok')
                     setUserSession(false)
@@ -81,13 +84,33 @@ function App() {
         }
         fetchUserAuth()
     },[user])
+    // useEffect(() => {
+    //     const fetchFlights = async () => {
+    //         try {
+    //             setLoading(true);
+    //             const res = await fetch('/flight/')
+    //             if(!res.ok) {
+    //                 console.log(res)
+    //                 console.log('flights not ok')
+    //                 return setLoading(false);
+    //             }
+    //             const data = await res.json();
+    //             setFlights(data)
+    //         }catch (error){
+    //             setLoading(false)
+    //             console.log('There was an error fetching flights',error);
+    //             return
+    //         }
+    //     }
+    //     fetchFlights()
+    // },[])
 
     return (
         <UserContext.Provider value={userSession}>
 
         <ThemeProvider theme={themeMode}>
 
-        <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched,bookingsSelected,setBookingsSelected,setUser,userDetails,setUserDetails,lat,setLat,long,setLong,weatherData,setWeatherData }}>
+        <FlightPubContext.Provider value={{flights,setFlights,authenticated,setAuthenticated,searched,setSearched,bookingsSelected,setBookingsSelected,setUser,userDetails,setUserDetails,lat,setLat,long,setLong,weatherData,setWeatherData }}>
         <GlobalStyles />
         <ToggleButton theme={theme} toggleTheme={toggleTheme} />
         <Layout>

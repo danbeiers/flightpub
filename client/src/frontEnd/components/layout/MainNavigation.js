@@ -14,6 +14,7 @@ function MainNavigation() {
     const otherContext = useContext(UserContext);
     let loginContent;
     let welcomeContent;
+    let profileContent;
     let registerContent;
 
     const Logout = async (req,res) => {
@@ -51,14 +52,16 @@ function MainNavigation() {
     }
     //console.log(otherContext.user)
     if(otherContext){
-        loginContent = <Link to='/' onClick={Logout}>Logout</Link>;
-        //welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!</li>;
-        welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!<br/>{context.weatherData.name}  {context.weatherData.main.temp}&deg;C</li>;
+        loginContent = <li><Link to='/' onClick={Logout}>Logout</Link></li>;
+        welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!</li>;
+        //welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!<br/>{context.weatherData.name}</li>;
+        profileContent = <li><Link to='profile'>Profile</Link></li>;
         registerContent = null;
     }else{
-        loginContent = <Link to='/login'>Login</Link>;
+        loginContent = <li><Link to='/login'>Login</Link></li>;
         welcomeContent = <li>Welcome Guest!</li>
         registerContent = <li><Link to='/register'>Register</Link></li>;
+        profileContent = null;
     }
 
     return (
@@ -76,10 +79,10 @@ function MainNavigation() {
                     <li>
                         <Link to='/map'>Map</Link>
                     </li>
-                    <li>
                         {loginContent}
-                    </li>
-                    {registerContent}
+                        {registerContent}
+                        {profileContent}
+
                 </ul>
             </nav>
         </header>

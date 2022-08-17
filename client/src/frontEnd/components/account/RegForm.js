@@ -145,6 +145,7 @@ function RegForm() {
                             <input
                                 type="Date"
                                 value={values.dob}
+
                                 min = "1900-01-01"
                                 max = "2022-01-01"
                                 onChange={handleChange('dob')}

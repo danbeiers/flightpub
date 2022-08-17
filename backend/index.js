@@ -1,8 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
-import req from "express/lib/request.js";
-import res from "express/lib/response.js";
 import session from "express-session";
 import { default as connectMongoDBSession} from 'connect-mongodb-session';
 import cors from "cors"
@@ -24,7 +22,8 @@ import booking from "./routes/booking.js";
 
 
 const app = express()
-app.use(cors({ credentials: true, origin: true }));
+//const cors = require('cors');
+//app.use(cors({ credentials: true, origin: true }));
 dotenv.config()
 
 const MAX_AGE = 1000 * 60 * 60 * 3 //Session cookie timeout
@@ -74,6 +73,7 @@ mongoose.connection.on("connected", ()=>{
 
 //middlewares
 //middleware for insomnia/postman
+//app.use(cors)
 app.use(cors(corsOptions))
 app.use(express.json());
 //Session creation stuff

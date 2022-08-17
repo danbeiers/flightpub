@@ -1,6 +1,5 @@
 {
   "name": "flightpub",
-  "proxy": "http://localhost:8800/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,7 +42,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8800",
+
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -65,5 +64,5 @@
   "devDependencies": {
     "react-tooltip": "^4.2.21"
   },
-  "proxy": "http://localhost:8800/backend"
+  "proxy": "http://localhost:8800"
 }

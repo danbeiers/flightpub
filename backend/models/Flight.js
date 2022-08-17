@@ -14,7 +14,7 @@ const FlightSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    StopoverCode:{
+    StopOverCode:{
         type: String,
     },
     DestinationCode:{
@@ -26,7 +26,7 @@ const FlightSchema = new mongoose.Schema({
         required: true,
     },
     Duration:{
-        type: Number,
+        type: String,
         required: true,
     },
 

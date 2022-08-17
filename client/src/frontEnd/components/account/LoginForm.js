@@ -74,7 +74,8 @@ function LoginForm() {
                 password: ''
             })
             context.setUser(data.userSession.userName)
-            //console.log(data.userSession.userName)
+            context.setUserDetails(data.userSession)
+            //console.log(context.userDetails)
 
             navigate('/')
         }catch (error) {
