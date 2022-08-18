@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Usefetch fetching map data and displaying on frontend!!!">
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="route for filter by query, button for add to booking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/bookings/Bookings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookings/Bookings.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/store/FlightPubContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/store/FlightPubContext.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +47,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/backend/controllers/map.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backend/routes/airline.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/backend/routes/booking.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backend/routes/map.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" root0="FORCE_HIGHLIGHTING" />
@@ -192,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660252784733</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="route for filter by query, button for add to booking">
+      <created>1660796963583</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1660796963583</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +264,8 @@
     <MESSAGE value="Axios done!!! Can see backend table data onto frontend!!! Yayyyy" />
     <MESSAGE value="Usefetch fetching map data and displaying on frontend!!!" />
     <MESSAGE value="Filter button working displaying dropdown of categories" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filter button working displaying dropdown of categories" />
+    <MESSAGE value="route for filter by query, button for add to booking" />
+    <option name="LAST_COMMIT_MESSAGE" value="route for filter by query, button for add to booking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

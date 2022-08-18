@@ -1,229 +1,100 @@
+//frontend/pages/Bookings.js
+
 import React, { useState } from 'react';
+import {useContext, useRef} from 'react';
 import Card from "../components/ui/Card";
 import classes from "../components/bookings/Bookings.module.css"
+import useFetch from "../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
+import FlightPubContext from "../store/FlightPubContext";
+import {Link} from "react-router-dom";
 
 function BookingsPage() {
 
-    const RECOMMENDATIONS = [
-        {
-            recommended: 'Discounted offer',
-            bookingID: 158589,
-            flight: 'SN493',
-            seat: '4C',
-            from: 'SYDNEY',
-            to: 'NEWCASTLE',
-            bookingDate: new Date('May 05, 2021'),
-            departureDate: new Date('May 18, 2021'),
-            departureTime: '11:45 AM',
-            returnDate: new Date('May 25, 2021'),
-            returnTime: '3:00 PM',
-            cost: '$49',
-            discount: '30%',
-        },
-        {
-            recommended: 'Frequent flight',
-            bookingID: 159564,
-            flight: 'SA266',
-            seat: '7A',
-            from: 'SYDNEY',
-            to: 'ADELAIDE',
-            bookingDate: new Date('October 01, 2021'),
-            departureDate: new Date('October 04, 2021'),
-            departureTime: '5:30 AM',
-            returnDate: new Date('October 07, 2021'),
-            returnTime: '7:00 PM',
-            cost: '$127',
-            discount: '15%',
-        },
-        {
-            recommended: 'Hot destination',
-            bookingID: 158322,
-            flight: 'NB107',
-            seat: '4C',
-            from: 'NEWCASTLE',
-            to: 'BRISBANE',
-            bookingDate: new Date('April 14, 2021'),
-            departureDate: new Date('April 17, 2021'),
-            departureTime: '11:00 AM',
-            returnDate: new Date('April 24, 2021'),
-            returnTime: '4:00 PM',
-            cost: '$225',
-            discount: '10%',
-        },
-    ]
-
-    const BOOKINGS = [
-        {
-            bookingID: 159871,
-            flight: 'SA266',
-            seat: '2D',
-            from: 'SYDNEY',
-            to: 'ADELAIDE',
-            bookingDate: new Date('October 09, 2021'),
-            departureDate: new Date('October 11, 2021'),
-            departureTime: '5:30 AM',
-            returnDate: new Date('October 15, 2021'),
-            returnTime: '7:00 PM',
-            cost: '$127',
-            discount: '15%',
-        },
-        {
-            bookingID: 159564,
-            flight: 'SA266',
-            seat: '7A',
-            from: 'SYDNEY',
-            to: 'ADELAIDE',
-            bookingDate: new Date('October 01, 2021'),
-            departureDate: new Date('October 04, 2021'),
-            departureTime: '5:30 AM',
-            returnDate: new Date('October 08, 2021'),
-            returnTime: '7:00 PM',
-            cost: '$127',
-            discount: '15%',
-        },
-        {
-            bookingID: 158589,
-            flight: 'SN493',
-            seat: '4C',
-            from: 'SYDNEY',
-            to: 'NEWCASTLE',
-            bookingDate: new Date('May 05, 2021'),
-            departureDate: new Date('May 18, 2021'),
-            departureTime: '11:45 AM',
-            returnDate: new Date('May 25, 2021'),
-            returnTime: '3:00 PM',
-            cost: '$59',
-            discount: '30%',
-        },
-        {
-            bookingID: 158322,
-            flight: 'NB107',
-            seat: '4C',
-            from: 'NEWCASTLE',
-            to: 'BRISBANE',
-            bookingDate: new Date('April 14, 2021'),
-            departureDate: new Date('April 17, 2021'),
-            departureTime: '11:00 AM',
-            returnDate: new Date('April 24, 2021'),
-            returnTime: '4:00 PM',
-            cost: '$225',
-            discount: '10%',
-        },
-    ]
-
     const[selectedFlight, setSelectedFlight] = useState(-1);
+    const [content, setContent] = useState("");
+    const{data, loading, error} = useFetch("/booking");
+    const context = useContext(FlightPubContext);
 
-    function CheckRecommendations() {
-        if (RECOMMENDATIONS.length > 0) {
-             return GetRecommendations();
-        }
-    }
+    const navigate = useNavigate();
 
-    function CheckBookings() {
-        if (BOOKINGS.length > 0) {
+    function CheckBookings()
+    {
+        if (data.length > 0 ) {
             return GetBookings();
         }
+        else
+        {
+            console.log("yes");
+            return NoBookings();
+        }
     }
 
-    function rebookFlight(bookingID) {
-        setSelectedFlight(bookingID);
-        console.log(selectedFlight);
-    }
-
-    function GetRecommendations() {
+    function FormatDate(e) {
+        const _date = new Date(e.target);
         return (
-            <section>
-                <h1> Recommendations </h1>
-                <Card>
-                    {RECOMMENDATIONS.map( (booking) => (
-
-                        <div className = {booking.bookingID == selectedFlight ? classes.Selected : classes.Booking } onClick={() => rebookFlight(booking.bookingID)} >
-                            <tr className={classes.row}>
-                                <td> <strong>Booking</strong> {booking.bookingID} </td>
-                                <td> <strong>{booking.recommended} </strong> </td>
-                            </tr>
-                            <tr className={classes.row}>
-                               <td><strong>Flight</strong> {booking.flight} </td>
-                               <td><strong>Seat</strong> {booking.seat} </td>
-                               <td> <strong>Booked on </strong> {booking.bookingDate.getDate() + "/" + (booking.bookingDate.getMonth() + 1)+ "/" + booking.bookingDate.getFullYear()} </td>
-                            </tr>
-                            <tr className={classes.row}>
-                                <td> <strong>From</strong> {booking.from} </td>
-                                <td> <strong>Departure</strong> {booking.departureDate.getDate() + "/" + (booking.departureDate.getMonth() + 1)+ "/" + booking.departureDate.getFullYear()} </td>
-                                <td> <strong>Departure time</strong> {booking.departureTime} </td>
-                            </tr>
-                            <tr className={classes.row}>
-                                <td> <strong>To</strong> {booking.to} </td>
-                                <td> <strong>Return</strong> {booking.returnDate.getDate() + "/" + (booking.departureDate.getMonth() + 1)+ "/" + booking.departureDate.getFullYear()} </td>
-                                <td> <strong>Return time</strong> {booking.returnTime} </td>
-                            </tr>
-                            <tr className={classes.row}>
-                                <td> <strong>Cost</strong> {booking.cost} </td>
-                                <CheckDiscount target={booking.discount}/>
-                            </tr>
-                        </div>
-                    ))}
-                    <form onSubmit={rebookFlight}>
-                        <input target="submit" type="submit" value="Rebook"/>
-                    </form>
-                </Card>
-            </section>
+            _date.getDate() + "/" + (_date.getMonth() + 1)+ "/" + _date.getFullYear()
         );
     }
 
-    function CheckDiscount(e) {
-        if (e.target != null)
-        {
-            return (
-                <td> <strong>Discount applied</strong> {e.target} </td>
-            );
-        }
-        return null;
+    function UpperCase(e) {
+        const str = e.target;
+        return str.toUpperCase();
     }
 
- function GetBookings() {
+    function NoBookings() {
         return (
-            <section>
-                <h1> My Bookings </h1>
-                <Card>
-                    {BOOKINGS.map( (booking) => (
+            <Card>
+                <td> you have no booking entries </td>
+            </Card>
+        );
+    }
 
-                        <div className = {booking.bookingID == selectedFlight ? classes.Selected : classes.Booking } onClick={() => rebookFlight(booking.bookingID)} >
-                            <tr className={classes.row}>
-                                <td> <strong>Booking</strong> {booking.bookingID} </td>
-                            </tr>
-                            <tr className={classes.row}>
-                               <td><strong>Flight</strong> {booking.flight} </td>
-                               <td><strong>Seat</strong> {booking.seat} </td>
-                               <td> <strong>Booked on </strong> {booking.bookingDate.getDate() + "/" + (booking.bookingDate.getMonth() + 1)+ "/" + booking.bookingDate.getFullYear()} </td>
-                            </tr>
-                            <tr className={classes.row}>
-                                <td> <strong>From</strong> {booking.from} </td>
-                                <td> <strong>Departure</strong> {booking.departureDate.getDate() + "/" + (booking.departureDate.getMonth() + 1)+ "/" + booking.departureDate.getFullYear()} </td>
-                                <td> <strong>Departure time</strong> {booking.departureTime} </td>
-                            </tr>
-                            <tr className={classes.row}>
-                                <td> <strong>To</strong> {booking.to} </td>
-                                <td> <strong>Return</strong> {booking.returnDate.getDate() + "/" + (booking.departureDate.getMonth() + 1)+ "/" + booking.departureDate.getFullYear()} </td>
-                                <td> <strong>Return time</strong> {booking.returnTime} </td>
-                            </tr>
-                            <tr className={classes.row}>
-                                <td> <strong>Cost</strong> {booking.cost} </td>
-                                <CheckDiscount target={booking.discount}/>
-                            </tr>
-                        </div>
-                    ))}
-                    <form onSubmit={rebookFlight}>
-                        <input target="submit" type="submit" value="Rebook"/>
-                    </form>
-                </Card>
-            </section>
+    function rebookFlight(booking) {
+        console.log("fires");
+        context.setDestination(booking.destination);
+        context.setDeparture(booking.departure);
+    }
+
+    function selectFlight(bookingID){
+        setSelectedFlight(bookingID);
+    }
+
+
+    function GetBookings() {
+        return (
+            <Card>
+                {data.map( (booking) => ( // change to data.map
+                    // move all this logic to a components/bookings
+                    // same order as the schema, copy mapchart
+                    <div className = {booking.bookingID == selectedFlight ? classes.Selected : classes.Booking } onClick={() => selectFlight(booking.bookingID)} >
+                        <Link className= {booking.bookingID == selectedFlight ? classes.oneClickSelected : classes.oneClick} to="/" onClick={() => { rebookFlight(booking) }}> rebook </Link>
+                        <tr>
+                            <td>  <strong>Booking</strong> {booking.bookingID} {<FormatDate target={booking.bookingDate} />}</td>
+                        </tr>
+                        <tr className={classes.row}>
+                            <td><strong>Flight</strong> {booking.flight} </td>
+                            <td><strong>Seat</strong> {booking.seat} </td>
+                            <td> <strong>Cost</strong> {booking.cost} </td>
+                        </tr>
+                        <tr className={classes.row}>
+                            <td> <strong>From</strong> {<UpperCase target={booking.departure} />}</td>
+
+                            <td> <strong>Departing </strong> {<FormatDate target={booking.departureDate} />} <strong> at </strong> {booking.departureTime}</td>
+                        </tr>
+                        <tr className={classes.row}>
+                            <td> <strong>To</strong> {<UpperCase target={booking.destination} />} </td>
+                            <td> <strong>Returning </strong> {<FormatDate target={booking.returnDate} />} <strong> at </strong> {booking.returnTime}</td>
+                        </tr>
+                    </div>
+                ))}
+            </Card>
         );
     }
 
     return (
         <section>
-            <CheckRecommendations/>
+            <h1> My Bookings </h1>
             <CheckBookings/>
         </section>
     );

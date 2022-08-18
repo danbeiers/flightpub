@@ -1,3 +1,5 @@
+//frontend/flights/FlightSearch.js
+
 import {useContext, useRef} from 'react';
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
@@ -86,12 +88,13 @@ function FlightSearch(props) {
         setFlexiReturn(true);
         return;
     }
+    const context = useContext(FlightPubContext);
 
     const [soonestStartDate, setSoonestStartDate] = useState(new Date());
     const [latestStartDate, setLatestStartDate] = useState(new Date());
     const [soonestEndDate, setSoonestEndDate] = useState(new Date());
     const [latestEndDate, setLatestEndDate] = useState(new Date());
-    const context = useContext(FlightPubContext);
+
 
     const [depLocation, setDepLocation] = useState("");
     const [arrLocation, setArrLocation] = useState("");
@@ -146,6 +149,20 @@ function FlightSearch(props) {
             <Arrival  target={e.flexi}/>
         );
 
+    }
+
+    function UpdateDestination() {
+        const e = context.destination;
+        context.setDestination("");
+        console.log(context.destination);
+        return e
+    }
+
+    function UpdateDeparture() {
+        const e = context.departure;
+        context.setDeparture("");
+        console.log(context.departure);
+        return e
     }
 
     function Departure(e) {
@@ -218,8 +235,8 @@ function FlightSearch(props) {
                     onChange={(date) => setSoonestEndDate(date)}
                 />
             </div>
-            );
-        }
+        );
+    }
 
     return (
         <Card>
@@ -230,6 +247,8 @@ function FlightSearch(props) {
 
                     <label htmlFor='departureLocation'>Departure Location <GiAirplaneDeparture /></label>
                     <Autocomplete id="departureLocation"
+                                  value={UpdateDeparture()}
+
                                   freeSolo={true}
                                   options= {getSearchResults()}
                                   onChange={(event, value) => setDepLocation(value)}
@@ -245,6 +264,7 @@ function FlightSearch(props) {
 
                     <label htmlFor='destinationLocation'>Destination Location <GiAirplaneArrival /> </label>
                     <Autocomplete id="destinationLocation"
+                                  value={UpdateDestination()}
                                   freeSolo={true}
                                   options= {getSearchResults()}
                                   onChange={(event, value) => setArrLocation(value)}
