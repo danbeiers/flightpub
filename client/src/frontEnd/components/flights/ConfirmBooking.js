@@ -13,6 +13,8 @@ function ConfirmBooking(props) {
 
     function bookingHandler(e)
     {
+        console.log(e)
+        //context.setUserDetails(...context.userDetails.bookedFlights,{e})
         return;
     }
 

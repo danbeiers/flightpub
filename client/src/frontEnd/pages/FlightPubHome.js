@@ -5,6 +5,8 @@ import FlightList from '../components/flights/FlightList';
 import FlightSearch from "../components/flights/FlightSearch";
 import ConfirmBooking from "../components/flights/ConfirmBooking"
 import FlightPubContext from "../store/FlightPubContext";
+import useFetch from "../../hooks/useFetch";
+
 
 const DUMMY_DATA = [
     {
@@ -102,16 +104,19 @@ const flightSearchData = {
     flexibleReturn: false,
 };
 
-function FlightPubHomePage() {
-
+  function FlightPubHomePage() {
     const context = useContext(FlightPubContext);
-
+    //This is the axios call to bring all the flight data into this page
+    //const {data, loading, error} = useFetch("/flight/");
     const [query, setQuery] = useState({});
     const [selectedFlights, setSelectedFlights] = useState([{}]);
-
-    function clearForm() {
+    //console.log(data)
+   // async
+        function clearForm() {
         context.setSearched(false);
         context.setBookingsSelected(false);
+        // const resp = await flightpubapi.getapi();
+        // console.log(resp);
     }
 
     if (!context.searched) {
