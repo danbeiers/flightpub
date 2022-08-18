@@ -22,6 +22,51 @@ function FlightList(props) {
     const [returnFlightSelected, setReturnFlightSelected] = useState(false);
     const [selectedReturnFlight, setSelectedReturnFlight] = useState([]);
 
+    //filter details
+    const [morningFilter, setMorningFilter] = useState(false);
+    const [afternoonFilter, setAfternoonFilter] = useState(false);
+    const [eveningFilter, setEveningFilter] = useState(false);
+
+    //filter functions
+    let toggleMorningFilter = () =>
+    {
+        if(morningFilter)
+        {
+            setMorningFilter(false);
+            return;
+        }
+
+        setMorningFilter(true);
+        return;
+
+    }
+
+    let toggleAfternoonFilter = () =>
+    {
+        if(afternoonFilter)
+        {
+            setAfternoonFilter(false);
+            return;
+        }
+
+        setAfternoonFilter(true);
+        return;
+    }
+
+    let toggleEveningFilter = () =>
+    {
+        if(eveningFilter)
+        {
+            setEveningFilter(false);
+            return;
+        }
+
+        setEveningFilter(true);
+        return;
+    }
+
+    //
+
     props.flights.map((el) =>
     {
         flightList.push(el);
@@ -30,12 +75,12 @@ function FlightList(props) {
 
     if(flightSelected)
     {
-        console.log("wow ur trip to is selected");
+        //console.log("wow ur trip to is selected");
     }
 
     if(returnFlightSelected)
     {
-        console.log("wow way back selected");
+        //console.log("wow way back selected");
     }
 
     //struct to store flights in a reverse linkedList
@@ -72,8 +117,10 @@ function FlightList(props) {
 
         props.flights.map((el) => {
 
+            startIndex = 0;
             flightPoints.length = 0;
             //find next start point
+
             if(el.departure.toLowerCase() == props.searchQuery.departureLocation.toLowerCase())
             {
                 var validTime = false;
@@ -89,7 +136,16 @@ function FlightList(props) {
                     && el.departureDate.getDate() >= props.searchQuery.soonestDepartureDate.getDate()
                     && el.departureDate.getDate() <= props.searchQuery.latestDepartureDate.getDate())
                 {
-                    validTime = true;
+                    if(!morningFilter && !afternoonFilter && !eveningFilter)
+                    {
+                        validTime = true;
+                    }
+                    else if(morningFilter && el.departureDate.getHours() >= 0 && el.departureDate.getHours() < 12
+                        || afternoonFilter && el.departureDate.getHours() >= 12 && el.departureDate.getHours() < 18
+                        || eveningFilter && el.departureDate.getHours() >= 18)
+                    {
+                        validTime = true;
+                    }
                 }
 
                 if(validTime)
@@ -186,11 +242,12 @@ function FlightList(props) {
         })
 
         //return trip details
-        /*if(!props.searchQuery.oneWayTrip) {
+        if(!props.searchQuery.oneWayTrip) {
             startIndex = 0;
 
             props.flights.map((el) => {
 
+                startIndex = 0;
                 flightPoints.length = 0;
                 //find next start point
                 if (el.departure.toLowerCase() == props.searchQuery.destinationLocation.toLowerCase()) {
@@ -205,8 +262,18 @@ function FlightList(props) {
                         && el.departureDate.getMonth() >= props.searchQuery.soonestReturnDate.getMonth()
                         && el.departureDate.getMonth() <= props.searchQuery.latestReturnDate.getMonth()
                         && el.departureDate.getDate() >= props.searchQuery.soonestReturnDate.getDate()
-                        && el.departureDate.getDate() <= props.searchQuery.latestReturnDate.getDate()) {
-                        validTime = true;
+                        && el.departureDate.getDate() <= props.searchQuery.latestReturnDate.getDate())
+                    {
+                        if(!morningFilter && !afternoonFilter && !eveningFilter)
+                        {
+                            validTime = true;
+                        }
+                        else if(morningFilter && el.departureDate.getHours() >= 0 && el.departureDate.getHours() < 12
+                            || afternoonFilter && el.departureDate.getHours() >= 12 && el.departureDate.getHours() < 18
+                            || eveningFilter && el.departureDate.getHours() >= 18)
+                        {
+                            validTime = true;
+                        }
                     }
 
                     if (validTime) {
@@ -287,13 +354,11 @@ function FlightList(props) {
 
             })
         }
-
-         */
     }
 
     function sort(e)
     {
-        console.log(e);
+        //og(e);
         if(e == "soonest")
         {
             for(let i = 0; i < flightList.length; i++)
@@ -404,7 +469,7 @@ function FlightList(props) {
         }
 
         //some error has occured
-        console.log("you have not selected a return or departure flights");
+        //console.log("you have not selected a return or departure flights");
         return;
     }
 
@@ -507,6 +572,17 @@ function FlightList(props) {
 
         <Card>
             <h2>Trip to Destination</h2>
+
+            <div className={classes.list}>
+                <label htmlFor='morningDeparture'> Morning Departure </label>
+                <input type='checkbox' id='morningDeparture' onClick={toggleMorningFilter} />
+
+                <label htmlFor='afternoonDeparture'> Afternoon Departure </label>
+                <input type='checkbox' id='afternoonDeparture' onClick={toggleAfternoonFilter} />
+
+                <label htmlFor='eveningDeparture'> Evening Departure </label>
+                <input type='checkbox' id='eveningDeparture' onClick={toggleEveningFilter}/>
+            </div>
 
             <table className={classes.tableList}>
                 <tr>
