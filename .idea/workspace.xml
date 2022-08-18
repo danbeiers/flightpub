@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.js" afterDir="false" />
-    </list>
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,19 +66,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="flightpub" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="flightpub" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -119,6 +103,13 @@
       <workItem from="1659761383186" duration="218000" />
       <workItem from="1659779679994" duration="1288000" />
       <workItem from="1659830525774" duration="5630000" />
+      <workItem from="1660484751175" duration="383000" />
+      <workItem from="1660524063281" duration="314000" />
+      <workItem from="1660524597084" duration="2587000" />
+      <workItem from="1660560954493" duration="606000" />
+      <workItem from="1660633541560" duration="6896000" />
+      <workItem from="1660726265435" duration="4921000" />
+      <workItem from="1660788362453" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="Added rudimentary interactive map that outputs country selection to console.">
       <created>1650975070620</created>
