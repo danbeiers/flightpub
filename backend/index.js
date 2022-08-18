@@ -14,6 +14,8 @@ import mapRoute from "./routes/map.js";
 import map from "./routes/map.js";
 import bookingRoute from "./routes/booking.js";
 import booking from "./routes/booking.js";
+import wishlist from "./routes/wishlist.js";
+import wishlistRoute from "./routes/wishlist.js";
 
 
 
@@ -63,6 +65,7 @@ app.use("/flight", flightRoute);
 app.use("/map", mapRoute);
 app.use("/seat", seat);
 app.use("/booking", bookingRoute);
+app.use("/wishlist", wishlistRoute);
 
 //middleware for error handling
 app.use((err,req,res, next)=>{

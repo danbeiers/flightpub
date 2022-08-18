@@ -16,6 +16,8 @@ import RegisterPage from "./frontEnd/pages/Register";
 import AccountPage from "./frontEnd/pages/Account";
 import ProfilePage from "./frontEnd/pages/Profile";
 
+import WishListPage from "./frontEnd/pages/WishList";
+
 import {
     GlobalStyles,
     darkTheme,
@@ -75,6 +77,7 @@ function App() {
                         <Route path='/register' element={<RegisterPage />} />
                         <Route path='/account' element={<AccountPage />} />
                         <Route path='/profile' element={<ProfilePage />} />
+                        <Route path='/wishlist' element={<WishListPage />} />
                     </Routes>
                 </Layout>
             </FlightPubContext.Provider>

@@ -60,7 +60,6 @@ function BookingsPage() {
         setSelectedFlight(bookingID);
     }
 
-
     function GetBookings() {
         return (
             <Card>

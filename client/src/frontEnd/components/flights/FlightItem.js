@@ -1,8 +1,32 @@
 import classes from './FlightItem.module.css';
+import { useNavigate } from "react-router-dom";
+
 function FlightItem(props) {
 
-    function toggleFavouriteStatusHandler() {
+    const navigate = useNavigate();
+   /* const jsonData = {
+        departure: props.departure,
+        destination:props.destination
+    }*/
 
+    const toggleFavouriteStatusHandler = async()=>{
+    {
+         console.log(props.departure);
+        console.log(props.destination);
+        const res = await fetch('http://localhost:8800/wishlist',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                // mode: 'cors',
+                body: JSON.stringify({
+                    departure: props.departure,
+                    destination:props.destination
+                }),
+            })
+        }
+        navigate("/wishlist");
     }
 
     function bookFlightHandler() {
@@ -33,7 +57,6 @@ function FlightItem(props) {
     }
 
     return (
-
                 <tr onClick={selectFlight}  className={props.selectedId == props.flightId ? classes.selectedFlight : classes.row}>
                     <td> {props.flightId}</td>
                     <td> {props.departure}</td>

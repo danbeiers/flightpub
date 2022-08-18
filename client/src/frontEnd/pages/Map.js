@@ -11,6 +11,7 @@ function MapPage() {
     const [content, setContent] = useState("");
     const navigate = useNavigate();
     const{data, loading, error} = useFetch("/map");
+    const {dataDropdown, loadings, errors}= useFetch("/map?tag=")
     const [selected, setSelected] = useState("Select a recommendation category");
      console.log(data);
     return (
@@ -18,9 +19,7 @@ function MapPage() {
 
             <Dropdown selected={selected} setSelected={setSelected} />
         <br/>
-
             <button onClick={() => navigate("/")}>Add to search</button>
-
             <MapChart setTooltipContent={setContent} data = {data}/>
             <ReactTooltip>{content}</ReactTooltip>
         </div>

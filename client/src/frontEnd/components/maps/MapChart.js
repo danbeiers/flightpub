@@ -22,48 +22,13 @@ const markers = [
     {
 
         markerOffset: -20,
-        name: "Sydney",
-        coordinates: [151.209900, -33.865143],
-        visit: "Opera House",
-        happening:"Vivid 2022",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Melbourne",
-        coordinates: [144.946457, -37.840935],
-        visit: "National Gallery of Victoria",
-        happening:"Winter Night Market",
-        tag:"Winter",
-    },
-    {
-
-        markerOffset: -20,
         name: "Adelaide",
         coordinates: [138.593903, -34.906101],
         visit: "Adelaide Oval",
         happening:"Adelaide Cabaret Festival 2022",
         tag:"Sports",
     },
-    {
 
-        markerOffset: -20,
-        name: "Canberra",
-        coordinates: [149.128998, -35.282001],
-        visit: "Dinosaur Festival 2022",
-        happening:"Parliament House",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Wellington",
-        coordinates: [174.777969,-41.276825],
-        visit: "Wellington Cable Car",
-        happening:"Lime Cordiale @The Hunter Lounge",
-        tag:"Music and Arts",
-    },
     {
 
         markerOffset: -20,
@@ -82,33 +47,7 @@ const markers = [
         happening:"Hampton Court Palace",
         tag:"Winter",
     },
-    {
 
-        markerOffset: -20,
-        name: "New York",
-        coordinates: [-73.935242, 40.730610],
-        visit: "The Metropolitan Museum of Art",
-        happening:"Machine Gun Kelly - Madison Square Garden",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Los Angeles",
-        coordinates: [-118.243683, 34.052235],
-        visit: "Disneyland",
-        happening:"Viva! L.A. Music Festival",
-        tag:"Summer",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Moscow",
-        coordinates: [37.618423, 55.751244],
-        visit: "St. Basil Cathedral",
-        happening:"Park Live Festival 2022",
-        tag:"Music and Arts",
-    },
     {
 
         markerOffset: -20,
@@ -118,78 +57,7 @@ const markers = [
         happening:"Hlakanyana",
         tag:"Summer",
     },
-    {
 
-        markerOffset: -20,
-        name: "Paris",
-        coordinates: [2.349014, 48.864716],
-        visit: "Eiffel Tower",
-        happening:"Festival Solidays",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Rome",
-        coordinates: [12.496366, 41.902782],
-        visit: "Colosseum",
-        happening:"ALT-J",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Amsterdam",
-        coordinates: [4.897070, 52.377956],
-        visit: "Van Gogh Museum",
-        happening:"Armin Van Buuren",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Seattle",
-        coordinates: [-122.335167, 47.608013],
-        visit: "The museum of Flight",
-        happening:"Orville Peck",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Mumbai",
-        coordinates: [72.877426, 19.076090],
-        visit: "Gateway of India",
-        happening:"All Star Standup Comedy ",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Dhaka",
-        coordinates: [90.399452, 23.777176],
-        visit: "Ahsan Manzil Museum",
-        happening:"International Conference on Software Engineering",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Beijing",
-        coordinates: [116.383331, 39.916668],
-        visit: "Great Wall of China",
-        happening:"2022 Dragon Boat Festival",
-        tag:"Music and Arts",
-    },
-    {
-
-        markerOffset: -20,
-        name: "Tokyo",
-        coordinates: [139.6503, 35.6762],
-        visit: "Shinjuku Gyoen National Garden",
-        happening:"Katsushika Iris Festival 2022",
-        tag:"Music and Arts",
-    },
 ];
 
 const geoUrl =

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MapChart from "./MapChart";
-// import useFetch from "../../hooks/useFetch";
+
 //dropdown list for selecting category
 function Dropdown({ selected, setSelected }) {
     ///const [content, setContent] = useState("");
@@ -20,7 +20,8 @@ function Dropdown({ selected, setSelected }) {
                             onClick={(e) => {
                                 setSelected(option);
                                 setIsActive(false);
-                                //MapChart.map?data={option};
+
+                               // MapChart.map?data={option};
 
                                 // <MapChart setTooltipContent={setContent}
                                 //   data = {option}/>

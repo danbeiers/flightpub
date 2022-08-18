@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="route for filter by query, button for add to booking">
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="One click booking by Dan T">
+      <change afterPath="$PROJECT_DIR$/backend/controllers/wishlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/Wishlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/wishlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/wishlist/Wishlist.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/WishList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/booking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Booking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/bookings/Bookings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookings/Bookings.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/account/RegForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/RegForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/store/FlightPubContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/store/FlightPubContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -49,6 +54,8 @@
     <setting file="file://$PROJECT_DIR$/backend/routes/airline.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backend/routes/booking.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backend/routes/map.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" root0="FORCE_HIGHLIGHTING" />
@@ -93,11 +100,11 @@
       <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\Akshata\SENG3150\flightpub\client\src\frontEnd\pages" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\backend" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\client" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
-      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\frontEnd" />
     </key>
   </component>
   <component name="RunManager">
@@ -201,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660796963583</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="One click booking by Dan T">
+      <created>1660800345034</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1660800345034</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +279,9 @@
     <MESSAGE value="Usefetch fetching map data and displaying on frontend!!!" />
     <MESSAGE value="Filter button working displaying dropdown of categories" />
     <MESSAGE value="route for filter by query, button for add to booking" />
-    <option name="LAST_COMMIT_MESSAGE" value="route for filter by query, button for add to booking" />
+    <MESSAGE value="One click booking by Dan B" />
+    <MESSAGE value="One click booking by Dan T" />
+    <option name="LAST_COMMIT_MESSAGE" value="One click booking by Dan T" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -273,6 +289,53 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/backend/controllers/auth.js</url>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js</url>
+          <line>68</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js</url>
+          <line>69</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js</url>
+          <line>71</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js</url>
+          <line>15</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js</url>
+          <line>59</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
