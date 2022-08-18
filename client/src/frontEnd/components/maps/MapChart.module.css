@@ -1,3 +1,14 @@
+.button{
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-right: 1rem;
+    float: top;
+    position: static;
+    align-items: center;
+}
+
 .map {
     font-family: sans-serif;
     text-align: center;

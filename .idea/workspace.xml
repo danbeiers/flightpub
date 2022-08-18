@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Filter button working displaying dropdown of categories">
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" afterDir="false" />
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Usefetch fetching map data and displaying on frontend!!!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +22,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="FPUB-11-connect-front-end-to-database-via-node-js" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,8 +44,14 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/controllers/map.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/backend/routes/airline.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/backend/routes/map.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/pages/FlightPubHome.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/hooks/useFetch.js" root0="FORCE_HIGHLIGHTING" />
@@ -56,24 +68,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "Project.color": "273b36",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.editor.code.editing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;Project.color&quot;: &quot;273b36&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor.code.editing&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />

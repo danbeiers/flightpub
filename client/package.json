@@ -1,6 +1,7 @@
 {
   "name": "flightpub",
   "proxy": "http://localhost:8800/",
+  "proxy": "http://localhost:8800/backend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

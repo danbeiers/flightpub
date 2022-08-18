@@ -37,11 +37,13 @@ export const deleteMap = async (req, res)=>{
     }
 }
 
-export const getMap = async (req, res)=>{
-    try{
 
-        // console.log(req);
-        const map= await Map.findById(req.params.id);
+//get for getting specific cities based on tag
+//http://localhost:8800/map?tag=Music and Arts
+export const getMap = async (req, res, next) => {
+    //   const {  ...others } = req.query;
+    try {
+        const map = await Map.find(req.query);
         res.status(200).json(map);
     }catch(err){
         res.status(500).json(err);
@@ -62,4 +64,3 @@ export const getallMap = async (req, res, next)=>{
     }
 }
 
-// console.log("MEssage from get all maps", req);
