@@ -2,7 +2,7 @@ import { useState } from "react";
 import MapChart from "./MapChart";
 
 //dropdown list for selecting category
-function Dropdown({ selected, setSelected }) {
+function Dropdown({ selected, onSelected }) {
     ///const [content, setContent] = useState("");
     const [isActive, setIsActive] = useState(false);
     const options = ["Summer", "Winter", "Music and Arts", "Sports"];
@@ -18,7 +18,7 @@ function Dropdown({ selected, setSelected }) {
                     {options.map((option) => (
                         <div
                             onClick={(e) => {
-                                setSelected(option);
+                                onSelected(option);
                                 setIsActive(false);
 
                                // MapChart.map?data={option};

@@ -1,7 +1,8 @@
 import {useState, useEffect} from "react";
 import ApiClient from "../api/apiClient";
 import axios from "axios";
-const useFetch = (url)=> {
+
+const useFetch = (url, tag)=> {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState([false]);
     const [error, setError] = useState([false]);
@@ -10,8 +11,7 @@ const useFetch = (url)=> {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const res = await ApiClient.get(url);
-
+                const res = await ApiClient.get(url, {params:{tag:tag}} );
                     setData(res.data);
             } catch (err) {
                 setError(err);
@@ -19,7 +19,7 @@ const useFetch = (url)=> {
             setLoading(false);
         };
         fetchData();
-    }, [url]);
+    }, [url, {params:{tag:tag}}]);
 
 
     const reFetch = async ()=> {
