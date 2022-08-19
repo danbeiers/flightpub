@@ -8,6 +8,7 @@ import FlightPubContext from "../../store/FlightPubContext";
 import DropdownList from "react-widgets/DropdownList";
 import {Button} from "@mui/material";
 import MultiFlightItem from "./MultiFlightItem";
+import useFetch from "../../../hooks/useFetch";
 
 
 function FlightList(props) {
@@ -26,6 +27,8 @@ function FlightList(props) {
     const [morningFilter, setMorningFilter] = useState(false);
     const [afternoonFilter, setAfternoonFilter] = useState(false);
     const [eveningFilter, setEveningFilter] = useState(false);
+
+    //const {data, loading, error} = useFetch("/flight/");
 
     //filter functions
     let toggleMorningFilter = () =>
@@ -98,6 +101,27 @@ function FlightList(props) {
         return constructor;
     }
 
+    const getFlightQuery = async() =>
+    {
+        let flightQuery = [];
+
+        try
+        {
+            const dep = 'MEL';
+            const dest = 'ADL';
+            flightQuery = await fetch(`/flight/getFlightByDepDest?dep=${encodeURIComponent(dep)}&dest=${encodeURIComponent(dest)}`,
+        { method: 'GET',})
+
+            console.log(flightQuery);
+        }
+        catch (error)
+        {
+            console.log(error);
+        }
+    }
+
+    //getFlightQuery();
+
     function multiSearch()
     {
         //todo
@@ -123,6 +147,8 @@ function FlightList(props) {
 
             if(el.departure.toLowerCase() == props.searchQuery.departureLocation.toLowerCase())
             {
+                console.log("succ");
+
                 var validTime = false;
                 if(!props.searchQuery.flexibleDeparture
                     && el.departureDate.getFullYear() == props.searchQuery.soonestDepartureDate.getFullYear()

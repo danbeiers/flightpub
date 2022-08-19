@@ -23,22 +23,60 @@ function FlightSearch(props) {
     const [locationList, setLocationList] = useState([]);
 
 
+    const locationLookupTable = new Map();
+    locationLookupTable.set('ADL', 'Adelaide');
+    locationLookupTable.set('AMS', 'Amsterdam');
+    locationLookupTable.set('ATL', 'Atlanta');
+    locationLookupTable.set('BKK', 'Bankok');
+    locationLookupTable.set('BNE', 'Brisbane');
+    locationLookupTable.set('CBR', 'Canberra');
+    locationLookupTable.set('CDG', 'Paris - Charles De Gaulle');
+    locationLookupTable.set('CNS', 'Cairns');
+    locationLookupTable.set('DOH', 'Doha');
+    locationLookupTable.set('DRW', 'Darwin');
+    locationLookupTable.set('DXB', 'Dubai');
+    locationLookupTable.set('FCO', 'Rome-Fiumicino');
+    locationLookupTable.set('GIG', 'Rio De Janeiro');
+    locationLookupTable.set('HBA', 'Hobart');
+    locationLookupTable.set('HEL', 'Helsinki');
+    locationLookupTable.set('HKG', 'Hong Kong');
+    locationLookupTable.set('HNL', 'Honolulu');
+    locationLookupTable.set('JFK', 'New York - JFK');
+    locationLookupTable.set('JNB', 'Johannesburg');
+    locationLookupTable.set('KUL', 'Kuala Lumpur');
+    locationLookupTable.set('LAX', 'Los Angeles');
+    locationLookupTable.set('LGA', 'New York - Laguardia');
+    locationLookupTable.set('LGW', 'London-Gatwick');
+    locationLookupTable.set('LHR', 'London-Heathrow');
+    locationLookupTable.set('MAD', 'Madrid');
+    locationLookupTable.set('MEL', 'Melbourne');
+    locationLookupTable.set('MIA', 'Miami');
+    locationLookupTable.set('MUC', 'Munich');
+    locationLookupTable.set('NRT', 'Tokyo - Narita');
+    locationLookupTable.set('OOL', 'Gold Coast');
+    locationLookupTable.set('ORD', 'Chicago - OHare Intl.');
+    locationLookupTable.set('ORY', 'Paris - Orly');
+    locationLookupTable.set('PER', 'Perth');
+    locationLookupTable.set('SFO', 'San Francisco');
+    locationLookupTable.set('SIN', 'Singapore');
+    locationLookupTable.set('SYD', 'Sydney');
+    locationLookupTable.set('VIE', 'Vienna');
+    locationLookupTable.set('YYZ', 'Toronto');
+
+    const locations = [];
+    let i = 0;
+
+    locationLookupTable.forEach((value, key) => {
+        locations.push({id: i, text: value, priority: 0});
+        i++;
+    })
+
     let getSearchResults = () =>
     {
-        locationList.length = 0;
-
-        ListData.map((el) =>
-        {
-            locationList.push(el);
-        })
-
-        //sorts list so that items with a higher priority are
-        //suggested first in the suggestion comboboxes
-        locationList.sort((a, b) => a.priority <= b.priority ? 1 : -1);
 
         var loc = [];
 
-        locationList.map((el) => {
+        locations.map((el) => {
             loc.push(el.text);
         })
 
