@@ -19,7 +19,7 @@ function MapPage() {
     const handleSelection = (value) => {
         setSelected(value);}
 
-     console.log(data);
+
     return (
         <div className={classes.map}>
 

@@ -20,11 +20,6 @@ function Dropdown({ selected, onSelected }) {
                             onClick={(e) => {
                                 onSelected(option);
                                 setIsActive(false);
-
-                               // MapChart.map?data={option};
-
-                                // <MapChart setTooltipContent={setContent}
-                                //   data = {option}/>
                             }}
                             className="dropdown-item"
                         >

@@ -28,9 +28,7 @@ function WishListPage() {
                             // className = {booking.bookingID == selectedFlight ? classes.Selected : classes.Booking }
                             // onClick={() => rebookFlight(booking.bookingID)}
                         >
-                            <tr className={classes.row}>
-                                <td> <strong>Airline</strong> {wishlist.AirlineCode} </td>
-                            </tr>
+
                             <tr className={classes.row}>
                                 <td><strong>Departure</strong> {wishlist.Departure} </td>
                                 <td><strong>Destination</strong> {wishlist.Destination} </td>

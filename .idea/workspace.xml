@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="wishlist">
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="recommendation filter works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Map.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/flight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useFetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useFetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/WishList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/WishList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660815872307</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="recommendation filter works">
+      <created>1660820724478</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1660820724479</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +291,8 @@
     <MESSAGE value="One click booking by Dan B" />
     <MESSAGE value="One click booking by Dan T" />
     <MESSAGE value="wishlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="wishlist" />
+    <MESSAGE value="recommendation filter works" />
+    <option name="LAST_COMMIT_MESSAGE" value="recommendation filter works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -288,23 +300,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/backend/controllers/auth.js</url>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js</url>
-          <line>68</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js</url>
-          <line>69</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js</url>
-          <line>71</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

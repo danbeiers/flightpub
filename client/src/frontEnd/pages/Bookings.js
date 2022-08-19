@@ -51,7 +51,7 @@ function BookingsPage() {
     }
 
     function rebookFlight(booking) {
-        console.log("fires");
+        //console.log("fires");
         context.setDestination(booking.destination);
         context.setDeparture(booking.departure);
     }
