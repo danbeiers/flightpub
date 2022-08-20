@@ -1,26 +1,58 @@
 import {useContext} from 'react';
-import classes from './FlightItem.module.css';
+import classes from '../flights/FlightItem.module.css';
+import listClasses from "../flights/FlightList.module.css"
 import {useState} from "react";
 import FlightPubContext from "../../store/FlightPubContext";
 
 import Card from "../ui/Card";
+import PaymentInputs from "./PaymentInputs";
+import TextField from "@mui/material/TextField";
+//import RegForm from "../account/RegForm"
 
 function ConfirmBooking(props) {
 
     const context = useContext(FlightPubContext);
     const depFlights = [];
     const retFlights = [];
+    const returnFlightForm = [];
+    const userDetailsForm = [];
+    const paymentForm = [];
+    const [confirmBooking, setConfirmBooking] = useState(false);
+
+    if(confirmBooking)
+    {
+        paymentForm.push(<PaymentInputs/>);
+    }
+
+    if(!context.authenticated)
+    {
+        userDetailsForm.push(
+            <div>
+                <br/>
+                <h2>User Details</h2>
+                <form className={listClasses.form}>
+                    <TextField
+                        variant="outlined"
+                        label="FirstName"/>
+                    <TextField
+                        variant="outlined"
+                        label="LastName"/>
+                    <TextField
+                        variant="outlined"
+                        label="Email"/>
+                </form>
+            </div>
+        );
+    }
 
     function bookingHandler(e)
     {
-        console.log(e)
-        //context.setUserDetails(...context.userDetails.bookedFlights,{e})
+        setConfirmBooking(true);
         return;
     }
 
     function Flight(e)
     {
-        console.log(e.e);
         return(
             <tr className = {classes.row}>
                 <td> {e.e.flightId}</td>
@@ -43,6 +75,30 @@ function ConfirmBooking(props) {
           {
               retFlights.push(<Flight e={flight}/>)
           }})
+
+    if(retFlights.length > 0)
+    {
+        returnFlightForm.push(<div>
+            <h2>Return Flight</h2>
+            <div>
+
+                <table>
+                    <tr>
+                        <th>Flight</th>
+                        <th>Departure</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Price</th>
+                    </tr>
+                    <tbody>
+                    {retFlights}
+                    </tbody>
+                </table>
+            </div>
+        </div>);
+    }
 
     return (
         <Card>
@@ -68,27 +124,15 @@ function ConfirmBooking(props) {
                     </table>
             </div>
 
-            <h2>Return Flight</h2>
+            {returnFlightForm}
 
-            <div>
 
-                <table>
-                    <tr>
-                        <th>Flight</th>
-                        <th>Departure</th>
-                        <th>Destination</th>
-                        <th>Date</th>
-                        <th>Departure</th>
-                        <th>Arrival</th>
-                        <th>Price</th>
-                    </tr>
-                    <tbody>
-                        {retFlights}
-                    </tbody>
-                </table>
-            </div>
+            {userDetailsForm}
 
             <button onClick={bookingHandler}>Proceed to payment</button>
+
+            {paymentForm}
+
         </Card>
     );
 }

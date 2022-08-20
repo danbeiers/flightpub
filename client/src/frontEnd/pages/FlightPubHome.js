@@ -3,7 +3,7 @@ import {useState} from "react";
 
 import FlightList from '../components/flights/FlightList';
 import FlightSearch from "../components/flights/FlightSearch";
-import ConfirmBooking from "../components/flights/ConfirmBooking"
+import ConfirmBooking from "../components/bookingConfirmation/ConfirmBooking"
 import FlightPubContext from "../store/FlightPubContext";
 import useFetch from "../../hooks/useFetch";
 
