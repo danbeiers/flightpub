@@ -14,6 +14,7 @@ function MainNavigation() {
     const otherContext = useContext(UserContext);
     let loginContent;
     let welcomeContent;
+    let wishlistContent;
     let profileContent;
     let registerContent;
 
@@ -55,6 +56,7 @@ function MainNavigation() {
         loginContent = <li><Link to='/' onClick={Logout}>Logout</Link></li>;
         welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!</li>;
         //welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!<br/>{context.weatherData.name}</li>;
+        wishlistContent = <li> <Link to='/wishlist'>Wishlist</Link></li>
         profileContent = <li><Link to='profile'>Profile</Link></li>;
         registerContent = null;
     }else{
@@ -79,9 +81,10 @@ function MainNavigation() {
                     <li>
                         <Link to='/map'>Map</Link>
                     </li>
+                        {wishlistContent}
+                        {profileContent}
                         {loginContent}
                         {registerContent}
-                        {profileContent}
 
                 </ul>
             </nav>
