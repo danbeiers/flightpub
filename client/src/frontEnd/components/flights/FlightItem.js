@@ -38,7 +38,7 @@ function FlightItem(props) {
 
     return (
 
-                <tr className={props.selectedId == props.flightId ? classes.selectedFlight : classes.row}>
+                <tr className={props.selected ? classes.selectedFlight : classes.row}>
                     <td> {props.flightId}</td>
                     <td> {props.departure}</td>
                     <td> {props.destination}</td>

@@ -20,8 +20,10 @@ function FlightList(props) {
 
     const [flightSelected , setFlightSelected] = useState(false);
     const [selectedFlight, setSelectedFlight] = useState([]);
+    const [selectedFlightPack, setSelectedFlightPack] = useState(-1);
     const [returnFlightSelected, setReturnFlightSelected] = useState(false);
     const [selectedReturnFlight, setSelectedReturnFlight] = useState([]);
+    const [selectedReturnFlightPack, setSelectedReturnFlightPack] = useState(-1);
 
     //filter details
     const [morningFilter, setMorningFilter] = useState(false);
@@ -100,27 +102,6 @@ function FlightList(props) {
         }
         return constructor;
     }
-
-    const getFlightQuery = async() =>
-    {
-        let flightQuery = [];
-
-        try
-        {
-            const dep = 'MEL';
-            const dest = 'ADL';
-            flightQuery = await fetch(`/flight/getFlightByDepDest?dep=${encodeURIComponent(dep)}&dest=${encodeURIComponent(dest)}`,
-        { method: 'GET',})
-
-            console.log(flightQuery);
-        }
-        catch (error)
-        {
-            console.log(error);
-        }
-    }
-
-    //getFlightQuery();
 
     function multiSearch()
     {
@@ -437,15 +418,7 @@ function FlightList(props) {
                       <th>Sponsored</th>
                   </tr>
                   <tbody>
-                  {returnFlightList.map((flightDetails) => (
-                      <MultiFlightItem
-                          flightPackage={flightDetails}
-                          selectedFlights={selectedReturnFlight}
-                          return={true}
-                          selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
-                          selFlight={res => setSelectedReturnFlight(res)}
-                      />
-                  ))}
+                    {rFlights}
                   </tbody>
               </table>
           </div>
@@ -593,6 +566,36 @@ function FlightList(props) {
     sponsoredSort(flightList);
     sponsoredSort(returnFlightList);
 
+    var count = 0;
+
+    const dFlights = [];
+    const rFlights = [];
+
+    {flightList.map((flightDetails) => (
+        dFlights.push(<MultiFlightItem
+            flightPackage={flightDetails}
+            selectedFlights={selectedFlight}
+            return={false}
+            selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
+            selFlight={res => setSelectedFlight(res)}
+            selFlightPack={res => setSelectedFlightPack(res)}
+            selectedCount={selectedFlightPack}
+            count={count}
+        />), count++
+    ))}
+
+    {returnFlightList.map((flightDetails) => (
+        rFlights.push(<MultiFlightItem
+            flightPackage={flightDetails}
+            selectedFlights={selectedReturnFlight}
+            return={true}
+            selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
+            selFlight={res => setSelectedReturnFlight(res)}
+            selFlightPack={res => setSelectedReturnFlightPack(res)}
+            selectedCount={selectedReturnFlightPack}
+            count={count}
+        />), count++
+    ))}
 
     return (
 
@@ -623,15 +626,7 @@ function FlightList(props) {
                     <th>Sponsored</th>
                 </tr>
                 <tbody>
-                    {flightList.map((flightDetails) => (
-                        <MultiFlightItem
-                            flightPackage={flightDetails}
-                            selectedFlights={selectedFlight}
-                            return={false}
-                            selectFlight={res => res == true ? setReturnFlightSelected(true) : setFlightSelected(true)}
-                            selFlight={res => setSelectedFlight(res)}
-                        />
-                    ))}
+                    {dFlights}
                 </tbody>
             </table>
 

@@ -171,7 +171,7 @@ function FlightSearch(props) {
             flexibleReturn: enteredFlexibleReturn,
         };
         context.setSearched(true);
-        console.log(flightSearchData);
+        //console.log(flightSearchData);
 
         props.exportQuery(flightSearchData);
     }
@@ -192,14 +192,14 @@ function FlightSearch(props) {
     function UpdateDestination() {
         const e = context.destination;
         context.setDestination("");
-        console.log(context.destination);
+        //console.log(context.destination);
         return e
     }
 
     function UpdateDeparture() {
         const e = context.departure;
         context.setDeparture("");
-        console.log(context.departure);
+        //console.log(context.departure);
         return e
     }
 

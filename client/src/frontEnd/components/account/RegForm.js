@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import classes from "./RegForm.module.css";
 import passwordRegexp from "password-regexp"
-import isEmail from "validator/es/lib/isEmail";
 
 function RegForm() {
     const [values, setValues] = useState({

@@ -26,6 +26,14 @@ function MultiFlightItem(props) {
         ))
 
         props.selFlight(flightData);
+        props.selFlightPack(props.count);
+    }
+
+    var isSelected = false;
+
+    if(props.count == props.selectedCount)
+    {
+        isSelected = true;
     }
 
     for (let i = 0; i < props.flightPackage.length; i++)
@@ -43,6 +51,7 @@ function MultiFlightItem(props) {
             selectedId={props.selectedFlights.length > 0 ? props.selectedFlights[i].flightId : ""}
             return={props.return}
             sponsored={props.flightPackage[i].sponsored}
+            selected={isSelected}
             />);
     }
 
