@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from './../../hooks/useFetch';
-import { useCart } from 'react-use-cart';
+//import { useCart } from 'react-use-cart';
 
 import FlightPubContext from '../store/FlightPubContext';
 import BookingsPage from './../pages/Bookings';
