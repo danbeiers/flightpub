@@ -8,13 +8,27 @@ import FlightItem from '../components/flights/FlightItem';
 import Card from "../components/ui/Card";
 import classes from '../components/wishlist/Wishlist.module.css';
 
-const WISHLIST = [{
-    AirlineCode: 'QANTAS',
-    Departure:'Darwin',
-    Destination:'Melbourne',
-},]
 function WishListPage() {
     const{data, loading, error} = useFetch("/wishlist");
+
+    const wishlistEntries = [];
+    data.map((wishlist) => {
+        //insert user id check here
+        if(true)
+        {
+            wishlistEntries.push(<div
+                // className = {booking.bookingID == selectedFlight ? classes.Selected : classes.Booking }
+                // onClick={() => rebookFlight(booking.bookingID)}
+            >
+
+                <tr className={classes.row}>
+                    <td><strong>Departure</strong> {wishlist.departure} </td>
+                    <td><strong>Destination</strong> {wishlist.destination} </td>
+                </tr>
+            </div>);
+        }
+    })
+
     return(
         <div>
             <h1 className="text text-center">Wishlist</h1>
@@ -22,19 +36,7 @@ function WishListPage() {
             <div className="col-12">
                 <h5>Total Items: </h5>
                 <Card>
-                    {data.map( (wishlist) => (
-
-                        <div
-                            // className = {booking.bookingID == selectedFlight ? classes.Selected : classes.Booking }
-                            // onClick={() => rebookFlight(booking.bookingID)}
-                        >
-
-                            <tr className={classes.row}>
-                                <td><strong>Departure</strong> {wishlist.Departure} </td>
-                                <td><strong>Destination</strong> {wishlist.Destination} </td>
-                            </tr>
-                        </div>
-                    ))}
+                    {wishlistEntries}
                 </Card>
             </div>
         </div>
