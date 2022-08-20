@@ -4,10 +4,8 @@ import { useNavigate } from "react-router-dom";
 function FlightItem(props) {
 
     const navigate = useNavigate();
-   /* const jsonData = {
-        departure: props.departure,
-        destination:props.destination
-    }*/
+
+    const sponsored = [];
 
     const toggleFavouriteStatusHandler = async()=>{
     {
@@ -33,31 +31,14 @@ function FlightItem(props) {
 
     }
 
-    function selectFlight()
+    if(props.sponsored)
     {
-        props.selectFlight(props.return);
-
-        const flightData = [];
-
-        flightData.push(
-            {
-                flightId: props.flightId,
-                departure: props.departure,
-                destination: props.destination,
-                departureDate: props.departureDate,
-                departureTime: props.departureTime,
-                arrivalTime: props.arrivalTime,
-                price: props.price,
-                isReturn: props.return,
-
-            }
-        );
-
-        props.selFlight(flightData);
+        sponsored.push(<td>Sponsored</td>);
     }
 
     return (
-                <tr onClick={selectFlight}  className={props.selectedId == props.flightId ? classes.selectedFlight : classes.row}>
+
+                <tr className={props.selectedId == props.flightId ? classes.selectedFlight : classes.row}>
                     <td> {props.flightId}</td>
                     <td> {props.departure}</td>
                     <td> {props.destination}</td>
@@ -74,6 +55,7 @@ function FlightItem(props) {
                             Select Flight
                         </button>
                     </td>
+                    {sponsored}
                 </tr>
     );
 }
