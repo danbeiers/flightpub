@@ -15,7 +15,33 @@ function BookingsPage() {
     const [content, setContent] = useState("");
     const{data, loading, error} = useFetch("/booking");
     const context = useContext(FlightPubContext);
+    const date = new Date();
+    console.log(date);
 
+    const RECOMMENDEDFLIGHTS = [
+        {
+            departure: 'Sydney',
+            destination: 'Adelaide'
+        },
+        {
+            departure: 'Sydney',
+            destination: 'Brisbane'
+        },
+        {
+            departure: 'Newcastle',
+            destination: 'Sydney'
+        },
+        {
+            departure: 'Newcastle',
+            destination: 'Brisbane'
+        },
+        {
+            departure: 'Adelaide',
+            destination: 'Brisbane'
+        },
+    ]
+
+    const recommendFlight = date.getHours()%RECOMMENDEDFLIGHTS.length; // recommendation changes every hour
     const navigate = useNavigate();
 
     function CheckBookings()
@@ -51,7 +77,6 @@ function BookingsPage() {
     }
 
     function rebookFlight(booking) {
-        console.log("fires");
         context.setDestination(booking.destination);
         context.setDeparture(booking.departure);
     }
@@ -60,6 +85,28 @@ function BookingsPage() {
         setSelectedFlight(bookingID);
     }
 
+    function searchRecommended(){
+        context.setDestination(RECOMMENDEDFLIGHTS[recommendFlight].destination);
+        context.setDeparture(RECOMMENDEDFLIGHTS[recommendFlight].departure);
+    }
+
+    function GetRecommendation()
+    {
+        return (
+            <Card>
+                <div className = {classes.recommended}>
+                        <Link className={classes.oneClickSelected} to="/" onClick={() => { searchRecommended()}}> search flight </Link>
+                    <tr>
+                        <td className = {classes.recommendedText}> <strong> Recommended flight </strong></td>
+                    </tr>
+                    <tr>
+                        <td className = {classes.recommendedText}><strong>From</strong> {RECOMMENDEDFLIGHTS[recommendFlight].departure} </td>
+                        <td className = {classes.recommendedText}><strong>To</strong> {RECOMMENDEDFLIGHTS[recommendFlight].destination} </td>
+                    </tr>
+                </div>
+            </Card>
+        )
+    }
 
     function GetBookings() {
         return (
@@ -94,6 +141,7 @@ function BookingsPage() {
 
     return (
         <section>
+            <GetRecommendation/>
             <h1> My Bookings </h1>
             <CheckBookings/>
         </section>

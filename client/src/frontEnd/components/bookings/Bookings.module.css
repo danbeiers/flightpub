@@ -40,6 +40,14 @@ td {
     padding-bottom: 10px;
 }
 
+.recommended {
+    background-color: #1ca909;
+}
+
+.recommendedText {
+    color: #EEEEEE;
+}
+
 .rebook {
     font: inherit;
     cursor: pointer;
