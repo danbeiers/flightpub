@@ -20,6 +20,8 @@ function MultiFlightItem(props) {
                     departureTime: flight.departureTime,
                     arrivalTime: flight.arrivalTime,
                     price: flight.price,
+                    FlightNumber: flight.FlightNumber,
+                    DepartureTime: flight.DepartureTime,
                     isReturn: props.return,
                 }
             )

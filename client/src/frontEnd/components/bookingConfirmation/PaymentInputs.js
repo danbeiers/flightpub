@@ -41,6 +41,8 @@ function PaymentInputs(props) {
                         departureDate: props.flights[i].departureDate.getDate() + "/" + (props.flights[i].departureDate.getMonth() + 1)+ "/" + props.flights[i].departureDate.getFullYear(),
                         departureTime: props.flights[i].DepartureTime,
                         destination: props.flights[i].destination,
+                        returnDate: " ",
+                        returnTime: " ",
                         cost: "$200",
 
 

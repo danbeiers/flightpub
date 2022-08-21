@@ -42,16 +42,16 @@ const BookingSchema = new mongoose.Schema({
     },
     returnDate:{
         type: String,
-        required: false,
+        required: true,
     },
     returnTime:{
         type: String,
-        required: false,
+        required: true,
     },
     //
     cost:{
         type: String,
-        required: false,
+        required: true,
     },
 });
 
