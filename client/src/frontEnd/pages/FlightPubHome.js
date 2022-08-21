@@ -66,6 +66,15 @@ import useFetch from "../../hooks/useFetch";
         data[i].departure = locationLookupTable.get(data[i].DepartureCode);
         data[i].destination = locationLookupTable.get(data[i].DestinationCode);
         data[i].departureDate = new Date(data[i].DepartureTime.replaceAt(10, 'T'));
+
+        //temp code for sponsored
+        var temp = Math.floor(Math.random() * 20);
+
+        if(temp <= 5)
+        {
+            data[i].sponsored = true;
+        }
+        else {data[i].sponsored = false;}
     }
 
       //
