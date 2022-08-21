@@ -10,13 +10,14 @@ import FlightPubContext from "../store/FlightPubContext";
 import {Link} from "react-router-dom";
 
 function BookingsPage() {
-
-    const[selectedFlight, setSelectedFlight] = useState(-1);
-    const [content, setContent] = useState("");
-    const{data, loading, error} = useFetch("/booking");
     const context = useContext(FlightPubContext);
+
+    const[selectedFutureFlight, setSelectedFutureFlight] = useState(-1);
+    const[selectedPastFlight, setSelectedPastFlight] = useState(-1);
+    const [content, setContent] = useState("");
+    const{data, loading, error} = useFetch("/booking/");
+    console.log(context.userDetails.email);
     const date = new Date();
-    console.log(date);
 
     const RECOMMENDEDFLIGHTS = [
         {
@@ -51,7 +52,6 @@ function BookingsPage() {
         }
         else
         {
-            console.log("yes");
             return NoBookings();
         }
     }
@@ -81,8 +81,21 @@ function BookingsPage() {
         context.setDeparture(booking.departure);
     }
 
-    function selectFlight(bookingID){
-        setSelectedFlight(bookingID);
+    function cancelFlight(booking)
+    {
+
+    }
+
+    function selectFlight(booking){
+        const _date = new Date(booking.returnDate);
+        if (date > _date){
+            setSelectedFutureFlight(booking.bookingID);
+            setSelectedPastFlight(null);
+        }
+        else {
+            setSelectedFutureFlight(null);
+            setSelectedPastFlight(booking.bookingID);
+        }
     }
 
     function searchRecommended(){
@@ -97,7 +110,7 @@ function BookingsPage() {
                 <div className = {classes.recommended}>
                         <Link className={classes.oneClickSelected} to="/" onClick={() => { searchRecommended()}}> search flight </Link>
                     <tr>
-                        <td className = {classes.recommendedText}> <strong> Recommended flight </strong></td>
+                        <td className = {classes.recommendedText}> <strong> Recommended trip </strong></td>
                     </tr>
                     <tr>
                         <td className = {classes.recommendedText}><strong>From</strong> {RECOMMENDEDFLIGHTS[recommendFlight].departure} </td>
@@ -114,8 +127,10 @@ function BookingsPage() {
                 {data.map( (booking) => ( // change to data.map
                     // move all this logic to a components/bookings
                     // same order as the schema, copy mapchart
-                    <div className = {booking.bookingID == selectedFlight ? classes.Selected : classes.Booking } onClick={() => selectFlight(booking.bookingID)} >
-                        <Link className= {booking.bookingID == selectedFlight ? classes.oneClickSelected : classes.oneClick} to="/" onClick={() => { rebookFlight(booking) }}> rebook </Link>
+                    <div className = {booking.bookingID == selectedFutureFlight ? classes.SelectedFuture : (booking.bookingID == selectedPastFlight ? classes.SelectedPast : classes.Booking) } onClick={() => selectFlight(booking)} >
+                        <Link className= {booking.bookingID == selectedFutureFlight ? classes.oneClickSelected : classes.oneClick} to="/" onClick={() => { rebookFlight(booking) }}> rebook trip </Link>
+                        <button className= {booking.bookingID == selectedPastFlight ? classes.oneClickSelected : classes.oneClick} onClick={() => { cancelFlight(booking) }}> cancel trip </button>
+
                         <tr>
                             <td>  <strong>Booking</strong> {booking.bookingID} {<FormatDate target={booking.bookingDate} />}</td>
                         </tr>

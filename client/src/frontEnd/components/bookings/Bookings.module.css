@@ -11,7 +11,13 @@ td {
     padding-top: 5px;
     display: inline-block;
 }
-.Selected {
+.SelectedFuture {
+    background-color: #3590db;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.SelectedPast {
     background-color: #3590db;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -27,6 +33,7 @@ td {
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    border: 0px;
 
     font: bold 11px Arial;
     text-decoration: none;
