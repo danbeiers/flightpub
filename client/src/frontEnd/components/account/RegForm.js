@@ -21,7 +21,6 @@ function RegForm() {
     })
 
     const handleChange = (fieldName) => (event) => {
-        const currValue = event.target.value;
 
         // switch(fieldName) {
         //     case 'email':

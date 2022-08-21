@@ -14,7 +14,6 @@ function MapPage() {
     const navigate = useNavigate();
     const [selected, setSelected] = useState("Select a recommendation category");
     const{data, loading, error} = useFetch("/map", selected);
-    // const {dataDropdown, loadings, errors}= useFetch("/map", selected)
 
     const handleSelection = (value) => {
         setSelected(value);}

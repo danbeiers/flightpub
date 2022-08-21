@@ -7,107 +7,11 @@ import ConfirmBooking from "../components/bookingConfirmation/ConfirmBooking"
 import FlightPubContext from "../store/FlightPubContext";
 import useFetch from "../../hooks/useFetch";
 
-
-const DUMMY_DATA = [
-    {
-        flightId: 'AA2431',
-        departureDate: new Date('May 18, 2022 09:30:00'),
-        departureTime: '9:30AM',
-        arrivalTime: '10:45PM',
-        destination: 'SYDNEY',
-        departure: 'NEWCASTLE',
-        price: 500,
-        sponsored: false,
-    },
-    {
-        flightId: 'AA2430',
-        departureDate: new Date('May 20, 2022 09:30:00'),
-        departureTime: '9:30AM',
-        arrivalTime: '10:45PM',
-        destination: 'SYDNEY',
-        departure: 'NEWCASTLE',
-        price: 500,
-        sponsored: true,
-    },
-    {
-        flightId: 'CC7296',
-        departureDate: new Date('May 31, 2022 21:00:00'),
-        departureTime: '9:00PM',
-        arrivalTime: '03:45AM',
-        destination: 'NEWCASTLE',
-        departure: 'SYDNEY',
-        price: 450,
-    },
-    {
-        flightId: 'CC7297',
-        departureDate: new Date('May 20, 2022 21:00:00'),
-        departureTime: '9:00PM',
-        arrivalTime: '03:45AM',
-        destination: 'NEWCASTLE',
-        departure: 'SYDNEY',
-        price: 450,
-        sponsored: false,
-    },
-    {
-        flightId: 'CC7298',
-        departureDate: new Date('May 20, 2022 22:00:00'),
-        departureTime: '10:00PM',
-        arrivalTime: '03:45AM',
-        destination: 'NEWCASTLE',
-        departure: 'SYDNEY',
-        price: 550,
-        sponsored: true,
-    },
-    {
-        flightId: 'CC7209',
-        departureDate: new Date('May 20, 2022 08:00:00'),
-        departureTime: '08:00AM',
-        arrivalTime: '9:45AM',
-        destination: 'BRISBANE',
-        departure: 'SYDNEY',
-        price: 725,
-        sponsored: false,
-    },
-    {
-        flightId: 'CC7210',
-        departureDate: new Date('May 20, 2022 10:00:00'),
-        departureTime: '10:00AM',
-        arrivalTime: '9:45AM',
-        destination: 'BRISBANE',
-        departure: 'SYDNEY',
-        price: 725,
-        sponsored: true,
-    },
-    {
-        flightId: 'CC7234',
-        departureDate: new Date('May 31, 2022 12:00:00'),
-        departureTime: '12:00PM',
-        arrivalTime: '01:45PM',
-        destination: 'SYDNEY',
-        departure: 'BRISBANE',
-        price: 725,
-        sponsored: false,
-    },
-
-];
-
-const flightSearchData = {
-    departureLocation: "Sydney",
-    soonestDepartureDate: new Date(),
-    latestDepartureDate: new Date(),
-    soonestReturnDate: new Date(),
-    latestReturnDate: new Date(),
-    destinationLocation: "Brisbane",
-    numOfPass: 2,
-    oneWayTrip: false,
-    flexibleDeparture: false,
-    flexibleReturn: false,
-};
-
   function FlightPubHomePage() {
     const context = useContext(FlightPubContext);
     //This is the axios call to bring all the flight data into this page
     const {data, loading, error} = useFetch("/flight/");
+
     const [query, setQuery] = useState({});
     const [selectedFlights, setSelectedFlights] = useState([{}]);
 
@@ -167,8 +71,6 @@ const flightSearchData = {
         function clearForm() {
         context.setSearched(false);
         context.setBookingsSelected(false);
-        // const resp = await flightpubapi.getapi();
-        // console.log(resp);
     }
 
     if (!context.searched) {
