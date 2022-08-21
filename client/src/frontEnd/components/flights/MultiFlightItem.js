@@ -57,9 +57,9 @@ function MultiFlightItem(props) {
 
 
     return (
-        <div onClick={selectFlight}>
+
             {flights}
-        </div>
+
     );
 }
 

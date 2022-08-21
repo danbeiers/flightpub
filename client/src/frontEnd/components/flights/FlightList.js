@@ -417,9 +417,11 @@ function FlightList(props) {
                       <th>Select</th>
                       <th>Sponsored</th>
                   </tr>
-                  <tbody>
+
+
                     {rFlights}
-                  </tbody>
+
+
               </table>
           </div>
         );

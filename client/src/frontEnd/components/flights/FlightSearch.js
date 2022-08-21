@@ -128,10 +128,10 @@ function FlightSearch(props) {
     }
     const context = useContext(FlightPubContext);
 
-    const [soonestStartDate, setSoonestStartDate] = useState(new Date());
-    const [latestStartDate, setLatestStartDate] = useState(new Date());
-    const [soonestEndDate, setSoonestEndDate] = useState(new Date());
-    const [latestEndDate, setLatestEndDate] = useState(new Date());
+    const [soonestStartDate, setSoonestStartDate] = useState(new Date('09-23-2014'));
+    const [latestStartDate, setLatestStartDate] = useState(new Date('09-23-2014'));
+    const [soonestEndDate, setSoonestEndDate] = useState(new Date('09-23-2014'));
+    const [latestEndDate, setLatestEndDate] = useState(new Date('09-23-2014'));
 
 
     const [depLocation, setDepLocation] = useState("");
@@ -211,6 +211,8 @@ function FlightSearch(props) {
                     <DatePicker
                         id='soonestDeparture'
                         dateFormat="dd/MM/yyyy"
+                        minDate={new Date('09-23-2014')}
+                        maxDate={new Date("12-31-2015")}
                         selected={soonestStartDate}
                         onChange={(date) => setSoonestStartDate(date)}
                     />
@@ -219,6 +221,8 @@ function FlightSearch(props) {
                     <DatePicker
                         id='latestDeparture'
                         dateFormat="dd/MM/yyyy"
+                        minDate={new Date('09-23-2014')}
+                        maxDate={new Date("12-31-2015")}
                         selected={latestStartDate}
                         onChange={(date) => setLatestStartDate(date)}
                     />
@@ -232,6 +236,8 @@ function FlightSearch(props) {
                 <DatePicker
                     id = 'departureDate'
                     dateFormat="dd/MM/yyyy"
+                    minDate={new Date('09-23-2014')}
+                    maxDate={new Date("12-31-2015")}
                     selected={soonestStartDate}
                     onChange={(date) => setSoonestStartDate(date)}
                 />
@@ -248,6 +254,8 @@ function FlightSearch(props) {
                     <DatePicker
                         id = 'soonestArrival'
                         dateFormat="dd/MM/yyyy"
+                        minDate={new Date('09-23-2014')}
+                        maxDate={new Date("12-31-2015")}
                         selected={soonestEndDate}
                         onChange={(date) => setSoonestEndDate(date)}
                     />
@@ -256,6 +264,8 @@ function FlightSearch(props) {
                     <DatePicker
                         id = 'latestArrival'
                         dateFormat="dd/MM/yyyy"
+                        minDate={new Date('09-23-2014')}
+                        maxDate={new Date("12-31-2015")}
                         selected={latestEndDate}
                         onChange={(date) => setLatestEndDate(date)}
                     />
@@ -269,6 +279,8 @@ function FlightSearch(props) {
                 <DatePicker
                     id = 'arrivalDate'
                     dateFormat="dd/MM/yyyy"
+                    minDate={new Date('09-23-2014')}
+                    maxDate={new Date("12-31-2015")}
                     selected={soonestEndDate}
                     onChange={(date) => setSoonestEndDate(date)}
                 />

@@ -52,6 +52,7 @@ function AdSidebar(props){
 
     const handleAd = async () => {
         console.log('ad clicked')
+        navigator.navigate('/',{})
     }
     return (
      <div onClick={handleAd}>

@@ -33,7 +33,7 @@ export const getBooking = async (req, res)=>{
     try{
 
         // console.log(req);
-        const booking= await Booking.findById(req.params.id);
+        const booking= await Booking.findOne({email:req.params.id});
         res.status(200).json(booking);
     }catch(err){
         res.status(500).json(err);
