@@ -15,8 +15,9 @@ router.delete("/:id",  deleteMap );
 
 //Get: used to get a specific flight via unique id
 //can be retrieved via idk anything also such as recommendation tag etc just change it in the path
-router.get("/:id", getMap);
+//router.get("/:id", getMap);
 
+router.get("/", getMap);
 //Getall
 router.get("/", getallMap)
 
