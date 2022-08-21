@@ -88,7 +88,7 @@ app.use(
         cookie: {
             maxAge: MAX_AGE,
             sameSite: false,
-            secure:false, //turn 'true' in deployment
+            secure:true, //turn 'true' in deployment
         },
         resave: true,
         saveUninitialized: true
