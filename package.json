@@ -26,6 +26,7 @@
     "react-scripts": "^5.0.1",
     "react-simple-maps": "^3.0.0",
     "react-tooltip": "^4.2.21",
+    "simple-random-number-generator": "^1.2.1",
     "svgo": "^2.8.0",
     "validator": "^13.7.0"
   }
