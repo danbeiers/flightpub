@@ -12,6 +12,8 @@ import useFetch from "../../hooks/useFetch";
     //This is the axios call to bring all the flight data into this page
     const {data, loading, error} = useFetch("/flight/");
 
+    console.log(data);
+
     const [query, setQuery] = useState({});
     const [selectedFlights, setSelectedFlights] = useState([{}]);
 

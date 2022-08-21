@@ -3,8 +3,10 @@ import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import classes from './PaymentInputs.module.css';
 import validator from 'validator';
+import {useContext} from 'react';
+import FlightPubContext from "../../store/FlightPubContext";
 
-function PaymentInputs() {
+function PaymentInputs(props) {
 
     const [number, setNumber] = useState('')
     const [name, setName] = useState('')
@@ -13,9 +15,38 @@ function PaymentInputs() {
     const [focus, setFocus] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
 
-    function complete(){
+    const context = useContext(FlightPubContext);
+
+    const complete = async()=> {
 
         //validate and push to database here
+        var thisDate = new Date();
+
+        for(let i = 0; i < props.flights.length; i++)
+        {
+            const res = await fetch('http://localhost:8800/booking',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    // mode: 'cors',
+                    body: JSON.stringify({
+                        userID: (context.userDetails != null ? context.userDetails.email : props.userName),
+                        bookingID: Math.floor(Math.random() * 9999999).toString(),
+                        flight: props.flights[i].FlightNumber,
+                        seat: Math.floor(Math.random() * 75).toString(),
+                        departure: props.flights[i].departure,
+                        bookingDate: thisDate.getDate() + "/" + thisDate.getMonth() + "/" + thisDate.getFullYear(),
+                        departureDate: props.flights[i].departureDate.getDate() + "/" + (props.flights[i].departureDate.getMonth() + 1)+ "/" + props.flights[i].departureDate.getFullYear(),
+                        departureTime: props.flights[i].DepartureTime,
+                        destination: props.flights[i].destination,
+                        cost: "$200",
+
+
+                    }),
+                })
+        }
 
         return(
         alert("Payment Complete!"));
