@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="52940760-8dfb-4717-83cf-6f1acf82f7dc" name="Changes" comment="Fixing my booboo">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/airline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/booking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/flight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/wishlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/Airline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/Booking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/Flight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/Map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/Wishlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/airline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/booking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/flight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/seat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/wishlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/codestream.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/api/apiClient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/DarkMode/DarkMode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/DarkMode/ToggleButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/DarkMode/darkmodestyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/LoginForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/LoginForm.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/ProfileDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/RegForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/RegForm.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/ads/AdSidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/ads/AdSidebar.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookingConfirmation/Cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookingConfirmation/ConfirmBooking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookingConfirmation/PaymentInputs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookingConfirmation/PaymentInputs.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookingConfirmation/ShoppingCart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/bookings/Bookings.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightSearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightSearch.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/MultiFlightItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/layout/Layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/layout/Layout.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/layout/MainNavigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/layout/MainNavigation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/list/List.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/list/ListData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/list/ListData.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/ui/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/ui/Card.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/wishlist/Wishlist.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Account.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Bookings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/DarkModeIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/FlightPubHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/WishList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/store/FlightPubContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/hooks/useFetch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/apiClient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/Cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/ConfirmBooking.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/PaymentInputs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/PaymentInputs.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/ShoppingCart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/flights/MultiFlightItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/maps/Dropdown.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/components/wishlist/Wishlist.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontEnd/pages/WishList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useFetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flightpub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flightpub.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/DarkMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/DarkMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/ToggleButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/ToggleButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/darkmodestyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/darkmodestyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/account/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/LoginForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/account/LoginForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/ProfileDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/account/ProfileDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/RegForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/account/RegForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/RegForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/account/RegForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ads/AdSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/ads/AdSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ads/AdSidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/ads/AdSidebar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/bookings/Bookings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/bookings/Bookings.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightSearch.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightSearch.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/Layout.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/layout/Layout.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/MainNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/layout/MainNavigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/MainNavigation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/layout/MainNavigation.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/list/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/list/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/list/ListData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/list/ListData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/list/ListData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/list/ListData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/CustomMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/maps/CustomMarker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/MapChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/maps/MapChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/MapChart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/maps/MapChart.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ui/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/ui/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ui/Card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/components/ui/Card.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/Account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/Bookings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/DarkModeIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/DarkModeIcon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/FlightPubHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/FlightPubHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/Map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontEnd/store/FlightPubContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontEnd/store/FlightPubContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="85166d5a-d1ff-41cb-9b55-5d6834fcd3b3" />
+        <option name="url" value="https://github.com/danbeiers/flightpub.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28KcroWpIMlVkAVfMfLHzhw4u5P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ewart/OneDrive/Documents/GitHub/flightpub&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\IdeaProjects\flightpub\client" />
+      <recent name="C:\Users\danie\IdeaProjects\flightpub" />
+      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
+      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\frontEnd" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="" />
+      <created>1650968919968</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650968919968</updated>
+      <workItem from="1650968923788" duration="7068000" />
+      <workItem from="1651043505021" duration="807000" />
+      <workItem from="1651044461222" duration="7948000" />
+      <workItem from="1651477078095" duration="1352000" />
+      <workItem from="1652316037273" duration="986000" />
+      <workItem from="1652794226983" duration="17100000" />
+      <workItem from="1658106117499" duration="648000" />
+      <workItem from="1658109871947" duration="41000" />
+      <workItem from="1658709812847" duration="772000" />
+      <workItem from="1658711035196" duration="7446000" />
+      <workItem from="1658741003698" duration="1021000" />
+      <workItem from="1659609594928" duration="71000" />
+      <workItem from="1659611065345" duration="735000" />
+      <workItem from="1659653862392" duration="3913000" />
+      <workItem from="1659700877566" duration="214000" />
+      <workItem from="1659761383186" duration="218000" />
+      <workItem from="1659779679994" duration="1288000" />
+      <workItem from="1659830525774" duration="5630000" />
+      <workItem from="1660484751175" duration="383000" />
+      <workItem from="1660524063281" duration="314000" />
+      <workItem from="1660524597084" duration="2587000" />
+      <workItem from="1660560954493" duration="606000" />
+      <workItem from="1660633541560" duration="6896000" />
+      <workItem from="1660726265435" duration="4921000" />
+      <workItem from="1660788362453" duration="11230000" />
+      <workItem from="1660817518546" duration="12000" />
+      <workItem from="1660817550564" duration="36000" />
+      <workItem from="1660868693472" duration="8535000" />
+      <workItem from="1660886586204" duration="1863000" />
+      <workItem from="1660897674543" duration="12491000" />
+      <workItem from="1660948693718" duration="648000" />
+      <workItem from="1660961664187" duration="786000" />
+      <workItem from="1660962700737" duration="668000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added rudimentary interactive map that outputs country selection to console.">
+      <created>1650975070620</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650975070620</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Login info">
+      <created>1651477133974</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651477133974</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Basic profile page and weather widget">
+      <created>1652857185007</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652857185007</updated>
+    </task>
+    <task id="LOCAL-00004" summary="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**">
+      <created>1658741973846</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658741973846</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added rudimentary interactive map that outputs country selection to console." />
+    <MESSAGE value="Login info" />
+    <MESSAGE value="Basic profile page and weather widget" />
+    <MESSAGE value="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**" />
+    <MESSAGE value="Fixing my booboo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing my booboo" />
+  </component>
+</project>

@@ -9,6 +9,10 @@
     width: 100%;
 }
 
+.form {
+    padding: 1rem;
+}
+
 .submitButt {
     float: right
 

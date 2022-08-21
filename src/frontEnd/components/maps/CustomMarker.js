@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Marker } from "react-simple-maps";
 import { Popover } from "react-tiny-popover";
+import useFetch from "../../../hooks/useFetch";
 
 const CustomMarker = ({ name, coordinates, markerOffset, visit, happening }) => {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
@@ -13,8 +14,7 @@ const CustomMarker = ({ name, coordinates, markerOffset, visit, happening }) => 
             happening = {happening} //stores what is happening in the city and would be further expanded once we have backend
             onClick={() => {
                 setIsPopoverOpen(true);
-            }}
-        >
+            }}>
             <Popover
                 isOpen={isPopoverOpen}
                 onClickOutside={() => {
@@ -30,5 +30,4 @@ const CustomMarker = ({ name, coordinates, markerOffset, visit, happening }) => 
         </Marker>
     );
 };
-
 export default CustomMarker;

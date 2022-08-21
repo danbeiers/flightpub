@@ -7,14 +7,31 @@ tr {
 }
 
 td {
-   padding-left: 1rem;
-   padding-top: 5px;
-   display: inline-block;
+    padding-left: 1rem;
+    padding-top: 5px;
+    display: inline-block;
 }
 .Selected {
     background-color: #3590db;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.oneClick {
+    visibility: hidden;
+}
+
+.oneClickSelected {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
 }
 
 .Booking {

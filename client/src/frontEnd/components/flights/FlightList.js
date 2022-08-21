@@ -3,7 +3,11 @@ import Card from "../ui/Card";
 import {useState} from "react";
 import {useContext} from 'react';
 import FlightPubContext from "../../store/FlightPubContext";
+
+import DropdownList from "react-widgets/DropdownList";
+import {Button} from "@mui/material";
 import MultiFlightItem from "./MultiFlightItem";
+import useFetch from "../../../hooks/useFetch";
 
 
 function FlightList(props) {
@@ -107,7 +111,6 @@ function FlightList(props) {
 
         props.flights.map((el) => {
 
-            //console.log(el)
             startIndex = 0;
             flightPoints.length = 0;
             //find next start point

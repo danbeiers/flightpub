@@ -5,14 +5,18 @@ import {useContext, useRef} from 'react';
 import Card from "../components/ui/Card";
 import classes from "../components/bookings/Bookings.module.css"
 import useFetch from "../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 import FlightPubContext from "../store/FlightPubContext";
 import {Link} from "react-router-dom";
 
 function BookingsPage() {
 
     const[selectedFlight, setSelectedFlight] = useState(-1);
+    const [content, setContent] = useState("");
     const{data, loading, error} = useFetch("/booking");
     const context = useContext(FlightPubContext);
+
+    const navigate = useNavigate();
 
     function CheckBookings()
     {
