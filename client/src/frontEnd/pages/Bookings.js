@@ -30,10 +30,7 @@ function BookingsPage() {
     }
 
     function FormatDate(e) {
-        const _date = new Date(e.target);
-        return (
-            _date.getDate() + "/" + (_date.getMonth() + 1)+ "/" + _date.getFullYear()
-        );
+        return (e.target)
     }
 
     function UpperCase(e) {
