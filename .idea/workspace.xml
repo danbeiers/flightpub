@@ -7,65 +7,7 @@
     <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="FPUB-73">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/ads/AdSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/ads/AdSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/ads/AdSidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/ads/AdSidebar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/flights/MultiFlightItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/flights/MultiFlightItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/apiClient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/DarkMode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/ToggleButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/DarkMode/darkmodestyle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/LoginForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/LoginForm.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/ProfileDetails.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/RegForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/account/RegForm.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ads/AdSidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ads/AdSidebar.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/Cart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/ConfirmBooking.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/PaymentInputs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/PaymentInputs.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/bookingConfirmation/ShoppingCart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/bookings/Bookings.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/ConfirmBooking.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightItem.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightList.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightSearch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/FlightSearch.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/flights/MultiFlightItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/Layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/Layout.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/MainNavigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/layout/MainNavigation.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/list/List.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/list/ListData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/list/ListData.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/CustomMarker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/Dropdown.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/Map.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/MapChart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/MapChart.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/maps/flight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ui/Card.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/ui/Card.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/components/wishlist/Wishlist.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Account.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Bookings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/DarkModeIcon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/FlightPubHome.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Profile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/pages/WishList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontEnd/store/FlightPubContext.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useFetch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/FlightPubHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/FlightPubHome.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +124,7 @@
       <workItem from="1660948693718" duration="648000" />
       <workItem from="1660961664187" duration="786000" />
       <workItem from="1660962700737" duration="668000" />
+      <workItem from="1661085751043" duration="154000" />
     </task>
     <task id="LOCAL-00001" summary="Added rudimentary interactive map that outputs country selection to console.">
       <created>1650975070620</created>
