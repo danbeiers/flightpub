@@ -1,7 +1,6 @@
 //client/src/App.js
 
 import { Routes, Route  } from 'react-router-dom';
-import axios from 'axios';
 
 import FlightPubHome from './frontEnd/pages/FlightPubHome';
 import MapPage from './frontEnd/pages/Map';

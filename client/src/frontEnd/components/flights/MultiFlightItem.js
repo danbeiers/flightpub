@@ -20,6 +20,8 @@ function MultiFlightItem(props) {
                     departureTime: flight.departureTime,
                     arrivalTime: flight.arrivalTime,
                     price: flight.price,
+                    FlightNumber: flight.FlightNumber,
+                    DepartureTime: flight.DepartureTime,
                     isReturn: props.return,
                 }
             )
@@ -43,13 +45,13 @@ function MultiFlightItem(props) {
             key={props.flightPackage[i].flightId}
             flightId={props.flightPackage[i].flightId}
             departureDate={props.flightPackage[i].departureDate.getDate() + "/" + (props.flightPackage[i].departureDate.getMonth() + 1)+ "/" + props.flightPackage[i].departureDate.getFullYear()}
-            departureTime={props.flightPackage[i].departureTime}
-            arrivalTime={props.flightPackage[i].arrivalTime}
+            departureTime={props.flightPackage[i].DepartureTime}
+            arrivalTime={props.flightPackage[i].ArrivalTime}
             destination={props.flightPackage[i].destination}
             departure={props.flightPackage[i].departure}
             price={props.flightPackage[i].price}
-            selectedId={props.selectedFlights.length > 0 ? props.selectedFlights[i].flightId : ""}
             return={props.return}
+            code={props.flightPackage[i].PlaneCode}
             sponsored={props.flightPackage[i].sponsored}
             selected={isSelected}
             />);

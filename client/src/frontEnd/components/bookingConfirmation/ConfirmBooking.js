@@ -7,7 +7,6 @@ import FlightPubContext from "../../store/FlightPubContext";
 import Card from "../ui/Card";
 import PaymentInputs from "./PaymentInputs";
 import TextField from "@mui/material/TextField";
-//import RegForm from "../account/RegForm"
 
 function ConfirmBooking(props) {
 
@@ -21,10 +20,12 @@ function ConfirmBooking(props) {
 
     if(confirmBooking)
     {
-        paymentForm.push(<PaymentInputs/>);
+        paymentForm.push(<PaymentInputs
+                        userName={"placeholder"}
+                        flights={props.flights}/>);
     }
 
-    if(!context.authenticated)
+    if(!context.userDetails == null)
     {
         userDetailsForm.push(
             <div>

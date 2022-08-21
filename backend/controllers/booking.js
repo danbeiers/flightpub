@@ -8,6 +8,7 @@ import Flight from "../models/Flight.js";
 
 export const createBooking = async (req, res)=>{
 
+    //console.log("testbwuh");
     const newBooking = new Booking(req.body);
     try{
 
@@ -33,7 +34,7 @@ export const getBooking = async (req, res)=>{
     try{
 
         // console.log(req);
-        const booking= await Booking.findById(req.params.id);
+        const booking= await Booking.find({userID:req.params.id});
         res.status(200).json(booking);
     }catch(err){
         res.status(500).json(err);
@@ -55,7 +56,7 @@ export const deleteBooking = async (req, res)=>{
     try{
 
         // console.log(req);
-        await Booking.findByIdAndDelete(req.params.id);
+        await Booking.findByIdAndDelete({bookingID:req.params.id});
         res.status(200).json("Booking has been deleted");
     }catch(err){
         res.status(500).json(err);

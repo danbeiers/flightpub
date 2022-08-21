@@ -3,7 +3,7 @@
     [{
       "id": 1,
       "text": "Sydney",
-      "priority": 10,
+      "priority": 10
     }, {
       "id": 2,
       "text": "Newcastle",

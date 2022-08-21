@@ -9,8 +9,6 @@ function FlightItem(props) {
 
     const toggleFavouriteStatusHandler = async()=>{
     {
-         console.log(props.departure);
-        console.log(props.destination);
         const res = await fetch('http://localhost:8800/wishlist',
             {
                 method: 'POST',
@@ -45,6 +43,7 @@ function FlightItem(props) {
                     <td> {props.departureDate}</td>
                     <td> {props.departureTime}</td>
                     <td> {props.arrivalTime}</td>
+                    <td> {props.code}</td>
                     <td>
                         <button className= {classes.actions} onClick={toggleFavouriteStatusHandler}>
                             To Favorites
