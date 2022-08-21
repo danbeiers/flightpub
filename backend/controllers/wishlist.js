@@ -31,7 +31,7 @@ export const getWishlist = async (req, res)=>{
     try{
 
         // console.log(req);
-        const wishlist= await Wishlist.findById(req.params.id);
+        const wishlist= await Wishlist.find({userID:req.params.id});
         res.status(200).json(wishlist);
     }catch(err){
         res.status(500).json(err);

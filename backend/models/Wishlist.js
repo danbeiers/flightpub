@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 
 const WishlistSchema = new mongoose.Schema({
 
+    userID:{
+        type: String,
+        required: true,
+    },
     departure:{
         type: String,
         required: true

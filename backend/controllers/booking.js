@@ -55,7 +55,7 @@ export const deleteBooking = async (req, res)=>{
     try{
 
         // console.log(req);
-        await Booking.findByIdAndDelete(req.params.id);
+        await Booking.findByIdAndDelete({bookingID:req.params.id});
         res.status(200).json("Booking has been deleted");
     }catch(err){
         res.status(500).json(err);

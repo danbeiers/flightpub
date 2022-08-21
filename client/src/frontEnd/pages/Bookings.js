@@ -16,15 +16,12 @@ function BookingsPage() {
     const[selectedPastFlight, setSelectedPastFlight] = useState(-1);
     const [content, setContent] = useState("");
     let userdata;
-    console.log("booking.js");
 
     if (context.userDetails == null) {
         userdata = null;
-        console.log("not logged in");
     }
     else{
         userdata = "/" + context.userDetails.email;
-        console.log("userData: " + userdata);
     }
     const{data, loading, error} = useFetch("/booking" + userdata);
     const date = new Date();
@@ -147,7 +144,6 @@ function BookingsPage() {
                         <tr className={classes.row}>
                             <td><strong>Flight</strong> {booking.flight} </td>
                             <td><strong>Seat</strong> {booking.seat} </td>
-                            <td> <strong>Cost</strong> {booking.cost} </td>
                         </tr>
                         <tr className={classes.row}>
                             <td> <strong>From</strong> {<UpperCase target={booking.departure} />}</td>
