@@ -1,5 +1,6 @@
 import classes from './FlightItem.module.css';
 import { useNavigate } from "react-router-dom";
+import {selectFlight} from './MultiFlightItem';
 
 function FlightItem(props) {
 
@@ -36,7 +37,7 @@ function FlightItem(props) {
 
     return (
 
-                <tr className={props.selected ? classes.selectedFlight : classes.row}>
+                <tr className={props.selected ? classes.selectedFlight : classes.row} >
                     <td> {props.flightId}</td>
                     <td> {props.departure}</td>
                     <td> {props.destination}</td>
