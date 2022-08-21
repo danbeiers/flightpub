@@ -15,8 +15,18 @@ function BookingsPage() {
     const[selectedFutureFlight, setSelectedFutureFlight] = useState(-1);
     const[selectedPastFlight, setSelectedPastFlight] = useState(-1);
     const [content, setContent] = useState("");
-    const{data, loading, error} = useFetch("/booking/");
-    console.log(context.userDetails.email);
+    let userdata;
+    console.log("booking.js");
+
+    if (context.userDetails == null) {
+        userdata = null;
+        console.log("not logged in");
+    }
+    else{
+        userdata = "/" + context.userDetails.email;
+        console.log("userData: " + userdata);
+    }
+    const{data, loading, error} = useFetch("/booking" + userdata);
     const date = new Date();
 
     const RECOMMENDEDFLIGHTS = [
@@ -47,7 +57,7 @@ function BookingsPage() {
 
     function CheckBookings()
     {
-        if (data.length > 0 ) {
+        if (data.length > 0 && userdata != null) {
             return GetBookings();
         }
         else

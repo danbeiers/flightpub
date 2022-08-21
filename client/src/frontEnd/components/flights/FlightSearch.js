@@ -153,14 +153,12 @@ function FlightSearch(props) {
 
     function UpdateDestination() {
         const e = context.destination;
-        context.setDestination("");
         console.log(context.destination);
         return e
     }
 
     function UpdateDeparture() {
         const e = context.departure;
-        context.setDeparture("");
         console.log(context.departure);
         return e
     }
