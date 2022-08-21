@@ -25,6 +25,7 @@ import wishlistRoute from "./routes/wishlist.js";
 
 
 const app = express()
+const port = process.env.port||8800
 //const cors = require('cors');
 //app.use(cors({ credentials: true, origin: true }));
 dotenv.config()
@@ -111,6 +112,6 @@ app.use((err,req,res, next)=>{
     return res.status(500).json("Hello error from handler")
 })
 
-app.listen(8800, ()=>{
+app.listen(port, ()=>{
     connect()
     console.log("Connected to backend!!! ")})
