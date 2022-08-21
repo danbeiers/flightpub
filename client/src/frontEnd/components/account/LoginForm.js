@@ -10,7 +10,6 @@ import FlightPubContext from "../../store/FlightPubContext";
 
 
 function LoginForm() {
-    const otherContext = useContext(UserContext);
     const context = useContext(FlightPubContext);
     const navigate = useNavigate();
     const [values, setValues] = useState({
