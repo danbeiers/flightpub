@@ -22,7 +22,7 @@ function AdSidebar(props){
         const fetchHolidayPackage = async () => {
             try {
                 setLoading(true);
-                console.log(number)
+                //console.log(number)
                 const res = await fetch(imgString, {mode: 'cors'})
                 if (!res.ok) {
                     console.log('package not ok')
@@ -31,7 +31,7 @@ function AdSidebar(props){
                 }
                 const data = await res.json();
                 setHolidayPackage(data);
-                console.log(holidayPackage.packageID)
+                //console.log(holidayPackage.packageID)
                 setLoading(false)
             } catch (error) {
                 setLoading(false)
@@ -52,7 +52,6 @@ function AdSidebar(props){
 
     const handleAd = async () => {
         console.log('ad clicked')
-        navigator.navigate('/',{})
     }
     return (
      <div onClick={handleAd}>
