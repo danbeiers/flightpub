@@ -52,7 +52,7 @@ export const getFlight = async (req, res)=>{
 // in another js and calling it as opposed to using json
 //ignore pls until i sort out the error handling xoxo
 
-export const getallFlight = async (req, res, next)=>{
+export const getAllFlight = async (req, res, next)=>{
     try{
 
         // console.log(req);
