@@ -1,6 +1,5 @@
 .main{
     background-color: #ffffff;
-
 }
 
 .form{
@@ -9,26 +8,13 @@
     text-align: left;
     margin-left: 1rem;
 }
-h1 {
-    text-align: center;
-}
-h2 {
-    text-align: center;
-    color: red;
-}
-.labels > * {
-    display: flex;
-    justify-content: space-between;
-}
-.div {
 
-}
-.input {
+input {
     padding: 15px;
     margin: 10px 0;
 }
 
-.button{
+input[target="submit"] {
     font: inherit;
     cursor: pointer;
     background-color: #0961a9;

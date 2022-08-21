@@ -6,19 +6,22 @@ function ProfileDetails() {
 
     return (
         <div >
-            <h2>This is your profile {context.userDetails.userName}</h2>
+            <h2>This is your profile {context.user}</h2>
             <ul>
                 <li>
-                    First Name: {context.userDetails.firstName}
+                    First Name: {context.userDetails.fName}
                 </li>
                 <li>
-                    Last Name: {context.userDetails.lastName}
+                    Last Name: {context.userDetails.lName}
                 </li>
                 <li>
-                    Date Of Birth: {context.userDetails.dob.split('T')[0]}
+                    Date Of Birth: {context.userDetails.dob}
                 </li>
                 <li>
-                    Email: {context.userDetails.email}
+                    Email: {context.userDetails.emailAdd}
+                </li>
+                <li>
+                    Password: {context.userDetails.pword}
                 </li>
             </ul>
             <div>

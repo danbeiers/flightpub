@@ -14,7 +14,7 @@ input {
     margin: 10px 0;
 }
 
-.button {
+input[target="submit"] {
     font: inherit;
     cursor: pointer;
     background-color: #0961a9;

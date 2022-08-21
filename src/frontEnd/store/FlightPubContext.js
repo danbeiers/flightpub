@@ -1,5 +1,3 @@
-//frontend/store/FlightPubContext.js
-
 import { createContext } from 'react';
 
 const FlightPubContext = createContext({
@@ -8,19 +6,16 @@ const FlightPubContext = createContext({
     bookingsSelected:false,
     user: '',
     userDetails: {
-        firstName:'',
-        lastName:'',
+        fName:'',
+        lName:'',
         dob:'',
-        email:'',
-        password:'',
+        emailAdd:'',
+        pword:'',
     },
     ip:'',
     lat:'',
     long:'',
     weatherData:'',
-    destination:'',
-    departure:'',
-
 
     setAuthenticated: (auth) => {},
     setSearched: (search) => {},
@@ -30,9 +25,7 @@ const FlightPubContext = createContext({
     setIP: (_ip) => {},
     setLat: (latitude) =>{},
     setLong: (longitude) => {},
-    setWeatherData: (weather) => {},
-    setDestination: (destination) => {},
-    setDeparture: (departure) => {},
+    setWeatherData: (weather) => {}
 
 });
 
