@@ -10,7 +10,8 @@ import cors from "cors"
 import airlinesRoute from "./routes/airline.js";
 import flightRoute from "./routes/flight.js";
 import loginRoute from "./routes/login.js"
-import seat from "./routes/seat.js";
+import seat from "./routes/seat.js"
+import packageRoute from './routes/holidayPackage.js'
 import req from "express/lib/request.js";
 import res from "express/lib/response.js";
 import flight from "./routes/flight.js";
@@ -103,6 +104,7 @@ app.use("/seat", seat);
 app.use("/user", loginRoute);
 app.use("/booking", bookingRoute);
 app.use("/wishlist", wishlistRoute);
+app.use("/holidayPackage",packageRoute);
 
 //middleware for error handling
 app.use((err,req,res, next)=>{

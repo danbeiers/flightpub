@@ -1,6 +1,7 @@
 import MainNavigation from './MainNavigation';
 import AdSidebar from '../ads/AdSidebar';
 import classes from './Layout.module.css';
+import Card from "../ui/Card";
 
 function Layout(props) {
     return (
@@ -8,17 +9,17 @@ function Layout(props) {
             <MainNavigation />
             <main className={classes.main}>
                 <div className={classes.layout} >
-                    <div className={classes.adleft}>
-                        <p>Ad 1</p>
+                    <Card className={classes.adleft} >
+
                         <AdSidebar url="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                    </div>
+                    </Card >
                     <div className={classes.inner}>
                         {props.children}
                     </div>
-                    <div className={classes.adright}>
-                        <p>Ad 2</p>
+                    <Card className={classes.adright}>
+
                         <AdSidebar url="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                    </div>
+                    </Card>
                 </div>
             </main>
         </div>
