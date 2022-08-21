@@ -8,6 +8,7 @@ import Flight from "../models/Flight.js";
 
 export const createBooking = async (req, res)=>{
 
+    //console.log("testbwuh");
     const newBooking = new Booking(req.body);
     try{
 

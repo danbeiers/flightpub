@@ -1,4 +1,3 @@
-import FlightItem from './FlightItem';
 import classes from './FlightList.module.css';
 import Card from "../ui/Card";
 import {useState} from "react";
@@ -77,16 +76,6 @@ function FlightList(props) {
         flightList.push(el);
         returnFlightList.push(el);
     });
-
-    if(flightSelected)
-    {
-        //console.log("wow ur trip to is selected");
-    }
-
-    if(returnFlightSelected)
-    {
-        //console.log("wow way back selected");
-    }
 
     //struct to store flights in a reverse linkedList
     //pattern for the multi-search algorithm
@@ -530,41 +519,11 @@ function FlightList(props) {
     function sponsoredSort(arr)
     {
         quickSort(arr, 0, arr.length - 1);
-        /*for(let i = 0; i < arr.length; i++)
-        {
-            for(let j = 0; j < arr.length - i - 1; j++)
-            {
-                var nextSponsoredCount = 0;
-                var thisSponsoredCount = 0;
-
-
-                for(let h = 0; h < arr[j + i].length; h++)
-                {
-                    if(arr[j + 1][h].sponsored == true)
-                    {
-                        nextSponsoredCount += 1;
-                    }
-                }
-
-                for(let h = 0; h < arr[j].length; h++)
-                {
-                    if(arr[j][h].sponsored == true)
-                    {
-                        thisSponsoredCount += 1;
-                    }
-                }
-
-                if(nextSponsoredCount > thisSponsoredCount)
-                {
-                    [arr[j+1], arr[j]] = [arr[j], arr[j+1]];
-                }
-            }
-        }*/
     }
 
     multiSearch();
     //searchFlightList();
-    //sort("latest");
+    sort("latest");
     sponsoredSort(flightList);
     sponsoredSort(returnFlightList);
 
@@ -623,6 +582,7 @@ function FlightList(props) {
                     <th>Date</th>
                     <th>Dep</th>
                     <th>Arr</th>
+                    <th>Aircraft</th>
                     <th>Favourite</th>
                     <th>Select</th>
                     <th>Sponsored</th>

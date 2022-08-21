@@ -22,8 +22,6 @@ function FlightSearch(props) {
     //var and method for searchbox in form
     //used to search list of destinations from user input
 
-    const [locationList, setLocationList] = useState([]);
-
 
     const locationLookupTable = new Map();
     locationLookupTable.set('ADL', 'Adelaide');
@@ -171,7 +169,6 @@ function FlightSearch(props) {
             flexibleReturn: enteredFlexibleReturn,
         };
         context.setSearched(true);
-        //console.log(flightSearchData);
 
         props.exportQuery(flightSearchData);
     }
@@ -191,15 +188,11 @@ function FlightSearch(props) {
 
     function UpdateDestination() {
         const e = context.destination;
-        context.setDestination("");
-        //console.log(context.destination);
         return e
     }
 
     function UpdateDeparture() {
         const e = context.departure;
-        context.setDeparture("");
-        //console.log(context.departure);
         return e
     }
 

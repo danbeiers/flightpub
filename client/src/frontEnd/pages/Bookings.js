@@ -25,7 +25,6 @@ function BookingsPage() {
         }
         else
         {
-            console.log("yes");
             return NoBookings();
         }
     }
@@ -51,7 +50,6 @@ function BookingsPage() {
     }
 
     function rebookFlight(booking) {
-        //console.log("fires");
         context.setDestination(booking.destination);
         context.setDeparture(booking.departure);
     }

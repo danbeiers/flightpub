@@ -22,8 +22,9 @@ import {
     darkTheme,
     lightTheme,
 } from "./frontEnd/components/DarkMode/darkmodestyle";
-import {ThemeProvider} from "styled-components";
+import styled, {ThemeProvider} from "styled-components";
 import {ToggleButton} from "./frontEnd/components/DarkMode/ToggleButton";
+import useFetch from "./hooks/useFetch";
 //import React from "@types/react";
 
 export const UserContext = createContext({});
