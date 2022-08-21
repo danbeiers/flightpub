@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import {useNavigate} from "react-router";
 import classes from "./LoginForm.module.css";
-import passwordRegexp from "password-regexp"
+import passwordRegexp from "password-regexp";
 import isEmail from "validator/es/lib/isEmail";
 import {UserContext} from '../../../App';
 import FlightPubContext from "../../store/FlightPubContext";
@@ -10,7 +10,6 @@ import FlightPubContext from "../../store/FlightPubContext";
 
 
 function LoginForm() {
-    const otherContext = useContext(UserContext);
     const context = useContext(FlightPubContext);
     const navigate = useNavigate();
     const [values, setValues] = useState({

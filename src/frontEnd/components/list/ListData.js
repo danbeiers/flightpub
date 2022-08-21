@@ -1,0 +1,29 @@
+export const ListData = [{
+    "id": 1,
+    "text": "Sydney",
+    "priority": 10,
+}, {
+    "id": 2,
+    "text": "Newcastle",
+    "priority": 7
+}, {
+    "id": 3,
+    "text": "Brisbane",
+    "priority": 9
+}, {
+    "id": 4,
+    "text": "Adelaide",
+    "priority": 7
+}, {
+    "id": 5,
+    "text": "Avaveo",
+    "priority": 5
+}, {
+    "id": 6,
+    "text": "Demivee",
+    "priority": 3
+}, {
+    "id": 7,
+    "text": "Jayo",
+    "priority": 5
+}]

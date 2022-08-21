@@ -1,6 +1,12 @@
 import express from "express";
 import Flight from "../models/Flight.js";
-import {createFlight, deleteFlight, getAllFlight, getFlight, updateFlight} from "../controllers/flight.js";
+import {
+    createFlight,
+    deleteFlight,
+    getAllFlight,
+    getFlight,
+    updateFlight
+} from "../controllers/flight.js";
 const router = express.Router();
 
 //All da CRUD commands for database
@@ -19,6 +25,10 @@ router.delete("/:id",  deleteFlight );
 //used to get a specific flight via unique id
 //can be retrieved via idk anything also such as recommendation tag etc just change it in the path
 router.get("/:id", getFlight);
+
+//Get
+//used to get a list of flights via depCode and destCode
+//router.get("/:id", getFlightByDepDest);
 
 //Getall
 router.get("/", getAllFlight)

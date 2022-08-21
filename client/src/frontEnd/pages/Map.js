@@ -7,24 +7,27 @@ import classes from "../components/maps/MapChart.module.css";
 import  "../components/maps/Dropdown.module.css";
 import { useNavigate } from "react-router-dom";
 
+
 function MapPage() {
+
     const [content, setContent] = useState("");
     const navigate = useNavigate();
-    const{data, loading, error} = useFetch("/map");
     const [selected, setSelected] = useState("Select a recommendation category");
-     console.log(data);
+    const{data, loading, error} = useFetch("/map", selected);
+
+    const handleSelection = (value) => {
+        setSelected(value);}
+
+
     return (
         <div className={classes.map}>
 
-            <Dropdown selected={selected} setSelected={setSelected} />
+            <Dropdown selected={selected} onSelected={handleSelection} />
         <br/>
-
             <button onClick={() => navigate("/")}>Add to search</button>
-
             <MapChart setTooltipContent={setContent} data = {data}/>
             <ReactTooltip>{content}</ReactTooltip>
         </div>
 
     );}
 export default MapPage;
-

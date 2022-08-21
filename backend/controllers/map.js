@@ -37,7 +37,6 @@ export const deleteMap = async (req, res)=>{
     }
 }
 
-
 //get for getting specific cities based on tag
 //http://localhost:8800/map?tag=Music and Arts
 export const getMap = async (req, res, next) => {

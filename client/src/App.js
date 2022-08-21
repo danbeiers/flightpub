@@ -1,5 +1,6 @@
+//client/src/App.js
+
 import { Routes, Route  } from 'react-router-dom';
-import axios from 'axios';
 
 import FlightPubHome from './frontEnd/pages/FlightPubHome';
 import MapPage from './frontEnd/pages/Map';
@@ -13,6 +14,8 @@ import LoginPage from "./frontEnd/pages/Login";
 import RegisterPage from "./frontEnd/pages/Register";
 import AccountPage from "./frontEnd/pages/Account";
 import ProfilePage from "./frontEnd/pages/Profile";
+
+import WishListPage from "./frontEnd/pages/WishList";
 
 import {
     GlobalStyles,
@@ -111,22 +114,22 @@ function App() {
         <UserContext.Provider value={userSession}>
 
         <ThemeProvider theme={themeMode}>
-
-        <FlightPubContext.Provider value={{flights,setFlights,authenticated,setAuthenticated,searched,setSearched,bookingsSelected,setBookingsSelected,setUser,userDetails,setUserDetails,lat,setLat,long,setLong,weatherData,setWeatherData }}>
-        <GlobalStyles />
-        <ToggleButton theme={theme} toggleTheme={toggleTheme} />
-        <Layout>
-            <Routes>
-                <Route path='/' element={<FlightPubHome />} />
-                <Route path='/bookings' element={<BookingsPage />} />
-                <Route path='/map' element={<MapPage />} />
-                <Route path='/login' element = {<LoginPage />} />
-                <Route path='/register' element={<RegisterPage />} />
-                <Route path='/account' element={<AccountPage />} />
-                <Route path='/profile' element={<ProfilePage />} />
-            </Routes>
-        </Layout>
-        </FlightPubContext.Provider>
+            <FlightPubContext.Provider value={{authenticated,setAuthenticated,searched,setSearched,bookingsSelected,setBookingsSelected,setUser,userDetails,setUserDetails,lat,setLat,long,setLong,weatherData,setWeatherData, destination, setDestination, departure, setDeparture}}>
+                <GlobalStyles />
+                <ToggleButton theme={theme} toggleTheme={toggleTheme} />
+                <Layout>
+                    <Routes>
+                        <Route path='/' element={<FlightPubHome />} />
+                        <Route path='/bookings' element={<BookingsPage />} />
+                        <Route path='/map' element={<MapPage />} />
+                        <Route path='/login' element = {<LoginPage />} />
+                        <Route path='/register' element={<RegisterPage />} />
+                        <Route path='/account' element={<AccountPage />} />
+                        <Route path='/profile' element={<ProfilePage />} />
+                        <Route path='/wishlist' element={<WishListPage />} />
+                    </Routes>
+                </Layout>
+            </FlightPubContext.Provider>
         </ThemeProvider>
         </UserContext.Provider>
     );

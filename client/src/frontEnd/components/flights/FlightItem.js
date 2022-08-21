@@ -1,46 +1,49 @@
 import classes from './FlightItem.module.css';
+import { useNavigate } from "react-router-dom";
+
 function FlightItem(props) {
 
-    function toggleFavouriteStatusHandler() {
+    const navigate = useNavigate();
 
+    const sponsored = [];
+
+    const toggleFavouriteStatusHandler = async()=>{
+    {
+        const res = await fetch('http://localhost:8800/wishlist',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                // mode: 'cors',
+                body: JSON.stringify({
+                    departure: props.departure,
+                    destination:props.destination
+                }),
+            })
+        }
+        navigate("/wishlist");
     }
 
     function bookFlightHandler() {
 
     }
 
-    function selectFlight()
+    if(props.sponsored)
     {
-        props.selectFlight(props.return);
-
-        const flightData = [];
-
-        flightData.push(
-            {
-                flightId: props.flightId,
-                departure: props.departure,
-                destination: props.destination,
-                departureDate: props.departureDate,
-                departureTime: props.departureTime,
-                arrivalTime: props.arrivalTime,
-                price: props.price,
-                isReturn: props.return,
-
-            }
-        );
-
-        props.selFlight(flightData);
+        sponsored.push(<td>Sponsored</td>);
     }
 
     return (
 
-                <tr onClick={selectFlight}  className={props.selectedId == props.flightId ? classes.selectedFlight : classes.row}>
+                <tr className={props.selected ? classes.selectedFlight : classes.row}>
                     <td> {props.flightId}</td>
                     <td> {props.departure}</td>
                     <td> {props.destination}</td>
                     <td> {props.departureDate}</td>
                     <td> {props.departureTime}</td>
                     <td> {props.arrivalTime}</td>
+                    <td> {props.code}</td>
                     <td>
                         <button className= {classes.actions} onClick={toggleFavouriteStatusHandler}>
                             To Favorites
@@ -51,6 +54,7 @@ function FlightItem(props) {
                             Select Flight
                         </button>
                     </td>
+                    {sponsored}
                 </tr>
     );
 }

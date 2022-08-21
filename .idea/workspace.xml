@@ -4,41 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Usefetch fetching map data and displaying on frontend!!!">
-      <change afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.module.css" afterDir="false" />
-    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="Login database connection working">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_08_2022_6_37_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_08_2022_6_37_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_08_2022_6_31_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_08_2022_6_31_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/account/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/account/RegForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/account/RegForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/frontEnd/components/layout/MainNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/frontEnd/components/layout/MainNavigation.js" afterDir="false" />
+    <list default="true" id="3ecc20d5-84ca-40c6-9c2d-3b8190288446" name="Default Changelist" comment="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -58,62 +35,26 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/MapChart.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/pages/FlightPubHome.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/pages/Map.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/src/hooks/useFetch.js" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectId" id="28KcroWpIMlVkAVfMfLHzhw4u5P" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
-    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "Project.color": "273b36",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.editor.code.editing"
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;Project.color&quot;: &quot;273b36&quot;,
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/IdeaProjects/SENG4500&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ewart/OneDrive/Documents/GitHub/flightpub&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -121,7 +62,6 @@
       <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\danie\IdeaProjects\flightpub\backend" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\client" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
@@ -129,17 +69,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -170,16 +99,28 @@
       <workItem from="1658709812847" duration="772000" />
       <workItem from="1658711035196" duration="7446000" />
       <workItem from="1658741003698" duration="1021000" />
-      <workItem from="1658825508592" duration="2805000" />
-      <workItem from="1658830374720" duration="553000" />
-      <workItem from="1659324294431" duration="2607000" />
-      <workItem from="1659351923266" duration="16728000" />
-      <workItem from="1659541738707" duration="13545000" />
-      <workItem from="1659943186953" duration="975000" />
-      <workItem from="1660043544438" duration="12799000" />
-      <workItem from="1659351923266" duration="615000" />
-      <workItem from="1659606395731" duration="20607000" />
-      <workItem from="1659991536986" duration="41425000" />
+      <workItem from="1659609594928" duration="71000" />
+      <workItem from="1659611065345" duration="735000" />
+      <workItem from="1659653862392" duration="3913000" />
+      <workItem from="1659700877566" duration="214000" />
+      <workItem from="1659761383186" duration="218000" />
+      <workItem from="1659779679994" duration="1288000" />
+      <workItem from="1659830525774" duration="5630000" />
+      <workItem from="1660484751175" duration="383000" />
+      <workItem from="1660524063281" duration="314000" />
+      <workItem from="1660524597084" duration="2587000" />
+      <workItem from="1660560954493" duration="606000" />
+      <workItem from="1660633541560" duration="6896000" />
+      <workItem from="1660726265435" duration="4921000" />
+      <workItem from="1660788362453" duration="11230000" />
+      <workItem from="1660817518546" duration="12000" />
+      <workItem from="1660817550564" duration="36000" />
+      <workItem from="1660868693472" duration="8535000" />
+      <workItem from="1660886586204" duration="1863000" />
+      <workItem from="1660897674543" duration="12491000" />
+      <workItem from="1660948693718" duration="648000" />
+      <workItem from="1660961664187" duration="786000" />
+      <workItem from="1660962700737" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="Added rudimentary interactive map that outputs country selection to console.">
       <created>1650975070620</created>
@@ -209,50 +150,7 @@
       <option name="project" value="LOCAL" />
       <updated>1658741973846</updated>
     </task>
-    <task id="LOCAL-00005" summary="Connected front end to back end.&#10;directory node_modules should be in project root.&#10;npm update (--legacy-peer-deps if needed) to update modules.&#10;npm start to start both back end and front end.">
-      <created>1659316054170</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1659316054170</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Axios done!!! Can see backend table data onto frontend!!! Yayyyy">
-      <created>1660117609171</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1660117609171</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Usefetch fetching map data and displaying on frontend!!!">
-      <created>1660249234868</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1660249234868</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
-    <task id="LOCAL-00006" summary="Sorry, wasn't adding new versioned files&#10;backend files added">
-      <created>1659481675573</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1659481675573</updated>
-    </task>
-    <task id="LOCAL-00007" summary="FPUB-13&#10;Registration w/ validation working">
-      <created>1659541195754</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1659541195755</updated>
-    </task>
-    <task id="LOCAL-00008" summary="FPUB-13&#10;Registration w/ validation working">
-      <created>1659541488882</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1659541488882</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,31 +159,6 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="9134a273-ee2a-4cc1-99da-b51e962f77d0">
-          <value>
-            <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="structure">
-                    <value>
-                      <list>
-                        <option value="dir:C:/Users/Dell/Akshata/SENG3150/flightpub/backend" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -311,26 +184,7 @@
     <MESSAGE value="Login info" />
     <MESSAGE value="Basic profile page and weather widget" />
     <MESSAGE value="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**" />
-    <MESSAGE value="Connected front end to back end.&#10;directory node_modules should be in project root.&#10;npm update (--legacy-peer-deps if needed) to update modules.&#10;npm start to start both back end and front end." />
-    <MESSAGE value="Sorry, wasn't adding new versioned files&#10;backend files added" />
-    <MESSAGE value="FPUB-13&#10;Registration w/ validation working" />
-    <option name="LAST_COMMIT_MESSAGE" value="FPUB-13&#10;Registration w/ validation working" />
-    <MESSAGE value="Axios done!!! Can see backend table data onto frontend!!! Yayyyy" />
-    <MESSAGE value="Usefetch fetching map data and displaying on frontend!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Usefetch fetching map data and displaying on frontend!!!" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/backend/controllers/auth.js</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Fixing my booboo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing my booboo" />
   </component>
 </project>
