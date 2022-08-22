@@ -38,10 +38,11 @@ var mongoStore = new MongoDBStore({
     uri: process.env.MONGO,
     collection: 'Sessions',
 })
-const corsOptions = {
-    origin: 'https://build-testing--seng3160-flightpub-team5.netlify.app/',
-    optionsSuccessStatus: 200,
-}
+
+// const corsOptions = {
+//     origin: 'https://build-testing--seng3160-flightpub-team5.netlify.app/',
+//     optionsSuccessStatus: 200,
+// }
 
 
 //FPUB-13 Adding login functionality
@@ -81,8 +82,10 @@ mongoose.connection.on("connected", ()=>{
 //middlewares
 //middleware for insomnia/postman
 //app.use(cors)
-app.use(cors(corsOptions))
+app.use(cors());
+//app.use(cors(corsOptions))
 app.use(express.json());
+
 //Cors Configuration - Start
 // app.use((req, res, next) => {
 //     res.header("Access-Control-Allow-Origin", "*")
@@ -128,9 +131,9 @@ app.use("/wishlist", wishlistRoute);
 app.use("/holidayPackage",packageRoute);
 
 //middleware for error handling
-app.use((err,req,res, next)=>{
-    return res.status(500).json("Hello error from handler")
-})
+// app.use((err,req,res, next)=>{
+//     return res.status(500).json("Hello error from handler")
+// })
 
 app.listen(port, ()=>{
     connect()
