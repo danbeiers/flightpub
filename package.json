@@ -4,7 +4,8 @@
   "private": true,
 
   "scripts": {
-    "build": "cd client && npm run build",
+    "build": "cd backend && nodemon index.js",
+    "buildfront": "cd client && npm run build",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
