@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="FPUB-73">
+    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="react build script in root package">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.npmrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flightpub.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_redirects" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/_redirects" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="oneClick" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,30 +76,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ewart/OneDrive/Documents/GitHub/flightpub&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/User/IdeaProjects/flightpub",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\flightpub" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\flightpub\client" />
+      <recent name="C:\Users\User\IdeaProjects\flightpub\client\public" />
+      <recent name="C:\Users\User\IdeaProjects\flightpub\public" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\client" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub" />
-      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
-      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\frontEnd" />
     </key>
   </component>
   <component name="RunManager">
@@ -171,7 +187,70 @@
       <option name="project" value="LOCAL" />
       <updated>1658741973846</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added force option">
+      <created>1661091736658</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661091736658</updated>
+    </task>
+    <task id="LOCAL-00006" summary="index.js&#10;-cookie:secure was false">
+      <created>1661092582668</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661092582668</updated>
+    </task>
+    <task id="LOCAL-00007" summary="index.js&#10;-added port specification">
+      <created>1661093367742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661093367742</updated>
+    </task>
+    <task id="LOCAL-00008" summary="index.js&#10;-added port specification">
+      <created>1661095509760</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661095509760</updated>
+    </task>
+    <task id="LOCAL-00009" summary="package.json changed in root and client">
+      <created>1661095775702</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661095775702</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added _redirects">
+      <created>1661098561976</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661098561976</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added _redirects">
+      <created>1661099371351</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661099371351</updated>
+    </task>
+    <task id="LOCAL-00012" summary="build folder created">
+      <created>1661128866047</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1661128866047</updated>
+    </task>
+    <task id="LOCAL-00013" summary="react build script in root package">
+      <created>1661129269445</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1661129269445</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +285,14 @@
     <MESSAGE value="Basic profile page and weather widget" />
     <MESSAGE value="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**" />
     <MESSAGE value="Fixing my booboo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing my booboo" />
+    <MESSAGE value="FPUB-73" />
+    <MESSAGE value="Added force option" />
+    <MESSAGE value="index.js&#10;-cookie:secure was false" />
+    <MESSAGE value="index.js&#10;-added port specification" />
+    <MESSAGE value="package.json changed in root and client" />
+    <MESSAGE value="added _redirects" />
+    <MESSAGE value="build folder created" />
+    <MESSAGE value="react build script in root package" />
+    <option name="LAST_COMMIT_MESSAGE" value="react build script in root package" />
   </component>
 </project>

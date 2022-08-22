@@ -26,7 +26,7 @@ import * as path from "path";
 
 
 const app = express()
-const port = process.env.port||8800
+const port = process.env.PORT||8800
 
 //const cors = require('cors');
 //app.use(cors({ credentials: true, origin: true }));
