@@ -2,13 +2,14 @@
   "name": "flightpub",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
-    "build": "cd backend && nodemon index.js",
+    "build": "cd backend && node index.js",
     "buildfront": "cd client && npm run build",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0"
   }
-
 }
