@@ -21,11 +21,13 @@ import bookingRoute from "./routes/booking.js";
 import booking from "./routes/booking.js";
 import wishlist from "./routes/wishlist.js";
 import wishlistRoute from "./routes/wishlist.js";
+import * as path from "path";
 
 
 
 const app = express()
 const port = process.env.port||8800
+
 //const cors = require('cors');
 //app.use(cors({ credentials: true, origin: true }));
 dotenv.config()

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"cd backend && npm start\" \"cd client && npm start\"",
     "install": "concurrently \"cd backend && npm install\" \"cd client && npm install\""
@@ -30,5 +29,8 @@
     "simple-random-number-generator": "^1.2.1",
     "svgo": "^2.8.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
