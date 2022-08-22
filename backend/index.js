@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import session from "express-session";
 import { default as connectMongoDBSession} from 'connect-mongodb-session';
-//import cors from "cors"
+import cors from "cors"
 
 //import authRoute from "./routes/auth.js";
 //import usersRoute from "./routes/users.js";
@@ -38,10 +38,10 @@ var mongoStore = new MongoDBStore({
     uri: process.env.MONGO,
     collection: 'Sessions',
 })
-// const corsOptions = {
-//     origin: 'https://6303271253398d0008340337--tubular-bublanina-308c07.netlify.app/',
-//     optionsSuccessStatus: 200,
-// }
+const corsOptions = {
+    origin: 'https://build-testing--tubular-bublanina-308c07.netlify.app/',
+    optionsSuccessStatus: 200,
+}
 
 
 //FPUB-13 Adding login functionality
@@ -81,24 +81,24 @@ mongoose.connection.on("connected", ()=>{
 //middlewares
 //middleware for insomnia/postman
 //app.use(cors)
-//app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 app.use(express.json());
 //Cors Configuration - Start
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested, Content-Type, Accept Authorization"
-    )
-    if (req.method === "OPTIONS") {
-        res.header(
-            "Access-Control-Allow-Methods",
-            "POST, PUT, PATCH, GET, DELETE"
-        )
-        return res.status(200).json({})
-    }
-    next()
-})
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*")
+//     res.header(
+//         "Access-Control-Allow-Headers",
+//         "Origin, X-Requested, Content-Type, Accept Authorization"
+//     )
+//     if (req.method === "OPTIONS") {
+//         res.header(
+//             "Access-Control-Allow-Methods",
+//             "POST, PUT, PATCH, GET, DELETE"
+//         )
+//         return res.status(200).json({})
+//     }
+//     next()
+// })
 //Cors Configuration - End
 //Session creation stuff
 app.use(
