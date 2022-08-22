@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="legacy peer deps set to true">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="CI=false in .env" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -265,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661131940206</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="CI=false in .env">
+      <created>1661132484792</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1661132484792</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +312,7 @@
     <MESSAGE value="react build script in root package" />
     <MESSAGE value="re-organise project structure" />
     <MESSAGE value="legacy peer deps set to true" />
-    <option name="LAST_COMMIT_MESSAGE" value="legacy peer deps set to true" />
+    <MESSAGE value="CI=false in .env" />
+    <option name="LAST_COMMIT_MESSAGE" value="CI=false in .env" />
   </component>
 </project>
