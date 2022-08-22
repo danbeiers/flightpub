@@ -39,7 +39,7 @@ var mongoStore = new MongoDBStore({
     collection: 'Sessions',
 })
 const corsOptions = {
-    origin: 'https://build-testing--tubular-bublanina-308c07.netlify.app/',
+    origin: 'https://build-testing--seng3160-flightpub-team5.netlify.app/',
     optionsSuccessStatus: 200,
 }
 
