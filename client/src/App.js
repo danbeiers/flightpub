@@ -83,8 +83,8 @@ function App() {
                 console.log(data.userName)
             }catch (error){
                 setLoading(false)
-                console.log('There was an error authenticating user',error);
-                return
+                //console.log('There was an error authenticating user',error);
+                //res.status(500).json(error)
             }
         }
         fetchUserAuth()
