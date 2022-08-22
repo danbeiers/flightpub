@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="CI=false in .env" />
+    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="removed _redirects">
+      <change afterPath="$PROJECT_DIR$/client/public/_redirects" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -267,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661132484792</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="removed _redirects">
+      <created>1661133343198</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1661133343198</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +324,7 @@
     <MESSAGE value="re-organise project structure" />
     <MESSAGE value="legacy peer deps set to true" />
     <MESSAGE value="CI=false in .env" />
-    <option name="LAST_COMMIT_MESSAGE" value="CI=false in .env" />
+    <MESSAGE value="removed _redirects" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed _redirects" />
   </component>
 </project>

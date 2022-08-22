@@ -47,7 +47,7 @@ const corsOptions = {
 
 const connect = async () => {
 try{
-    await mongoose.connect(process.env.MONGO_URI||process.env.MONGO);
+    await mongoose.connect(process.env.MONGO);
     console.log("Connected to mongoDB")
 } catch (error){
     throw error;
