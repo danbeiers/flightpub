@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import session from "express-session";
 import { default as connectMongoDBSession} from 'connect-mongodb-session';
-import cors from "cors"
+//import cors from "cors"
 
 //import authRoute from "./routes/auth.js";
 //import usersRoute from "./routes/users.js";

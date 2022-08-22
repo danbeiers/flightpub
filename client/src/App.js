@@ -70,7 +70,7 @@ function App() {
         const fetchUserAuth = async () => {
             try {
                 setLoading(true);
-                const res = await fetch ('/user/isAuth', { mode: 'cors' })
+                const res = await fetch ('/user/isAuth')
                 if(!res.ok) {
                     console.log('auth not ok')
                     setUserSession(false)
