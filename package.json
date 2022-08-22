@@ -21,5 +21,8 @@
     "nodemon": "^2.0.19",
     "password-regexp": "^1.0.5",
     "svgo": "^2.8.0"
+  },
+  "engines": {
+    "node": "v18.4.0"
   }
 }
