@@ -24,7 +24,7 @@ function PaymentInputs(props) {
 
         for(let i = 0; i < props.flights.length; i++)
         {
-            const res = await fetch('http://localhost:8800/booking',
+            const res = await fetch('/booking',
                 {
                     method: 'POST',
                     headers: {

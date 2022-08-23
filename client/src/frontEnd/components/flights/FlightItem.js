@@ -10,7 +10,7 @@ function FlightItem(props) {
 
     const toggleFavouriteStatusHandler = async()=>{
     {
-        const res = await fetch('http://localhost:8800/wishlist',
+        const res = await fetch('/wishlist',
             {
                 method: 'POST',
                 headers: {

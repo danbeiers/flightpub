@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="FPUB-73">
+    <list default="true" id="610de1a2-3787-4ad8-8306-1664256910b0" name="Changes" comment="removed _redirects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="oneClick" />
+        <entry key="$PROJECT_DIR$" value="FPUB-73-holiday-package" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,6 +41,8 @@
     <setting file="file://$PROJECT_DIR$/backend/routes/airline.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backend/routes/booking.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backend/routes/map.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightItem.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/flights/FlightList.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/CustomMarker.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/frontEnd/components/maps/Dropdown.js" root0="FORCE_HIGHLIGHTING" />
@@ -69,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ewart/OneDrive/Documents/GitHub/flightpub&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/IdeaProjects/flightpub&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -79,13 +80,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\flightpub" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\flightpub\client" />
+      <recent name="C:\Users\User\IdeaProjects\flightpub\client\public" />
+      <recent name="C:\Users\User\IdeaProjects\flightpub\public" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub\client" />
       <recent name="C:\Users\danie\IdeaProjects\flightpub" />
-      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\backEnd" />
-      <recent name="C:\Users\danie\IdeaProjects\flightpub\src\frontEnd" />
     </key>
   </component>
   <component name="RunManager">
@@ -171,7 +174,126 @@
       <option name="project" value="LOCAL" />
       <updated>1658741973846</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added force option">
+      <created>1661091736658</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661091736658</updated>
+    </task>
+    <task id="LOCAL-00006" summary="index.js&#10;-cookie:secure was false">
+      <created>1661092582668</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661092582668</updated>
+    </task>
+    <task id="LOCAL-00007" summary="index.js&#10;-added port specification">
+      <created>1661093367742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661093367742</updated>
+    </task>
+    <task id="LOCAL-00008" summary="index.js&#10;-added port specification">
+      <created>1661095509760</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661095509760</updated>
+    </task>
+    <task id="LOCAL-00009" summary="package.json changed in root and client">
+      <created>1661095775702</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661095775702</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added _redirects">
+      <created>1661098561976</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661098561976</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added _redirects">
+      <created>1661099371351</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661099371351</updated>
+    </task>
+    <task id="LOCAL-00012" summary="build folder created">
+      <created>1661128866047</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1661128866047</updated>
+    </task>
+    <task id="LOCAL-00013" summary="react build script in root package">
+      <created>1661129269445</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1661129269445</updated>
+    </task>
+    <task id="LOCAL-00014" summary="re-organise project structure">
+      <created>1661131102464</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661131102464</updated>
+    </task>
+    <task id="LOCAL-00015" summary="re-organise project structure">
+      <created>1661131158282</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1661131158282</updated>
+    </task>
+    <task id="LOCAL-00016" summary="re-organise project structure">
+      <created>1661131403523</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661131403523</updated>
+    </task>
+    <task id="LOCAL-00017" summary="legacy peer deps set to true">
+      <created>1661131940206</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1661131940206</updated>
+    </task>
+    <task id="LOCAL-00018" summary="CI=false in .env">
+      <created>1661132484792</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1661132484792</updated>
+    </task>
+    <task id="LOCAL-00019" summary="removed _redirects">
+      <created>1661133343198</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1661133343198</updated>
+    </task>
+    <task id="LOCAL-00020" summary="removed _redirects">
+      <created>1661135436105</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1661135436105</updated>
+    </task>
+    <task id="LOCAL-00021" summary="removed _redirects">
+      <created>1661144380105</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1661144380105</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +328,18 @@
     <MESSAGE value="Basic profile page and weather widget" />
     <MESSAGE value="FPUB-11-connect-front-end-to-database-via-node-js&#10;Folder structure reorganised.&#10;- Client folder to hold front end React project from project root.&#10;- Backend directory created to maintain Node.js and Express API's.&#10;- Database connectivity added to ./backend/server.js&#10;- Run command 'npm start' now starts database connection and react app from project root.&#10;**Successfully compiles and runs on browser**" />
     <MESSAGE value="Fixing my booboo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing my booboo" />
+    <MESSAGE value="FPUB-73" />
+    <MESSAGE value="Added force option" />
+    <MESSAGE value="index.js&#10;-cookie:secure was false" />
+    <MESSAGE value="index.js&#10;-added port specification" />
+    <MESSAGE value="package.json changed in root and client" />
+    <MESSAGE value="added _redirects" />
+    <MESSAGE value="build folder created" />
+    <MESSAGE value="react build script in root package" />
+    <MESSAGE value="re-organise project structure" />
+    <MESSAGE value="legacy peer deps set to true" />
+    <MESSAGE value="CI=false in .env" />
+    <MESSAGE value="removed _redirects" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed _redirects" />
   </component>
 </project>

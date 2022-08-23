@@ -85,16 +85,16 @@ export const isAuthorised = async (req, res) => {
         //console.log("User Authenticated:"+req.session.user.userName)
         return res.json(req.session.user)
     } else {
-        return res.status(401).json('unauthorized')
+        return res.status(401).json({msg:'unauthorized'})
     }
 }
 export const logoutUser =  async (req, res) => {
-    console.log('in logout')
+    //console.log('in logout')
     req.session.destroy((err) => {
         //delete session data from store, using sessionID in cookie
         if (err) throw err;
         res.clearCookie("session-id"); // clears cookie containing expired sessionID
-        res.status(201).json("Logged out successfully");
+        res.status(201).json({msg:"Logged out successfully"});
 
     });
 }

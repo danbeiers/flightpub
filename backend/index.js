@@ -26,7 +26,7 @@ import * as path from "path";
 
 
 const app = express()
-const port = process.env.port||8800
+const port = process.env.PORT||8800
 
 //const cors = require('cors');
 //app.use(cors({ credentials: true, origin: true }));
@@ -38,16 +38,18 @@ var mongoStore = new MongoDBStore({
     uri: process.env.MONGO,
     collection: 'Sessions',
 })
-const corsOptions = {
-    origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200,
-}
+
+// const corsOptions = {
+//     origin: 'https://build-testing--seng3160-flightpub-team5.netlify.app/',
+//     optionsSuccessStatus: 200,
+// }
+
 
 //FPUB-13 Adding login functionality
 
 const connect = async () => {
 try{
-    await mongoose.connect(process.env.MONGO_URI||process.env.MONGO);
+    await mongoose.connect(process.env.MONGO);
     console.log("Connected to mongoDB")
 } catch (error){
     throw error;
@@ -80,8 +82,27 @@ mongoose.connection.on("connected", ()=>{
 //middlewares
 //middleware for insomnia/postman
 //app.use(cors)
-app.use(cors(corsOptions))
+app.use(cors());
+//app.use(cors(corsOptions))
 app.use(express.json());
+
+//Cors Configuration - Start
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*")
+//     res.header(
+//         "Access-Control-Allow-Headers",
+//         "Origin, X-Requested, Content-Type, Accept Authorization"
+//     )
+//     if (req.method === "OPTIONS") {
+//         res.header(
+//             "Access-Control-Allow-Methods",
+//             "POST, PUT, PATCH, GET, DELETE"
+//         )
+//         return res.status(200).json({})
+//     }
+//     next()
+// })
+//Cors Configuration - End
 //Session creation stuff
 app.use(
     session({
@@ -110,9 +131,9 @@ app.use("/wishlist", wishlistRoute);
 app.use("/holidayPackage",packageRoute);
 
 //middleware for error handling
-app.use((err,req,res, next)=>{
-    return res.status(500).json("Hello error from handler")
-})
+// app.use((err,req,res, next)=>{
+//     return res.status(500).json("Hello error from handler")
+// })
 
 app.listen(port, ()=>{
     connect()

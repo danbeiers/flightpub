@@ -23,7 +23,7 @@ function AdSidebar(props){
             try {
                 setLoading(true);
                 //console.log(number)
-                const res = await fetch(imgString, {mode: 'cors'})
+                const res = await fetch(imgString)
                 if (!res.ok) {
                     console.log('package not ok')
                     setHolidayPackage(null)
