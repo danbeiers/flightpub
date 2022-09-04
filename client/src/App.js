@@ -70,7 +70,7 @@ function App() {
         const fetchUserAuth = async () => {
             try {
                 setLoading(true);
-                const res = await fetch ('/user/isAuth')
+                const res = await fetch ('/user/isAuth', { mode: 'cors' })
                 if(!res.ok) {
                     console.log('auth not ok')
                     setUserSession(false)
@@ -83,8 +83,8 @@ function App() {
                 console.log(data.userName)
             }catch (error){
                 setLoading(false)
-                //console.log('There was an error authenticating user',error);
-                //res.status(500).json(error)
+                console.log('There was an error authenticating user',error);
+                return
             }
         }
         fetchUserAuth()

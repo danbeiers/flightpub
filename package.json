@@ -1,28 +1,33 @@
 {
   "name": "flightpub",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "buildfront": "cd client && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"cd backend && npm start\" \"cd client && npm start\"",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "install": "concurrently \"cd backend && npm install\" \"cd client && npm install\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danbeiers/flightpub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danbeiers/flightpub/issues"
+  },
+  "homepage": "https://github.com/danbeiers/flightpub#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
     "concurrently": "^7.3.0",
-    "bcrypt": "^5.0.1",
-    "connect-mongodb-session": "^3.1.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "express-session": "^1.17.3",
-    "mongoose": "^6.4.6",
-    "nodemon": "^2.0.19",
-    "password-regexp": "^1.0.5",
-    "svgo": "^2.8.0"
-  },
-  "engines": {
-    "node": "v18.4.0"
+    "react-scripts": "^5.0.1",
+    "react-simple-maps": "^3.0.0",
+    "react-tooltip": "^4.2.21",
+    "simple-random-number-generator": "^1.2.1",
+    "svgo": "^2.8.0",
+    "validator": "^13.7.0"
   }
 }
-

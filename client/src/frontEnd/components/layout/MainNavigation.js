@@ -15,6 +15,7 @@ function MainNavigation() {
     let loginContent;
     let welcomeContent;
     let wishlistContent;
+    let bookingContent;
     let profileContent;
     let registerContent;
 
@@ -56,7 +57,8 @@ function MainNavigation() {
         loginContent = <li><Link to='/' onClick={Logout}>Logout</Link></li>;
         welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!</li>;
         //welcomeContent = <li>Welcome <Link to='/profile' >{otherContext.userName}</Link>!<br/>{context.weatherData.name}</li>;
-        wishlistContent = <li> <Link to='/wishlist'>Wishlist</Link></li>
+        wishlistContent = <li> <Link to='/wishlist'>Wishlist</Link></li>;
+        bookingContent = <li><Link to='/bookings'>My Bookings</Link></li>;
         profileContent = <li><Link to='profile'>Profile</Link></li>;
         registerContent = null;
     }else{
@@ -76,12 +78,10 @@ function MainNavigation() {
                         <Link to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link to='/bookings'>My Bookings</Link>
-                    </li>
-                    <li>
                         <Link to='/map'>Map</Link>
                     </li>
                         {wishlistContent}
+                        {bookingContent}
                         {profileContent}
                         {loginContent}
                         {registerContent}

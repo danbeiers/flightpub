@@ -72,7 +72,7 @@ import useFetch from "../../hooks/useFetch";
 
         if(temp <= 5)
         {
-            data[i].sponsored = true;
+            //data[i].sponsored = true;
         }
         else {data[i].sponsored = false;}
     }

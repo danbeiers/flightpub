@@ -115,6 +115,11 @@ function FlightList(props) {
             flightPoints.length = 0;
             //find next start point
 
+            if(el.departure.toLowerCase() == "atlanta" && el.destination.toLowerCase() != "rio de janeiro")
+            {
+                console.log(el);
+            }
+
             if(el.departure.toLowerCase() == props.searchQuery.departureLocation.toLowerCase())
             {
                 console.log("succ");

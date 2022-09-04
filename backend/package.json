@@ -20,10 +20,6 @@
     "express-session": "^1.17.3",
     "mongoose": "^6.4.6",
     "nodemon": "^2.0.19",
-    "password-regexp": "^1.0.5",
-    "svgo": "^2.8.0"
-  },
-  "engines": {
-    "node": "v18.4.0"
+    "password-regexp": "^1.0.5"
   }
 }
